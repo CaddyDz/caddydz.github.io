@@ -1,0 +1,246 @@
+/* Options Panel
+================================================================ */
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+.clearfix, .cf, .theme-options .theme-option {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after, .cf:before, .theme-options .theme-option:before, .cf:after, .theme-options .theme-option:after {
+  content: "";
+  display: table;
+}
+.clearfix:after, .cf:after, .theme-options .theme-option:after {
+  clear: both;
+}
+
+.theme-options {
+  position: fixed;
+  z-index: 5;
+  left: -250px;
+  transition: 0.4s;
+  top: 25%;
+}
+.theme-options .options-trigger {
+  background: white;
+  line-height: 2em;
+  text-align: center;
+  height: 2em;
+  width: 2em;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  border-radius: 0 0.25em 0.25em 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  position: absolute;
+  right: -1.95em;
+  top: 0;
+}
+.theme-options .options-trigger:hover {
+  color: white;
+}
+.theme-options .options-trigger:hover:before {
+  display: inline-block;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.theme-options .theme-option:not(:last-of-type) {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.theme-options .theme-option p,
+.theme-options .theme-option .input-toggle {
+  float: left;
+}
+.theme-options .theme-option .input-toggle {
+  width: 50px;
+}
+.theme-options .theme-option p {
+  width: 76%;
+  width: calc(100% - 50px);
+  padding-right: 1em;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+.theme-options .options-content {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1.5em 1.25em;
+  border-radius: 0 0 0.25em 0;
+  width: 250px;
+}
+.theme-options .options-content h3 {
+  font-weight: 300;
+}
+.theme-options .options-content h4 {
+  margin-bottom: 0.65em;
+  font-size: 0.9rem;
+}
+.theme-options .page-type {
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+.theme-options .page-type .button {
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+.theme-options.active {
+  left: 0;
+}
+.theme-options.active .options-trigger {
+  color: white;
+}
+.theme-options.active .options-trigger:before {
+  content: "\f00d";
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+.cp-active .theme-options {
+  display: none;
+}
+@media (max-width: 720px) {
+  .theme-options {
+    position: static;
+    top: 90px;
+    z-index: 11;
+  }
+  .theme-options.active {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .theme-options.active .options-content {
+    width: 100%;
+    display: block;
+  }
+  .theme-options.active .options-trigger {
+    top: 1em;
+  }
+  .theme-options .options-trigger {
+    top: 5.25em;
+    right: 1.95em;
+    border-radius: 0.25em;
+    z-index: 9;
+    height: 39px;
+    width: 39px;
+    line-height: 38px;
+    font-size: 0.9rem;
+  }
+  .theme-options .options-content {
+    border-radius: 0;
+    display: none;
+  }
+}
+
+.logo .image-logo {
+  display: none;
+}
+
+/* Color Options
+================================================================ */
+.theme-color {
+  display: inline-block;
+  margin-left: 0.5em;
+  height: 32px;
+  width: 32px;
+  background: #707070;
+  border-radius: 0.25em;
+  cursor: pointer;
+  position: relative;
+}
+.theme-color:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  transition: 0.4s;
+  -webkit-transform: translateY(-5.5px);
+      -ms-transform: translateY(-5.5px);
+          transform: translateY(-5.5px);
+  opacity: 0;
+}
+.theme-color.small {
+  height: 24px;
+  width: 24px;
+}
+.theme-color.small:hover:after {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+.theme-color.small.active:after {
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+.theme-color:nth-child(1) {
+  background: #1795C5;
+  margin-left: 0;
+}
+.theme-color:nth-child(2) {
+  background: #1CBB9B;
+}
+.theme-color:nth-child(3) {
+  background: #bb1c4d;
+}
+.theme-color:nth-child(4) {
+  background: #bb1c1c;
+}
+.theme-color:nth-child(5) {
+  background: #707070;
+}
+
+/* Demo Blocks
+================================================================ */
+.theme-demos {
+  text-align: center;
+}
+.theme-demos h3 {
+  font-size: 1.4rem;
+}
+.theme-demos a, .theme-demos a:hover {
+  border-bottom: 0;
+}
+@media (max-width: 940px) {
+  .theme-demos > div:not(:last-child) {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+  }
+}
+@media (min-width: 940px) and (max-width: 1200px) {
+  .theme-demos h3 {
+    height: 1.25em;
+  }
+}
