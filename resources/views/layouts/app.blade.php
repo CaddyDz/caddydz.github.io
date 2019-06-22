@@ -136,9 +136,11 @@
 
     <!-- SCRIPTS -->
 
-    <!-- jQuery -->
     @env('production')
+        <!-- jQuery -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Raphael for livicons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js" integrity="sha256-Gk+dzc4kV2rqAZMkyy3gcfW6Xd66BhGYjVWa/FjPu+s=" crossorigin="anonymous"></script>
     @else
         <script src="{{ mix('js/vendor.js') }}"></script>
     @endenv
