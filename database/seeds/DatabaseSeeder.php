@@ -1,7 +1,6 @@
 <?php
 
 use Caddy\User;
-use Caddy\Meta;
 use Caddy\Post;
 use Illuminate\Database\Seeder;
 
