@@ -1,5 +1,0 @@
-{
-    "scripts": {
-        "postdeploy": "php artisan migrate:refresh --seed"
-    }
-}
