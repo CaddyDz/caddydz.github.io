@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         User::disableSearchSyncing();
         Post::disableSearchSyncing();
-        $this->call(UsersTableSeeder::class);
-        $this->call(ClientsTableSeeder::class);
-        $this->call(TestimoniesTableSeeder::class);
+        // $this->call(UsersTableSeeder::class);
+        // $this->call(ClientsTableSeeder::class);
+        // $this->call(TestimoniesTableSeeder::class);
         $this->call(MetasTableSeeder::class);
-        $this->call(PostsTableSeeder::class);
+        // $this->call(PostsTableSeeder::class);
     }
 }

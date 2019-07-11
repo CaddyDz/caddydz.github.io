@@ -12,9 +12,8 @@
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
           <li v-for="item in items" :key="item.objectID">
-            <small>
-              <a href="#">{{ item.name }}</a>
-            </small>
+            Posts by User: 
+            <a href="#">{{ item.name }}</a>
           </li>
         </template>
       </ais-hits>
@@ -24,9 +23,7 @@
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
           <li v-for="item in items" :key="item.objectID">
-            <small>
-              <a href="#">{{ item.title }}</a>
-            </small>
+            <a href="#">{{ item.title }}</a>
           </li>
         </template>
       </ais-hits>
@@ -84,10 +81,19 @@ export default {
 </script>
 
 <style scoped>
+/* Make the search box input placeholder more visible */
+input {
+  font-weight: 600;
+}
 /* Prevent results from showing as a list */
 li {
-  display: unset;
+  display: -webkit-box;
+  padding-left: 5%;
+  border: red 1px solid;
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
+
 .hits {
   margin-left: 25%;
   width: 50%;

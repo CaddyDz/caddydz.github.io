@@ -20,7 +20,7 @@
                 </div>
                 <div class="meta">
                     <p class="blurb">
-                        {!! $meta->content !!}
+                        {!! optional($meta)->content !!}
                     </p>
                     <a href="{{ route('contact') }}" target="blank" class="button round brand-1">
                         @lang('Contact Sales')

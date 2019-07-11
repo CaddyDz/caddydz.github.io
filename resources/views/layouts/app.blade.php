@@ -15,7 +15,7 @@
     <meta name="MobileOptimized" content="320">
     <!-- Icons & favicons -->
     <link rel="apple-touch-icon" href="{{ secure_asset('img/apple-icon-touch.png') }}">
-    <link rel="icon" href="/img/logo.jpg">
+    <link rel="icon" href="{{ secure_asset('/img/logo.jpg') }}">
     <!--[if IE]>
         <link rel="shortcut icon" href="/img/logo.jpg">
     <![endif]-->
@@ -29,8 +29,15 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"> --}}
+    @env('production')
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,800" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    @else
+        {{-- Include fonts installed via npm --}}
+        <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" >
+    @endenv
 
     <!-- Styles -->
     <link href="{{ secure_asset('assets/styles/css/app.css') }}" rel="stylesheet">
@@ -39,8 +46,12 @@
     <!-- Theme Options -->
     <link rel="stylesheet" href="assets/styles/css/theme-options.css">
 
-    <!-- Modernizr -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js" integrity="sha256-zyXsGPIj9MUc4RKKQuZEzcIkTYj4nRpRRA2dvlH07+g=" crossorigin="anonymous"></script>
+    @env('production')
+        <!-- Modernizr -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js" integrity="sha256-zyXsGPIj9MUc4RKKQuZEzcIkTYj4nRpRRA2dvlH07+g=" crossorigin="anonymous"></script>
+    @else
+        {{-- Include Modernizr from npm --}}
+    @endenv
 </head>
 
 <body class="index parallax-bg">
@@ -165,10 +176,11 @@
     <script src="assets/js/homepage.js"></script>
     <script src="assets/js/earth-slider.js"></script>
 
-    <!-- Google Map -->
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9kOt-o-2NU7_pcjkGIj4f8cKPw_xinco"></script>
-    <script src="assets/js/google-map.js"></script>
+    @env('production')
+        <!-- Google Map -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9kOt-o-2NU7_pcjkGIj4f8cKPw_xinco"></script>
+        <script src="assets/js/google-map.js"></script>
+    @endenv
 </body>
 
 </html>

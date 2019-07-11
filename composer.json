@@ -33,7 +33,8 @@
             "Caddy\\": "app/"
         },
         "files": [
-            "app/Helpers.php"
+            "app/Helpers.php",
+            "tests/helpers/functions.php"
         ]
     },
     "autoload-dev": {
