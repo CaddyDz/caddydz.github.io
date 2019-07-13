@@ -55,8 +55,11 @@ export default {
     }
   },
   mounted() {
-    axios.get('/api/getHeroData')
-        .then(response => {
+    axios('/api/getHeroData', {
+      headers: {
+        'X-localization': document.documentElement.lang
+      }
+    }).then(response => {
           this.heroData = response.data;
         });
     // Get the app locale from the DOM
