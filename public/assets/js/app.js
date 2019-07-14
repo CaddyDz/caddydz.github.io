@@ -4,54 +4,6 @@
 $(document).ready(function() {
 
 /******************************************************************
-Sub-Header Parallax Title
-******************************************************************/
-
-if (window.matchMedia('(min-width: 940px)').matches) { // is the window width larger than 940px?
-
-    var shTitle = $('.sh-title-wrapper'); // the element to apply parallax to
-
-    $(window).on('scroll', function() { // call the script on window scroll
-
-        var st = $(this).scrollTop();
-
-        // set the CSS relative to scroll position to achieve parallax effect
-        shTitle.css({ 
-            //'top' : (st/3)+"px", 
-            'transform' : "translate3d(0px, "+(st/3)+"px, 0px)",
-            'opacity' : 1 - st/250
-        }); 
-
-    });
-
-}
-    
-/******************************************************************
-Scroll to Top/Nav trigger Visibility
-******************************************************************/
-
-if (window.matchMedia('(min-width: 940px)').matches) { // is the window width larger than 940px?
-
-    $(window).bind("load scroll", function() { // call the script on window scroll & window load
-
-        if ($(this).scrollTop() > 350) { // have we scrolled more than 350px from the top?
-            // yes
-            $(".scroll-top, #cp-trigger, .opera-trigger").addClass('visible'); // show the buttons
-        } else {
-            // no
-            $(".scroll-top, #cp-trigger, .opera-trigger").stop().removeClass('visible'); // hide the buttons
-        }
-
-        // are we at the bottom of the page?
-        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            $(".scroll-top").stop().removeClass('visible'); // hide the scroll-top button
-        }
-
-    });
-
-}
-
-/******************************************************************
 Fixed Header
 ******************************************************************/
 

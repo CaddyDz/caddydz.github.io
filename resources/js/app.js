@@ -31,5 +31,21 @@ const i18n = new VueI18n({
 })
 const app = new Vue({
     el: '#app',
-    i18n
+    i18n,
+    data() {
+        return {
+            scrollUp: false
+        }
+    },
+    mounted() {
+        if (window.matchMedia('(min-width: 940px)').matches) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 350 && !(window.scrollY + window.innerHeight === document.body.clientHeight)) {
+                    this.scrollUp = true;
+                } else {
+                    this.scrollUp = false;
+                }
+            });
+        }
+    }
 });

@@ -66,7 +66,7 @@
         <div class="fixed-header-container" id="fixed-header"></div>
     
         <!-- Control Panel Nav Trigger -->
-        <div class="icon-lrg nav-trigger cp-trigger" id="cp-trigger">
+        <div class="icon-lrg nav-trigger cp-trigger" id="cp-trigger" v-show="scrollUp">
             <i class="fa fa-bars"></i>
         </div>
             
@@ -82,7 +82,7 @@
         <nav class="flyout-nav-container" id="flyout-nav"></nav>
 
         <!-- Scroll-to-top Icon-->
-        <a class="icon-lrg-border scroll-top" href="#site-content">
+        <a class="icon-lrg-border scroll-top" href="#site-content" v-show="scrollUp">
             <i class="fa fa-angle-up"></i>
         </a>
 

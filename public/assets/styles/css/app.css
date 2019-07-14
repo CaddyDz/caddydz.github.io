@@ -334,17 +334,6 @@ body .cp-nav-container .copyright {
     visibility: hidden !important;
 }
 
-.visible,
-body .cp-nav-container>ul li:hover>ul,
-body.cp-active .cp-nav-container .logo,
-body.cp-active .cp-nav-container>ul,
-body.cp-active .cp-nav-container .main-search,
-body.cp-active .cp-nav-container .copyright,
-body.cp-active .cp-trigger {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
 .clearfix,
 .cf,
 form fieldset,
@@ -4327,10 +4316,6 @@ body.cp-active .cp-nav-container .main-search {
     .cp-trigger {
         display: block;
     }
-
-    .opera-trigger {
-        display: block !important;
-    }
 }
 
 /* Fixed Header
@@ -4385,8 +4370,7 @@ body.fixed-header .fixed-header-container {
     display: block;
 }
 
-body.fixed-header .cp-trigger,
-body.fixed-header .opera-trigger {
+body.fixed-header .cp-trigger {
     display: none;
 }
 
@@ -4395,7 +4379,7 @@ body.fh-visible .fixed-header-container .app-header {
     visibility: visible;
 }
 
-body.fh-visible.fixed-header #flyout-trigger.opera-trigger {
+body.fh-visible.fixed-header {
     display: none !important;
 }
 
@@ -4793,16 +4777,6 @@ body.fh-visible .main-search [type="submit"] {
 @media (min-width: 940px) {
     .nav-trigger.flyout-trigger {
         display: none;
-    }
-}
-
-@media (min-width: 940px) {
-    #flyout-trigger.opera-trigger {
-        top: 3rem !important;
-        right: 3rem;
-        display: block;
-        opacity: 0;
-        visibility: hidden;
     }
 }
 
@@ -5256,25 +5230,12 @@ body.fh-visible .main-search [type="submit"] {
 /* Scroll to Top
 ================================================================ */
 .scroll-top {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
     position: fixed;
     bottom: 3rem;
     right: 3rem;
     color: rgba(0, 0, 0, 0.6);
     border-color: rgba(0, 0, 0, 0.6) !important;
     z-index: 9;
-}
-
-.scroll-top.visible,
-body .cp-nav-container>ul li:hover>ul.scroll-top,
-body.cp-active .cp-nav-container .scroll-top.logo,
-body.cp-active .cp-nav-container>ul.scroll-top,
-body.cp-active .cp-nav-container .scroll-top.main-search,
-body.cp-active .cp-nav-container .scroll-top.copyright,
-body.cp-active .scroll-top.cp-trigger {
-    opacity: 0.5 !important;
 }
 
 .scroll-top:hover {
