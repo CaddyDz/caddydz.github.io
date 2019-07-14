@@ -1,5 +1,5 @@
 <template>
-  <section class="hero inactive">
+  <section class="hero" :class="{inactive: isInactive}">
     <div class="hero-down">
       <a href="#s-welcome" class="mouse">
         <div class="mouse-animations">
@@ -49,21 +49,15 @@
 <script>
 export default {
   data() {
-    this.$i18n.locale = 'en';
     return {
-      heroData: {}
+      heroData: {},
+      isInactive: true,
     }
   },
   mounted() {
-    axios('/api/getHeroData', {
-      headers: {
-        'X-localization': document.documentElement.lang
-      }
-    }).then(response => {
+    axios('/api/getHeroData').then(response => {
           this.heroData = response.data;
         });
-    // Get the app locale from the DOM
-    this.$i18n.locale = document.documentElement.lang;
   },
 };
 </script>

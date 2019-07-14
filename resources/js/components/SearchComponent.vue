@@ -12,16 +12,17 @@
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
           <li v-for="item in items" :key="item.objectID">
-            Posts by User: 
-            <a href="#">{{ item.name }}</a>
+            Articles by User: 
+            <a :href="link(item.name)">{{ item.name }}</a>
           </li>
         </template>
       </ais-hits>
     </ais-instant-search>
-    <ais-instant-search :search-client="searchClient" index-name="posts">
+    <ais-instant-search :search-client="searchClient" index-name="articles">
       <ais-configure :query="query" :hitsPerPage="8"/>
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
+          <p v-if="items.length">Articles:</p>
           <li v-for="item in items" :key="item.objectID">
             <a href="#">{{ item.title }}</a>
           </li>
@@ -73,9 +74,12 @@ export default {
   },
   methods: {
     close() {
-        // Close the search bar when the user hits escape 
-				$('body').removeClass('search-active');
-		},
+      // Close the search bar when the user hits escape
+			$('body').removeClass('search-active');
+    },
+    link(name) {
+      return '/articles?by=' + name;
+    }
   }
 };
 </script>
@@ -89,7 +93,7 @@ input {
 li {
   display: -webkit-box;
   padding-left: 5%;
-  border: red 1px solid;
+  border: #5457b3 1px solid;
   padding-bottom: 1%;
   padding-top: 1%;
 }
@@ -105,5 +109,18 @@ li {
 }
 button {
   margin-top: 2%;
+}
+
+a {
+  color: #4ec9f7
+}
+
+p {
+    margin-bottom: unset;
+    display: flex;
+    padding: 2%;
+    font-size: x-large;
+    color: white;
+    background-color: #1895c6;
 }
 </style>

@@ -23,12 +23,13 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::view('about', 'about')->name('about');
 Route::view('services', 'services')->name('services');
 Route::view('portfolio', 'portfolio')->name('portfolio');
-Route::get('blog', 'PostController@index')->name('blog');
+Route::get('blog', 'ArticlesController@index')->name('blog');
 Route::view('contact', 'contact')->name('contact');
 Route::post('contact', 'ContactController@send')->name('contact');
-Route::get('posts', 'PostController@index')->name('posts');
-Route::get('posts/{user}', 'PostController@index')->name('articlesBy');
+Route::get('articles', 'ArticlesController@index')->name('articles');
+Route::get('articles/{user}', 'ArticlesController@index')->name('articlesBy');
 Route::post('subscribe', 'MailingListController@subscribe')->name('subscribe');
-Route::get('category/{category}', 'PostController@index')->name('category');
+Route::get('category/{category}', 'ArticlesController@index')->name('category');
 // Wildcard should be the last, this helps for SEO
-Route::get('{post}', 'PostController@show')->name('article');
+Route::get('{article}', 'ArticlesController@show')
+    ->name('article')->where('article', '^(?!admin)[أ-يa-zA-Z0-9-_]*$');

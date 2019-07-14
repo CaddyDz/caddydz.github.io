@@ -49,7 +49,7 @@ $(document).ready(function() {
         }
     }) 
 
-    /* Single Post - Load more comments */
+    /* Single Article - Load more comments */
     $('.load-more').click(function() {
         $(this).hide();
         $('.hidden-comment').fadeIn(400);

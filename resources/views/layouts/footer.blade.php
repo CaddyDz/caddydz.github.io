@@ -69,7 +69,7 @@
                         <div class="twitter-pic">
                             <a href="https://twitter.com/saly3301" class="modal-image">
                                 {{-- Call Twitter API to get the avatar --}}
-                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/928192763178479616/ClowoTy__normal.jpg" alt="Caddy DZ">
+                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/1140969530568712192/9hhTEDXf_normal.jpg" alt="Caddy DZ">
                             </a>
                             <div class="tweet-time"><a href="https://twitter.com/saly3301/status/1050454769515593728">11 Oct</a></div>
                         </div>
@@ -83,7 +83,7 @@
                     <div class="twitter-article">
                         <div class="twitter-pic">
                             <a href="https://twitter.com/saly3301" class="modal-image">
-                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/928192763178479616/ClowoTy__normal.jpg" alt="Caddy DZ">
+                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/1140969530568712192/9hhTEDXf_normal.jpg" alt="Caddy DZ">
                             </a>
                             <div class="tweet-time"><a href="https://twitter.com/saly3301/status/1021062586027175936">22 Jul</a></div>
                         </div>
