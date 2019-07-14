@@ -55,6 +55,9 @@ export default {
     }
   },
   mounted() {
+    this.$root.$on('activate-hero', () => {
+        this.isInactive = false;
+    });
     axios('/api/getHeroData').then(response => {
           this.heroData = response.data;
         });
