@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', [
-        'title' => __('My Blog'),
-        'description' => __('My latest articles, notes and thoughts'),
-        'url' => route('contact'),
-        'link' => __('Have an idea?')
-    ])
+    <header-component title="@lang('My Blog')"
+                    description="@lang('My latest articles, notes and thoughts')"
+                    url="{{ route('contact') }}"
+                    link="@lang('Have an idea?')"></header-component>
 @include('layouts.breadcrumb')
 <section class="section primary blog-articles">
     <div class="container small-container blog-items">

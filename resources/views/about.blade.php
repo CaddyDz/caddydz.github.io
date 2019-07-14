@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', [
-        'title' => __('About Me'),
-        'description' => __('So you want to know more huh? check this page out'),
-        'url' => route('contact'),
-        'link' => __('Get in touch')
-    ])
+    <header-component title="@lang('About Me')"
+                    description="@lang('So you want to know more huh? check this page out')"
+                    url="{{ route('contact') }}"
+                    link="@lang('Get in touch')"></header-component>
     @include('layouts.breadcrumb')
     @include('partials.welcome')
     {{-- @include('partials.skills')

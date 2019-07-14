@@ -1,11 +1,10 @@
-@extends('layouts.app') 
+@extends('layouts.app')
+
 @section('content')
-    @include('layouts.header', [
-        'title' => __('Contact Me'),
-        'description' => __("Whether you're a student in need for help or a contractor looking to hire, don't hesitate to ping me"),
-        'url' => route('contact'),
-        'link' => __('Get in touch')
-    ])
+    <header-component title="@lang('Contact Me')"
+                    description="@lang('Whether you\'re a student in need for help or a contractor looking to hire, don\'t hesitate to ping me')"
+                    url="{{ route('contact') }}"
+                    link="@lang('Get in touch')"></header-component>
     @include('layouts.breadcrumb')
 <section class="section primary contact" id="s-contact">
     <div class="container">

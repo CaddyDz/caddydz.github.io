@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.header', [
-        'title' => __('My Portfolio'),
-        'description' => __('My latest works, projects and ideas'),
-        'url' => route('contact'),
-        'link' => __('Have a question?')
-    ])
+    <header-component title="@lang('My Portfolio')"
+                    description="@lang('My latest works, projects and ideas')"
+                    url="{{ route('contact') }}"
+                    link="@lang('Have a question?')"></header-component>
     @include('layouts.breadcrumb')
     @include('partials.portfolio')
     @include('partials.banner')
