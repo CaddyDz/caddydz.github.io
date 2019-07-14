@@ -162,6 +162,7 @@ return [
         Caddy\Providers\EventServiceProvider::class,
         Caddy\Providers\NovaServiceProvider::class,
         Caddy\Providers\RouteServiceProvider::class,
+        Caddy\Providers\PaginationServiceProvider::class,
 
     ],
 
