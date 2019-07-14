@@ -18,7 +18,6 @@ export default {
           this.isActive = false; // Stop the spinner
           /* Hero Section */
           this.$root.$emit('activate-hero');
-          // $('section.hero').removeClass('inactive'); 
         }, 600); // After 600 milliseconds
       } else {
           this.isActive = false;
