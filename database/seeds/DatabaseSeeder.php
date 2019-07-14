@@ -1,7 +1,7 @@
 <?php
 
 use Caddy\User;
-use Caddy\Post;
+use Caddy\Article;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::disableSearchSyncing();
-        Post::disableSearchSyncing();
-        // $this->call(UsersTableSeeder::class);
+        Article::disableSearchSyncing();
+        $this->call(UsersTableSeeder::class);
         // $this->call(ClientsTableSeeder::class);
         // $this->call(TestimoniesTableSeeder::class);
         $this->call(MetasTableSeeder::class);
-        // $this->call(PostsTableSeeder::class);
+        $this->call(ArticlesTableSeeder::class);
     }
 }

@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Caddy\Post::class, function (Faker $faker) {
-    $title = $faker->sentence();
+$factory->define(Caddy\Article::class, function (Faker $faker) {
+    $title = $faker->sentence;
     return [
         'user_id' => factory(Caddy\User::class),
         'category_id' => factory(Caddy\Category::class),

@@ -2,20 +2,24 @@
 
 namespace Caddy\Http\Controllers;
 
-use Caddy\Post;
+use Caddy\Article;
 use Illuminate\Http\Request;
+use Caddy\User;
 
-class PostController extends Controller
+class ArticlesController extends Controller
 {
     /**
-     * Display a listing of the posts.
+     * Display a listing of the articles.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::latest()->paginate(3);
-        return view('posts.index', compact('posts'));
+        if ($request->has('by')) {
+            return User::whereName($request->by)->first()->articles;
+        }
+        $articles = Article::latest()->paginate(3);
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -45,9 +49,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article)
     {
-        //
+        return view('articles.show', compact('article'));
     }
 
     /**
