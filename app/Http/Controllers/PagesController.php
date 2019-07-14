@@ -42,4 +42,20 @@ class PagesController extends Controller
             'content' => $heroContent,
         ]);
     }
+
+    /**
+     * Get Navigation Component Data
+     *
+     * This function returns a json response
+     * to be fetched by axios in vue client
+     *
+     * @return Illuminate\Http\Response
+     **/
+    public function getNavData()
+    {
+        return response([
+            'app' => [
+                'name' => config('app.name'),            ]
+        ]);
+    }
 }

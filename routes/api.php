@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('getHeroData', 'PagesController@getHeroData');
+Route::get('getNavData', 'PagesController@getNavData');
