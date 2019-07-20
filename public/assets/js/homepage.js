@@ -1,31 +1,9 @@
-
 /* Homepage Scripts
 ================================================================ */
 
 $(document).ready(function() {
 
     if (window.matchMedia('(min-width: 940px)').matches) { // is the window width larger than 940px?
-
-    /* Hero Parallax Title
-    ******************************************************************/
-
-        var heroTitle = $('.parallax-title .title-wrapper, .video-bg .title-wrapper');
-
-        $(window).on('scroll', function() {
-
-            var st = $(this).scrollTop();
-
-            heroTitle.css({ 
-                'transform' : "translate3d(0px,"+(st/2.5)+"px, 0px)",
-                'opacity' : 1 - st/700
-            }); 
-
-            $('.mouse').css({ 
-                'opacity' : 1 - st/700
-            }); 
-
-        });
-
     /* Hero Parallax Background
     ******************************************************************/
 

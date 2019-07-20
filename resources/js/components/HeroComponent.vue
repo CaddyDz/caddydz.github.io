@@ -1,7 +1,7 @@
 <template>
   <section class="hero" :class="{inactive: isInactive}">
     <div class="hero-down">
-      <a href="#s-welcome" class="mouse">
+      <a href="#s-welcome" class="mouse" :style="{opacity:opacity}">
         <div class="mouse-animations">
           <div class="mouse-scroll-l"></div>
           <div class="mouse-scroll-2"></div>
@@ -10,7 +10,7 @@
       </a>
     </div>
     <div class="container">
-      <div class="title-wrapper">
+      <div class="title-wrapper" :style="{transform:transform,opacity:opacity}">
         <div class="hero-title" v-html="heroData.title"></div>
         <div class="meta">
           <p class="blurb" v-html="heroData.content"></p>
@@ -52,6 +52,8 @@ export default {
     return {
       heroData: {},
       isInactive: true,
+      transform: '',
+      opacity: 1
     }
   },
   mounted() {
@@ -61,6 +63,12 @@ export default {
     axios('/api/getHeroData').then(response => {
           this.heroData = response.data;
         });
+    if (window.matchMedia('(min-width: 940px)').matches) {
+      window.addEventListener('scroll', () => {
+        this.transform = "translate3d(0px, "+(window.scrollY/2.5)+"px, 0px)";
+        this.opacity = 1 - window.scrollY / 700;
+      });
+    }
   },
 };
 </script>

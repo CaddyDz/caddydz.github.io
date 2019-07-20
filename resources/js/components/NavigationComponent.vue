@@ -1,17 +1,17 @@
 <template>
     <!-- Header -->
-    <header class="app-header" id="app-header">
+    <header class="app-header" :id="idProp">
         <div class="container">
             <div class="header-wrapper">
                 <!-- Logo -->
                 <div class="logo" id="logo">
                     <!-- image logo -->
-                    <a href="/" class="image-logo">
+                    <a href="/" class="image-logo" v-show="!isHtml">
                     <img src="/img/logo.jpg" :alt="app.name" style="display:inline"/> 
                     {{ app.name }}
                 </a>
                     <!-- HTML logo -->
-                    <a href="/" class="html-logo"><i class="fa fa-code"></i> {{ app.name }}</a>
+                    <a href="/" class="html-logo" v-show="isHtml"><i class="fa fa-code"></i> {{ app.name }}</a>
                 </div>
                 <!-- Main-Nav -->
                 <nav class="main-nav">
@@ -23,7 +23,7 @@
                             <a href="/contact">{{ $t('Contact') }}</a>
                         </li>
                     </ul>
-                    <div class="icon-round-lrg-plain search-toggle">
+                    <div class="icon-round-lrg-plain search-toggle" @click="activateSearch">
                         <i class="fa fa-search"></i>
                     </div>
                 </nav>
@@ -31,6 +31,43 @@
         </div>
     </header>
 </template>
+
+<script>
+export default {
+  props: ['id-prop'],
+  data() {
+    return {
+      app: {
+        name: 'Caddy DZ'
+      },
+      isHtml: ''
+    }
+  },
+  computed: {
+    currentUrl: function() {
+        return document.location.pathname.slice(1);
+    }
+  },
+  methods: {
+      activateSearch() {
+          document.body.classList.add('search-active'); // search box is visible
+        // auto-focus the input afer transition complete
+        setTimeout(() => {
+            this.$root.$emit('focus-search-input');
+        }, 400)
+      }
+  },
+  mounted() {
+    this.$root.$on('set-logo', isHtml => {
+      this.isHtml = isHtml;
+    });
+    axios.get('/api/getNavData')
+         .then(response => {
+           this.app.name = response.data.app.name
+         });
+  }
+}
+</script>
 
 <i18n>
 {
@@ -48,30 +85,3 @@
     }
 }
 </i18n>
-
-<script>
-export default {
-  data() {
-    return {
-      app: {
-        name: 'Caddy DZ'
-      }
-    }
-  },
-  computed: {
-      currentUrl: function() {
-          return document.location.pathname.slice(1);
-      }
-  },
-  mounted() {
-    axios.get('/api/getNavData')
-         .then(response => {
-           this.app.name = response.data.app.name
-         });
-  }
-}
-</script>
-
-<style scoped>
-
-</style>

@@ -1,53 +1,4 @@
-/* Application Scripts
-================================================================ */
-
 $(document).ready(function() {
-
-/******************************************************************
-Fixed Header
-******************************************************************/
-
-$('.app-header').clone().removeAttr('id').appendTo('.fixed-header-container'); // Create the fixed header
-
-$(window).bind("load scroll", function() { // call the script on window scroll & window load
-
-    if ($(this).scrollTop() > 350) { // have we scrolled more than 350px from the top?
-        // yes
-        $('body').addClass('fh-visible');
-    } else {
-        // no
-        $('body').removeClass('fh-visible');      
-    }
-
-    if ($('.fixed-header-container').css('opacity') == '1' && $('body').hasClass('fh-visible')) { // is the fixed-header visible?
-        // yes
-        $('.flyout-trigger').css({
-            top: '0.7em'
-        });
-    } else {   
-        // no     
-        $('.flyout-trigger').css({
-            top: '1.5em'
-        });
-    }
-
-});
-
-/******************************************************************
-Main Search
-******************************************************************/
-
-$('.search-toggle').click(function() {
-
-    $('body').addClass('search-active'); // search box is visible
-
-    // auto-focus the input afer transition complete
-    setTimeout(function(){
-        $('.main-search input').focus();
-    }, 400)
-
-});
-
 /******************************************************************
 Contact Form
 ******************************************************************/
@@ -561,30 +512,6 @@ $(window).load(function(){
     });
 
 }); // End window.load
-
-/******************************************************************
-Opera Flyout Nav
-******************************************************************/
-
-$(document).ready(function() {
-
-    // Our custom control panel nav doesn't work in Opera, so we need a fallback
-    function operaNav() {
-
-        $('#cp-trigger').hide(); // hide the regular cp-canvas nav trigger
-        $('#flyout-trigger').show().addClass('opera-trigger'); // show the mobile off-canvas nav trigger
-
-    } // End operaNav()
-
-    // are we browsing with Opera?
-    if (isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0) { 
-        // yes
-        operaNav();
-    } else {
-        // no
-    }
-
-}); // End document.ready
 
 /******************************************************************
 Welcome Section

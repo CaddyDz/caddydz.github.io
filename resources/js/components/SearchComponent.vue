@@ -1,6 +1,6 @@
 <template>
   <div class="main-search" id="search" @keyup.esc="close">
-    <input v-model="query" type="search" name="s" placeholder="Enter your query...">
+    <input v-model="query" type="search" name="s" placeholder="Enter your query..." ref="search">
     <button type="submit">
       <i class="fa fa-search"></i>
     </button>
@@ -75,11 +75,16 @@ export default {
   methods: {
     close() {
       // Close the search bar when the user hits escape
-			$('body').removeClass('search-active');
+      document.body.classList.remove('search-active');
     },
     link(name) {
       return '/articles?by=' + name;
     }
+  },
+  mounted() {
+    this.$root.$on('focus-search-input', () => {
+      this.$refs.search.focus();
+    });
   }
 };
 </script>

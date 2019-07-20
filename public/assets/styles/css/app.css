@@ -1089,11 +1089,6 @@ blockquote cite {
     float: right;
 }
 
-/* No Js */
-.no-js .owl-carousel {
-    display: block;
-}
-
 .owl-dots {
     text-align: center;
     -webkit-tap-highlight-color: transparent;
@@ -4379,7 +4374,7 @@ body.fh-visible .fixed-header-container .app-header {
     visibility: visible;
 }
 
-body.fh-visible.fixed-header {
+body.fh-visible.fixed-header #flyout-trigger {
     display: none !important;
 }
 
@@ -4523,9 +4518,10 @@ body.fh-visible .main-search [type="submit"] {
 }
 
 .logo img {
-    display: block;
     max-height: 36px;
     padding-bottom: 1px;
+    margin-right: -2px;
+    margin-bottom: -12px;
 }
 
 @media (min-width: 720px) {
@@ -4759,8 +4755,6 @@ body.fh-visible .main-search [type="submit"] {
     z-index: 9;
     top: 3rem;
     right: 3rem;
-    opacity: 0;
-    visibility: hidden;
 }
 
 .flyout-active .nav-trigger,

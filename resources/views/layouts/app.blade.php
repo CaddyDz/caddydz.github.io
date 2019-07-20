@@ -3,7 +3,7 @@
 <!--[if IE 9]>     <html class="no-js ie ie9 lte9"> <![endif]-->
 <!--[if gt IE 9]>  <html class="no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!--<![endif]-->
 
 <head>
@@ -54,7 +54,7 @@
 <body class="index parallax-bg">
     <div id="app">
         <div id="site-content">
-            <navigation-component></navigation-component>
+            <navigation-component id-prop="app-header"></navigation-component>
             @yield('content')
             @include('layouts.footer')
         </div>
@@ -63,17 +63,15 @@
         <loading-spinner-component></loading-spinner-component>
     
         <!-- Fixed header -->
-        <div class="fixed-header-container" id="fixed-header"></div>
+        <div class="fixed-header-container" id="fixed-header">
+            <navigation-component id-prop=""></navigation-component>
+        </div>
     
         <!-- Control Panel Nav Trigger -->
-        <div class="icon-lrg nav-trigger cp-trigger" id="cp-trigger" v-show="scrollUp">
-            <i class="fa fa-bars"></i>
-        </div>
+        <control-panel-nav-trigger-component></control-panel-nav-trigger-component>
             
-        <!-- Flyout Nav Trigger -->
-        <span class="icon-lrg nav-trigger flyout-trigger" id="flyout-trigger">
-            <i class="fa fa-bars"></i>
-        </span>
+        <!-- Sidebar Nav Trigger -->
+        <sidebar-trigger-component></sidebar-trigger-component>
 
         <!-- Control Panel Nav -->
         <nav class="cp-nav-container" id="cp-nav"></nav>
@@ -82,9 +80,7 @@
         <nav class="flyout-nav-container" id="flyout-nav"></nav>
 
         <!-- Scroll-to-top Icon-->
-        <a class="icon-lrg-border scroll-top" href="#site-content" v-show="scrollUp">
-            <i class="fa fa-angle-up"></i>
-        </a>
+        <scroll-top-component></scroll-top-component>
 
         <!-- Main Search -->
         <search-component></search-component>
