@@ -1,6 +1,6 @@
 <template>
   <div class="main-search" id="search" @keyup.esc="close">
-    <input v-model="query" type="search" name="s" placeholder="Enter your query..." ref="search">
+    <input v-model="query" type="search" name="s" :placeholder="$t('Enter your query...')" ref="search">
     <button type="submit">
       <i class="fa fa-search"></i>
     </button>
@@ -129,3 +129,17 @@ p {
     background-color: #1895c6;
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "Enter your query...": "Enter your query..."
+  },
+  "fr": {
+    "Enter your query...": "Entrez votre requête..."
+  },
+  "ar": {
+    "Enter your query...": "أدخل استفسارك ..."
+  }
+}
+</i18n>
