@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <header-component title="@lang('Contact Me')"
-                    description="@lang('Whether you\'re a student in need for help or a contractor looking to hire, don\'t hesitate to ping me')"
-                    url="{{ route('contact') }}"
-                    link="@lang('Get in touch')"></header-component>
-    @include('layouts.breadcrumb')
+<header-component title="@lang('Contact Me')"
+    description="@lang('Whether you\'re a student in need for help or a contractor looking to hire, don\'t hesitate to ping me')"
+    url="{{ route('contact') }}" link="@lang('Get in touch')"></header-component>
+@include('layouts.breadcrumb')
 <section class="section primary contact" id="s-contact">
     <div class="container">
         <div class="row contact-widgets">
@@ -56,31 +55,7 @@
             </div>
         </div>
         <hr class="stripes" />
-        <form class="h5-valid" method="POST" action="{{ route('contact') }}">
-            @csrf
-            <fieldset>
-                <div class="form-element">
-                    <input type="text" class="box" name="fullname" required placeholder="Full Name">
-                    <label>Full Name</label>
-                </div>
-                <div class="form-element">
-                    <input type="text" class="box" name="subject" placeholder="Subject">
-                    <label>Subject</label>
-                </div>
-                <div class="form-element">
-                    <input type="tel" class="box" name="phone" placeholder="Phone Number">
-                    <label>Phone Number</label>
-                </div>
-                <div class="form-element">
-                    <input type="email" class="box" name="email" required placeholder="Email Address">
-                    <label>Email Address</label>
-                </div>
-            </fieldset>
-            <div class="form-element">
-                <textarea class="box" placeholder="Enter your message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="button large full-width brand-1">Submit Message</button>
-        </form>
+        <contact-form-component></contact-form-component>
     </div>
 </section>
 <div id="map"></div>

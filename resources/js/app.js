@@ -28,8 +28,35 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 import VueI18n from 'vue-i18n'
 const i18n = new VueI18n({
     locale: document.documentElement.lang
-})
+});
+import VuePureLightbox from 'vue-pure-lightbox'
+import styles from 'vue-pure-lightbox/dist/VuePureLightbox.css'
+import { VTooltip } from 'v-tooltip'
+Vue.directive('tooltip', VTooltip.VTooltip)
 const app = new Vue({
     el: '#app',
-    i18n
+    i18n,
+    components: {
+        VuePureLightbox,
+    },
+    data() {
+        return {
+            isScreenLargeEnough: false,
+        }
+    },
+    created() {
+        this.isScreenLargeEnough = window.matchMedia('(min-width: 940px)').matches;
+    },
+    mounted() {
+        if (this.isScreenLargeEnough) {
+            window.addEventListener('scroll', () => {
+                this.$emit('scrolling');
+                if (window.scrollY > 350) {
+                    this.$emit('scrolled-enough');
+                } else {
+                    this.$emit('not-scrolled-enough');
+                }
+            });
+        }
+    }
 });

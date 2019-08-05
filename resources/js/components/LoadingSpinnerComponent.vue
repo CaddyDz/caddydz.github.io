@@ -12,7 +12,7 @@ export default {
     }
   },
   mounted() {
-    if (window.matchMedia('(min-width: 940px)').matches) { // Only on desktop
+    if (this.$root.isScreenLargeEnough) { // Only on desktop
         setTimeout(() => {
           /* Loading Spinner */
           this.isActive = false; // Stop the spinner

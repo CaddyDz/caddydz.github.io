@@ -14,6 +14,16 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getPosterAvatarAttribute()
+    {
+        return $this->user->avatar;
+    }
+
+    public function getPosterAvatarFullAttribute()
+    {
+        return $this->user->avatarFull;
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -26,7 +36,6 @@ class Article extends Model
      */
     public function toSearchableArray()
     {
-
         $array = $this->only(['title', 'body', 'excerpt', 'image', 'slug']);
         return $array;
     }

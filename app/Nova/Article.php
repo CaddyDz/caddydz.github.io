@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\BelongsTo;
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Article extends Resource
 {
@@ -49,57 +49,13 @@ class Article extends Resource
             TextWithSlug::make('Title')->sortable()
                 ->rules('required', 'min:3', 'max:50')
                 ->slug('slug'),
-            // BelongsTo::make('Category')->searchable(),
             Trix::make('Body'),
             Textarea::make('Excerpt'),
             Image::make('Image'),
             Slug::make('Link', 'slug')->hideFromIndex()
                 ->showUrlPreview(config('app.url'))
                 ->rules('required', 'min:3', 'max:50'),
+            BelongsTo::make('User'),
         ];
-    }
-
-    /**
-     * Get the cards available for the request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-    public function cards(Request $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the filters available for the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-    public function filters(Request $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the lenses available for the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-    public function lenses(Request $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the actions available for the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-    public function actions(Request $request)
-    {
-        return [];
     }
 }

@@ -16,7 +16,8 @@ class ArticlesController extends Controller
     public function index(Request $request)
     {
         if ($request->has('by')) {
-            return User::whereName($request->by)->first()->articles;
+            $articles = User::whereName($request->by)->first()->articles()->paginate();
+            return view('articles.index', compact('articles'));
         }
         $articles = Article::latest()->paginate(3);
         return view('articles.index', compact('articles'));

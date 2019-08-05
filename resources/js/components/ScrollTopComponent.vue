@@ -12,18 +12,14 @@ export default {
     };
   },
   mounted() {
-    if (window.matchMedia("(min-width: 940px)").matches) {
-      window.addEventListener("scroll", () => {
-        if (
-          window.scrollY > 350 &&
-          !(window.scrollY + window.innerHeight === document.body.clientHeight)
-        ) {
-          this.isVisible = true;
-        } else {
-          this.isVisible = false;
-        }
-      });
-    }
+    this.$root.$on('scrolled-enough', () => {
+      this.isVisible = true;
+      document.body.classList.add('fh-visible');
+    });
+    this.$root.$on('not-scrolled-enough', () => {
+      this.isVisible = false;
+      document.body.classList.remove('fh-visible');
+    });
   }
 };
 </script>

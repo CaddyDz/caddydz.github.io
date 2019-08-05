@@ -62,38 +62,10 @@
                 </div>
             </div>
             <div class="span-3 footer-col">
-                <h3><i class="fa fa-twitter"></i> Twitter Feed</h3>
-                <h4>View my latest tweets</h4>
+                <h3><i class="fa fa-twitter"></i> @lang('Twitter Feed')</h3>
+                <h4>@lang('View my latest tweets')</h4>
                 <div id="twitter-feed">
-                    <div class="twitter-article">
-                        <div class="twitter-pic">
-                            <a href="https://twitter.com/saly3301" class="modal-image">
-                                {{-- Call Twitter API to get the avatar --}}
-                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/1140969530568712192/9hhTEDXf_normal.jpg" alt="Caddy DZ">
-                            </a>
-                            <div class="tweet-time"><a href="https://twitter.com/saly3301/status/1050454769515593728">11 Oct</a></div>
-                        </div>
-                        <div class="twitter-text">
-                            <div class="tweetprofilelink">
-                                <strong><a href="https://twitter.com/saly3301">Caddy DZ</a></strong> <a href="https://twitter.com/cortexpodcast">@cortexpodcast</a>
-                            </div>
-                            <p>Is it down or just for me?</p>
-                        </div>
-                    </div>
-                    <div class="twitter-article">
-                        <div class="twitter-pic">
-                            <a href="https://twitter.com/saly3301" class="modal-image">
-                                <img width="50" height="50" src="https://pbs.twimg.com/profile_images/1140969530568712192/9hhTEDXf_normal.jpg" alt="Caddy DZ">
-                            </a>
-                            <div class="tweet-time"><a href="https://twitter.com/saly3301/status/1021062586027175936">22 Jul</a></div>
-                        </div>
-                        <div class="twitter-text">
-                            <div class="tweetprofilelink">
-                                <strong><a href="https://twitter.com/saly3301">Caddy DZ</a></strong> <a href="https://twitter.com/SlackHQ">@SlackHQ</a>
-                            </div>
-                            <p>I like you too #slack</p>
-                        </div>
-                    </div>
+                    <a class="twitter-timeline" data-width="264" data-height="400" data-theme="dark" data-link-color="#242424" href="https://twitter.com/saly3301?ref_src=twsrc%5Etfw">Tweets by saly3301</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </div>

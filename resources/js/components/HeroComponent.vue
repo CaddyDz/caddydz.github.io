@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" :class="{inactive: isInactive}">
+  <section class="hero" :class="{inactive: isInactive, active: isActive}">
     <div class="hero-down">
       <a href="#s-welcome" class="mouse" :style="{opacity:opacity}">
         <div class="mouse-animations">
@@ -53,7 +53,8 @@ export default {
       heroData: {},
       isInactive: true,
       transform: '',
-      opacity: 1
+      opacity: 1,
+      isActive: false
     }
   },
   mounted() {
@@ -63,12 +64,10 @@ export default {
     axios('/api/getHeroData').then(response => {
           this.heroData = response.data;
         });
-    if (window.matchMedia('(min-width: 940px)').matches) {
-      window.addEventListener('scroll', () => {
-        this.transform = "translate3d(0px, "+(window.scrollY/2.5)+"px, 0px)";
-        this.opacity = 1 - window.scrollY / 700;
-      });
-    }
+    this.$root.$on('scrolling', () => {
+      this.transform = "translate3d(0px, "+(window.scrollY/2.5)+"px, 0px)";
+      this.opacity = 1 - window.scrollY / 700;
+    });
   },
 };
 </script>

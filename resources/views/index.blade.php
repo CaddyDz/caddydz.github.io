@@ -2,9 +2,10 @@
 
 @section('content')
     {{-- Hero --}}
-    <hero-component @activate-hero="isInactive = false"></hero-component>
+    <hero-component></hero-component>
     <!-- Main Content -->
-    @include('partials.welcome')
+    <welcome-component></welcome-component>
+    {{-- @include('partials.welcome') --}}
     @include('partials.skills')
     @include('partials.services')
     @include('partials.quote')

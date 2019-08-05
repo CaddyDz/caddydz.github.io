@@ -25,12 +25,10 @@ export default {
     this.$root.$on('activate-hero', () => {
       this.isInactive = false;
     });
-    if (window.matchMedia('(min-width: 940px)').matches) {
-      window.addEventListener('scroll', () => {
-        this.transform = "translate3d(0px, "+(window.scrollY/3)+"px, 0px)";
-        this.opacity = 1 - window.scrollY / 250;
-      });
-    }
+    this.$root.$on('scrolling', () => {
+      this.transform = "translate3d(0px, "+(window.scrollY/3)+"px, 0px)";
+      this.opacity = 1 - window.scrollY / 250;
+    });
   }
 }
 </script>

@@ -6,6 +6,7 @@ html,
 body {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -1698,7 +1699,10 @@ img {
     max-width: none;
     width: auto !important;
     height: 101%;
-    margin-left: -25%;
+}
+
+.lightbox__image {
+    margin-left: 25%;
 }
 
 .profile.profile-alt {
@@ -2884,23 +2888,7 @@ table.table-fixed {
 }
 
 /* Tooltips
-================================================================ */
-/*
-Tipr 1.0.1
-Copyright (c) 2013 Tipue
-Tipr is released under the MIT License
-http://www.tipue.com/tipr
-Converted to SCSS for One Nexus by Edmund Reed
-*/
-.tipr_content {
-    padding: 0.35rem 1rem 0.4rem;
-    background: rgba(0, 0, 0, 0.65);
-    border-radius: 0.4rem;
-    color: #ffffff;
-    font-size: 1rem;
-}
-
-.tipr_container_bottom,
+===================Œ.-**************************************************************
 .tipr_container_top {
     display: none;
     position: absolute;
@@ -5459,71 +5447,6 @@ body.search-active .main-search {
 
 #twitter-feed a:hover {
     text-decoration: none;
-}
-
-#twitter-feed .twitter-article {
-    margin-top: 1rem;
-}
-
-#twitter-feed .twitter-article:first-of-type {
-    margin-top: 0;
-}
-
-#twitter-feed .twitter-pic,
-#twitter-feed .twitter-text {
-    display: table-cell;
-    vertical-align: top;
-}
-
-#twitter-feed .twitter-pic {
-    width: 16%;
-    width: calc(42px - 0.0000001em);
-}
-
-#twitter-feed .twitter-pic a,
-#twitter-feed .twitter-pic img {
-    display: block;
-}
-
-#twitter-feed .twitter-pic img {
-    margin-top: 2px;
-    border: none;
-}
-
-#twitter-feed .twitter-text {
-    width: 70%;
-    width: calc(100% - 46px);
-    padding-left: 0.75rem;
-}
-
-#twitter-feed .twitter-text p {
-    margin: 0px;
-}
-
-#twitter-feed .tweetprofilelink strong a {
-    color: #ffffff;
-}
-
-#twitter-feed .tweetprofilelink strong a:hover {
-    border-color: inherit;
-}
-
-#twitter-feed .tweetprofilelink>a {
-    font-size: 0.95em;
-}
-
-#twitter-feed .tweet-time {
-    position: relative;
-    top: -1px;
-    text-align: center;
-}
-
-#twitter-feed .tweet-time a {
-    background: #1795C5;
-    padding: 0 1px;
-    font-size: 0.75rem;
-    color: white;
-    text-shadow: none;
 }
 
 /******************************************************************

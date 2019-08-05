@@ -13,18 +13,12 @@ export default {
     };
   },
   mounted() {
-    if (window.matchMedia("(min-width: 940px)").matches) {
-      window.addEventListener("scroll", () => {
-        if (
-          window.scrollY > 350 &&
-          !(window.scrollY + window.innerHeight === document.body.clientHeight)
-        ) {
-          this.top = 1.5;
-        } else {
-          this.top = 0.7;
-        }
-      });
-    }
+    this.$root.$on('scrolled-enough', () => {
+      this.top = 1.5;
+    });
+    this.$root.$on('not-scrolled-enough', () => {
+      this.top = 0.7;
+    });
   }
 };
 </script>

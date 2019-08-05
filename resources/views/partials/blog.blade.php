@@ -15,9 +15,11 @@
                 <a href="{{ route('article', ['article' => $article]) }}" class="thumb">
                     <img src="{{ $article->image }}" alt="{{ $article->title }}" />
                 </a>
-                <a href="{{ $article->user->avatar }}" class="modal-image profile profile-alt">
-                    <img src="{{ $article->user->avatar }}" alt="{{ $article->user->name }}" />
-                </a>
+                <vue-pure-lightbox
+                    class="profile profile-alt"
+                    thumbnail="{{ $article->posterAvatar }}"
+                    :images="['{{ $article->posterAvatarFull }}']"
+                ></vue-pure-lightbox>
                 <div class="date">
                     <span>{{ $article->created_at->shortEnglishMonth }}</span>
                     <span>{{ $article->created_at->day }}</span>

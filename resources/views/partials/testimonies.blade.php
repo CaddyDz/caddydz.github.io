@@ -3,11 +3,14 @@
         <div class="container">
             <div class="testimonials-slider owl-carousel">
                 @foreach ($testimonies as $testimony)
-                <div class="testimonial">
+                    <div class="testimonial">
                         <div class="profile">
-                            <a href="{{ secure_asset($testimony->avatar) }}" class="modal-image">            
-                            <img src="{{ secure_asset($testimony->avatar) }}" alt="{{ $testimony->endorser }}" />
-                        </a>
+                            <vue-pure-lightbox
+                                class="profile profile-alt"
+                                alt="{{ $testimony->endorser }}"
+                                thumbnail="{{ secure_asset($testimony->avatar) }}"
+                                :images="['{{ secure_asset($testimony->avatar) }}']"
+                            ></vue-pure-lightbox>
                         </div>
                         <blockquote>
                             <p>{!! $testimony->quote !!}</p>
