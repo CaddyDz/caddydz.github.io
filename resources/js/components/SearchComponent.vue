@@ -12,7 +12,7 @@
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
           <li v-for="item in items" :key="item.objectID">
-            Articles by User: 
+            {{ $t('Articles by User:') }} 
             <a :href="link(item.name)">{{ item.name }}</a>
           </li>
         </template>
@@ -22,9 +22,9 @@
       <ais-configure :query="query" :hitsPerPage="8"/>
       <ais-hits :class-names="{'ais-Hits': 'hits'}">
         <template slot-scope="{ items }">
-          <p v-if="items.length">Articles:</p>
-          <li v-for="item in items" :key="item.objectID">
-            <a href="#">{{ item.title }}</a>
+          <p v-if="items.length">{{ $t('Articles:') }}</p>
+          <li v-for="article in items" :key="article.objectID">
+            <a :href="article.slug">{{ article.title }}</a>
           </li>
         </template>
       </ais-hits>

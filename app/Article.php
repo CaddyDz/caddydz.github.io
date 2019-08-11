@@ -39,4 +39,16 @@ class Article extends Model
         $array = $this->only(['title', 'body', 'excerpt', 'image', 'slug']);
         return $array;
     }
+
+    /**
+     * Get route key name
+     *
+     * Get the column name used to retrieve articles
+     *
+     * @return string Key name
+     **/
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

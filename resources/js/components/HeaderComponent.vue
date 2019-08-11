@@ -5,7 +5,7 @@
       <div class="sh-title-wrapper" :style="{transform:transform,opacity:opacity}">
         <h1>{{ title }}</h1>
         <p>{{ description }}</p>
-        <a :href="url" target="blank" class="button border round cta">{{ link }}</a>
+        <a :href="url" :target="target" class="button border round cta">{{ link }}</a>
       </div>
     </div>
   </section>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ['title', 'description', 'url', 'link'],
+  props: ['title', 'description', 'url', 'link', 'target'],
   data() {
     return {
       isInactive: true,

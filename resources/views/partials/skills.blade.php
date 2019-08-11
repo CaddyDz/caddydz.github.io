@@ -3,14 +3,14 @@
         <div class="row block-columns">
             <div class="span-6 skills-meta">
                 <div class="section-title">
-                    <h2>Our Skills</h2>
-                    <h3><i>It's What We Do Best</i></h3>
+                    <h2>My Skills</h2>
+                    <h3><i>It's What I Do Best</i></h3>
                 </div>
-                <p>We can provide <b>valuable services</b> on almost any software project regardless of the technology being used due to what we call <b>cross-platform skills</b>. However, there are of course some technologies we are more familiar with.</p>
+                <p>I can provide <b>valuable services</b> on almost any software project regardless of the technology being used due to what we call <b>cross-platform skills</b>. However, there are of course some technologies we are more familiar with.</p>
                 <ul class="bullet-list min-bp2">
                     <li>More familiarity reduces risk of complications.</li>
-                    <li>We love to work with new technologies.</li>
-                    <li>Mitigate risk by including a third party experts.</li>
+                    <li>I love to work with new technologies.</li>
+                    <li>Mitigate risk by including a third party expert.</li>
                 </ul>
                 <p class="button-set">
                     <a href="{{ route('contact') }}" class="button round brand-1">Get in Touch</a>
@@ -20,7 +20,7 @@
             <div class="span-6 progress-bars">
                 <h5>Laravel</h5>
                 <div class="progress-bar">
-                    <div class="progress" data-progress="75%">75%</div>
+                    <div class="progress" data-progress="90%">90%</div>
                 </div>
                 <h5>CSS3/SASS</h5>
                 <div class="progress-bar">

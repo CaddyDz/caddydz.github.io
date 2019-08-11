@@ -65,7 +65,7 @@
                 <h3><i class="fa fa-twitter"></i> @lang('Twitter Feed')</h3>
                 <h4>@lang('View my latest tweets')</h4>
                 <div id="twitter-feed">
-                    <a class="twitter-timeline" data-width="264" data-height="400" data-theme="dark" data-link-color="#242424" href="https://twitter.com/saly3301?ref_src=twsrc%5Etfw">Tweets by saly3301</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="twitter-timeline" data-width="264" data-height="400" data-theme="dark" data-link-color="#242424" href="https://twitter.com/saly3301?ref_src=twsrc%5Etfw">Tweets by saly3301</a>
                 </div>
             </div>
         </div>

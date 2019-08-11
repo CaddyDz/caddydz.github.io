@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::disableSearchSyncing();
-        Article::disableSearchSyncing();
+        // User::disableSearchSyncing();
+        // Article::disableSearchSyncing();
         $this->call(UsersTableSeeder::class);
         // $this->call(ClientsTableSeeder::class);
         // $this->call(TestimoniesTableSeeder::class);

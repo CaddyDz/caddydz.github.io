@@ -1185,7 +1185,7 @@ blockquote cite {
 }
 
 .feature-block p {
-    font-weight: 100;
+    font-weight: 300;
     margin: 0;
 }
 
@@ -1219,7 +1219,7 @@ blockquote cite {
 ================================================================ */
 form {
     font-size: 1.2rem;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 form .form-element {
@@ -1248,7 +1248,8 @@ form .form-element textarea:focus~label {
 }
 
 form .form-element input:focus:invalid~label,
-form .form-element textarea:focus:invalid~label {
+form .form-element textarea:focus:invalid~label,
+.is-invalid {
     background: #C23A2C;
 }
 
@@ -1301,7 +1302,8 @@ form label {
 }
 
 form input:focus:invalid,
-form textarea:focus:invalid {
+form textarea:focus:invalid,
+.is-invalid {
     border-color: #C23A2C;
 }
 
@@ -1521,7 +1523,7 @@ h4 em,
 h5 em,
 h6 em {
     font-weight: lighter;
-    font-weight: 100;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -2554,7 +2556,7 @@ screen and (max-height: 300px) {
 .price-chart h5 {
     margin-top: 0;
     margin-bottom: 1.25em;
-    font-weight: 100;
+    font-weight: 300;
     font-family: "Lato", sans-serif;
     font-size: 1.2rem;
 }
@@ -3176,7 +3178,7 @@ Modules
 }
 
 .blog-items .blog-item p {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .blog-items .blog-item small {
@@ -4071,7 +4073,7 @@ body.cp-active .cp-nav-container .main-search {
     font-family: "Lato", sans-serif;
     font-size: 1.2rem;
     margin-top: 0.25rem;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .app-footer .footer-content p,
@@ -5478,7 +5480,7 @@ Sections
 }
 
 .section.banner h4 {
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1.8rem;
     margin: 0;
 }
@@ -5581,7 +5583,7 @@ Sections
 .section.clients h5 {
     margin-top: 0.25em;
     font-size: 1.8rem;
-    font-weight: 100;
+    font-weight: 300;
     color: #1795C5;
 }
 
@@ -6375,7 +6377,7 @@ Sections
 }
 
 .section.primary .section-title h2 {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .section.primary .section-title h2 b {
@@ -6403,7 +6405,7 @@ Sections
 
 .section.primary .section-title h4 {
     position: relative;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1.8rem;
 }
 
@@ -6469,7 +6471,7 @@ Sections
 }
 
 .section.secondary .section-title h3 {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .section.secondary .button.border {

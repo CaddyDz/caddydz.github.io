@@ -2,9 +2,9 @@
     <div class="container">
         <header class="sep active">
             <div class="section-title">
-                <h2>Our <i>Services</i> Are <strong>World Class <i class="fa fa-trophy"></i></strong></h2>
+                <h2>My <i>Services</i> Are <strong>World Class <i class="fa fa-trophy"></i></strong></h2>
             </div>
-            <p class="sub-text">These are some services you may find useful for you current project or idea, just <a href="#">activate a plan</a>  and let us be part of your awesome project.</p>
+            <p class="sub-text">These are some services you may find useful for your current project or idea, just <a href="{{ route('contact') }}">contact me</a>  and let me be part of your awesome project.</p>
         </header>
         <div class="owl-carousel services-slider">
             <div class="widget service">

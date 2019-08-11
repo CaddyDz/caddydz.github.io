@@ -95,6 +95,7 @@
     <!-- SCRIPTS -->
     <script src="{{ mix('js/app.js') }}"></script>
     @env('production')
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Raphael for livicons -->
