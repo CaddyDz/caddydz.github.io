@@ -11,7 +11,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
-    public function testIndexRoute()
+    public function test_index_route()
     {
         $response = $this->get('/');
 
@@ -23,7 +23,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
-    public function testAboutRoute()
+    public function test_about_route()
     {
         $response = $this->get('/about');
 
@@ -35,7 +35,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
-    public function testContactRoute()
+    public function test_contact_route()
     {
         $response = $this->get('/contact');
 
