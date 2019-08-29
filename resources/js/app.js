@@ -31,8 +31,6 @@ const i18n = new VueI18n({
 });
 import VuePureLightbox from 'vue-pure-lightbox'
 import styles from 'vue-pure-lightbox/dist/VuePureLightbox.css'
-import { VTooltip } from 'v-tooltip'
-Vue.directive('tooltip', VTooltip.VTooltip)
 const app = new Vue({
     el: '#app',
     i18n,

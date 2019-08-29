@@ -28,7 +28,6 @@
         "modernizr": "^3.7.1",
         "raleway-webfont": "^3.0.1",
         "raphael": "^2.1.4",
-        "v-tooltip": "^2.0.2",
         "vlightbox": "^2.0.2",
         "vue": "^2.5.17",
         "vue-i18n": "^8.12.0",
