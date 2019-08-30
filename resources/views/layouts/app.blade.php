@@ -74,9 +74,12 @@
         <sidebar-trigger-component></sidebar-trigger-component>
 
         <!-- Control Panel Nav -->
-        <nav class="cp-nav-container" id="cp-nav"></nav>
+        <nav class="cp-nav-container" id="cp-nav">
+            <search-component></search-component>
+        </nav>
 
         <!-- Flyout Nav -->
+        {{-- Only for mobile devices --}}
         <nav class="flyout-nav-container" id="flyout-nav"></nav>
 
         <!-- Scroll-to-top Icon-->

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" :class="{inactive: isInactive, active: isActive}">
+  <section class="hero" :class="{inactive: !isActive, active: isActive}">
     <div class="hero-down">
       <a href="#s-welcome" class="mouse" :style="{opacity:opacity}">
         <div class="mouse-animations">
@@ -51,7 +51,6 @@ export default {
   data() {
     return {
       heroData: {},
-      isInactive: true,
       transform: '',
       opacity: 1,
       isActive: false
@@ -59,7 +58,7 @@ export default {
   },
   mounted() {
     this.$root.$on('activate-hero', () => {
-        this.isInactive = false;
+        this.isActive = true;
     });
     axios('/api/getHeroData').then(response => {
           this.heroData = response.data;

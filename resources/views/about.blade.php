@@ -6,7 +6,7 @@
                     url="{{ route('contact') }}"
                     link="@lang('Get in touch')"></header-component>
     @include('layouts.breadcrumb')
-    @include('partials.welcome')
+    <welcome-component></welcome-component>
     {{-- @include('partials.skills')
     @include('partials.why_choose_us')
     @include('partials.banner')

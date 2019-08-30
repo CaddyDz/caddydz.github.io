@@ -16,7 +16,7 @@
                 <ul>
                     <li><b><i class="fa fa-globe"></i> Location:</b> Didouche Mourad, Algiers Center City</li>
                     <li><b><i class="fa fa-phone-square"></i> Phone:</b> (+213) 550-647-448</li>
-                    <li><b><i class="fa fa-envelope"></i> Email:</b> <a href="mailto:caddy@caddydz.me">caddy@caddydz.me</a></li>
+                    <li><b><i class="fa fa-envelope"></i> Email:</b> <a href="mailto:caddy@salimdj.me">caddy@salimdj.me</a></li>
                 </ul>
             </div>
             <div class="span-3 footer-col">

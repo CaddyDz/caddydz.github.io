@@ -94,6 +94,11 @@ export default {
 input {
   font-weight: 600;
 }
+input::-webkit-search-cancel-button {
+    right: 2em;
+    margin-right: 50px;
+    position: relative;
+}
 /* Prevent results from showing as a list */
 li {
   display: -webkit-box;
@@ -109,6 +114,7 @@ li {
   background: #043040;
   color: silver;
   text-align: center;
+  overflow: hidden;
   -webkit-transition: color 0.3s, background-color 0.3s;
   transition: color 0.3s, background-color 0.3s;
 }
@@ -133,13 +139,19 @@ p {
 <i18n>
 {
   "en": {
-    "Enter your query...": "Enter your query..."
+    "Enter your query...": "Enter your query...",
+    "Articles:": "Articles",
+    "Articles by User:": "Articles by User:"
   },
   "fr": {
-    "Enter your query...": "Entrez votre requête..."
+    "Enter your query...": "Entrez votre requête...",
+    "Articles:": "Articles",
+    "Articles by User:": "Articles by User:"
   },
   "ar": {
-    "Enter your query...": "أدخل استفسارك ..."
+    "Enter your query...": "أدخل استفسارك ...",
+    "Articles:": "Articles",
+    "Articles by User:": "Articles by User:"
   }
 }
 </i18n>

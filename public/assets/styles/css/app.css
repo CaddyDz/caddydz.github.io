@@ -153,8 +153,6 @@ ol {
 [class*="span"] {
     display: inline-block;
     zoom: 1;
-    *display: inline;
-    /* IE < 8: fake inline-block */
     vertical-align: top;
     margin-left: 4%;
 }
@@ -3224,7 +3222,7 @@ Modules
 
 .bottom-bar .footer-nav a {
     color: rgba(255, 255, 255, 0.75);
-    font-weight: lighter;
+    font-weight: 400;
 }
 
 .bottom-bar .footer-nav a:hover {
@@ -3708,7 +3706,7 @@ body.cp-active #site-content {
 }
 
 body.cp-active .cp-nav-container {
-    visibility: visible;
+    visibility: visible !important;
 }
 
 body.cp-active .cp-nav-container .logo,
@@ -3728,7 +3726,25 @@ body.cp-active .cp-nav-container>ul a:not(:only-child):before {
 }
 
 body.cp-active .cp-nav-container .main-search {
+    display: block;
     top: 3.6%;
+}
+
+body .cp-nav-container .main-search .search-close {
+    display: none;
+}
+
+
+
+.visible,
+body .cp-nav-container>ul li:hover>ul,
+body.cp-active .cp-nav-container .logo,
+body.cp-active .cp-nav-container>ul,
+body.cp-active .cp-nav-container .main-search,
+body.cp-active .cp-nav-container .copyright,
+body.cp-active .cp-trigger {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 @media (max-height: 800px) {
@@ -5172,7 +5188,8 @@ body.fh-visible .main-search [type="submit"] {
     z-index: 9;
 }
 
-.scroll-top:hover {
+.scroll-top:hover,
+.hovered {
     opacity: 1 !important;
     color: white;
     border-color: #1795C5 !important;
