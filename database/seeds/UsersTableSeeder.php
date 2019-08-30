@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
         ]);
         // Create 5 users and each user has 3 articles
         factory(User::class, 5)->create()->each(function($user) use ($faker) {
-            $user->addMedia($faker->unique()->image($dir = '/tmp', $width = 800, $height = 534, 'people'))->toMediaCollection('avatars');
+            $user->addMedia($faker->unique()->image($dir = '/tmp', $width = 800, $height = 534, $category = 'people'))->toMediaCollection('avatars');
             $user->articles()->createMany(factory(Article::class, 3)->make()->toArray());
         });
     }
