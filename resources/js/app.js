@@ -40,21 +40,57 @@ const app = new Vue({
     data() {
         return {
             isScreenLargeEnough: false,
+            isHtml: false,
+            lightboxEnabled: false,
+        }
+    },
+    methods: {
+        show(event) {
+            event.target.closest('.portfolio-item').lastElementChild.__vue__.visible = true;
+            this.lightboxEnabled = true;
+            document.body.style.marginRight = '15px';
+            document.body.style.overflow = 'hidden';
+            document.body.classList.add('mfp-zoom-out-cur');
         }
     },
     created() {
+        // Initialize the data depending on the initial screen size
         this.isScreenLargeEnough = window.matchMedia('(min-width: 940px)').matches;
     },
     mounted() {
+        this.$root.$on('set-logo', isHtml => {
+            this.isHtml = isHtml;
+        });
         if (this.isScreenLargeEnough) {
+            /******************************************************************
+                Add Active Class
+            ******************************************************************/
+            let tiles = document.getElementsByClassName('inactive');
             window.addEventListener('scroll', () => {
-                this.$emit('scrolling');
-                if (window.scrollY > 350) {
-                    this.$emit('scrolled-enough');
-                } else {
-                    this.$emit('not-scrolled-enough');
+                let windowHeight = window.scrollY + window.innerHeight;
+                for (let tile of tiles) {
+                    let height = tile.offsetTop + tile.offsetHeight;
+                    if (height < windowHeight) {
+                        tile.classList.remove('inactive');
+                        tile.classList.add('active');
+                    }
                 }
             });
+        } else {
+            let tiles = document.getElementsByClassName('inactive');
+            // On mobile devices, activate all tiles
+            for (let tile of tiles) {
+                tile.classList.remove('inactive');
+            }
+        }
+        /******************************************************************
+        Progress Bars
+        ******************************************************************/
+
+        let progressBars = document.getElementsByClassName('progress');
+        for (let progressBar of progressBars) {
+            let progress = progressBar.getAttribute('data-progress');
+            progressBar.style.width = progress;
         }
     }
 });

@@ -12,7 +12,7 @@
                 <div class="owl-carousel clients-slider">
                     @foreach ($clients as $client)
                         <a href="{{ $client->url }}" title="{{ $client->name }}">
-                            <img src="{{ secure_asset($client->image) }}" alt="{{ $client->name }}" />
+                            <img src="{{ secure_asset('storage/' . $client->image) }}" alt="{{ $client->name }}" />
                         </a>
                     @endforeach
                 </div>

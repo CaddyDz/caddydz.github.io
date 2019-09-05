@@ -53,6 +53,7 @@
 
 <body class="index parallax-bg">
     <div id="app">
+        <div class="mfp-bg mfp-ready" v-if="lightboxEnabled"></div>
         <div id="site-content">
             <navigation-component id-prop="app-header"></navigation-component>
             @yield('content')
@@ -61,15 +62,15 @@
         <!-- TOOLS/UTILITIES -->
         <!-- Loading Spinner -->
         <loading-spinner-component></loading-spinner-component>
-    
+
         <!-- Fixed header -->
         <div class="fixed-header-container" id="fixed-header">
             <navigation-component id-prop=""></navigation-component>
         </div>
-    
+
         <!-- Control Panel Nav Trigger -->
         <control-panel-nav-trigger-component></control-panel-nav-trigger-component>
-            
+
         <!-- Sidebar Nav Trigger -->
         <sidebar-trigger-component></sidebar-trigger-component>
 
@@ -87,13 +88,13 @@
 
         <!-- Main Search -->
         <search-component></search-component>
-            
+
         <!-- Site Overlay -->
         <div class="site-overlay invisible" id="site-overlay"></div>
-    
+
         <theme-component></theme-component>
     </div>
-    
+
 
     <!-- SCRIPTS -->
     <script src="{{ mix('js/app.js') }}"></script>

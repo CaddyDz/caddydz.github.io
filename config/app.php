@@ -163,7 +163,7 @@ return [
         Caddy\Providers\NovaServiceProvider::class,
         Caddy\Providers\RouteServiceProvider::class,
         Caddy\Providers\PaginationServiceProvider::class,
-
+        Caddy\Providers\ViewComposerServiceProvider::class,
     ],
 
     /*

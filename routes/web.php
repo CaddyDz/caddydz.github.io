@@ -20,7 +20,7 @@ Route::get('/', 'PagesController@index')->name('index');
 Auth::routes(['verify' => true]);
 
 Route::get('home', 'HomeController@index')->name('home');
-Route::view('about', 'about')->name('about');
+Route::get('about', 'PagesController@about')->name('about');
 Route::view('services', 'services')->name('services');
 Route::view('portfolio', 'portfolio')->name('portfolio');
 Route::get('blog', 'ArticlesController@index')->name('blog');
@@ -30,6 +30,7 @@ Route::get('articles', 'ArticlesController@index')->name('articles');
 Route::get('articles/{user}', 'ArticlesController@index')->name('articlesBy');
 Route::post('subscribe', 'MailingListController@subscribe')->name('subscribe');
 Route::get('category/{category}', 'ArticlesController@index')->name('category');
+Route::get('project/{project}', 'ProjectsController@index')->name('project');
 // Wildcard should be the last, this helps for SEO
 Route::get('{article}', 'ArticlesController@show')
     ->name('article')->where('article', '^(?!admin)[أ-يa-zA-Z0-9-_]*$');

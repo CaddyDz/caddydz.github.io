@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Caddy\Testimony;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
 class TestimoniesTableSeeder extends Seeder
@@ -15,6 +15,8 @@ class TestimoniesTableSeeder extends Seeder
     {
         Storage::disk('public')->deleteDirectory('testimonies');
         Storage::disk('public')->makeDirectory('testimonies');
-        factory(Testimony::class, 3)->create();
+        factory(Testimony::class, 3)->create()->each(function($testimony) {
+            $testimony->addMedia($testimony->photo)->toMediaCollection('avatars');
+        });
     }
 }

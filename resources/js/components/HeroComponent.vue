@@ -19,7 +19,7 @@
             target="blank"
             class="button round brand-1"
           >{{ $t('contact') }}</a>
-          <a href="#s-welcome" class="button round border">{{ $t('read') }}</a>
+          <a href="#s-skills" class="button round border">{{ $t('read') }}</a>
         </div>
       </div>
     </div>
@@ -58,12 +58,12 @@ export default {
   },
   mounted() {
     this.$root.$on('activate-hero', () => {
-        this.isActive = true;
+      this.isActive = true;
     });
     axios('/api/getHeroData').then(response => {
-          this.heroData = response.data;
-        });
-    this.$root.$on('scrolling', () => {
+      this.heroData = response.data;
+    });
+    window.addEventListener('scroll', () => {
       this.transform = "translate3d(0px, "+(window.scrollY/2.5)+"px, 0px)";
       this.opacity = 1 - window.scrollY / 700;
     });

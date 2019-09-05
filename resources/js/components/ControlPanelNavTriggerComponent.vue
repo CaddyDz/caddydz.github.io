@@ -15,7 +15,7 @@ export default {
   methods: {
     toggleCP() {
       if (!this.cpActive) { // If control panel is inactive, (initial state) then activate it
-        var scaleFactorWhenNavActive = 0.65; // change me if CSS body.cp-active #site-content transform:scale factor ever changes! 
+        var scaleFactorWhenNavActive = 0.65; // change me if CSS body.cp-active #site-content transform:scale factor ever changes!
 
         var vPos = $('html').scrollTop(); // my current scroll position in px
 
@@ -44,15 +44,16 @@ export default {
     }
   },
   mounted() {
-    this.$root.$on('scrolled-enough', () => {
-      this.isVisible = true;
-      document.body.classList.add('fh-visible');
-    });
-    this.$root.$on('not-scrolled-enough', () => {
-      if (!this.cpActive) { // Do not hide the trigger if the control panel is active
-        this.isVisible = false;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        this.isVisible = true;
+        document.body.classList.add('fh-visible');
+      } else {
+        if (!this.cpActive) { // Do not hide the trigger if the control panel is active
+          this.isVisible = false;
+        }
+        document.body.classList.remove('fh-visible');
       }
-      document.body.classList.remove('fh-visible');
     });
   }
 }

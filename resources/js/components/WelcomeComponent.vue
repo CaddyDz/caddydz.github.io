@@ -1,5 +1,5 @@
 <template>
-  <section class="section primary welcome" :class="{inactive: !isActive, active: isActive}" id="s-welcome" ref="section">
+  <section class="section primary welcome inactive" id="s-welcome">
     <div class="container">
         <div class="welcome-titles">
             <header class="welcome-content">
@@ -111,17 +111,7 @@
 export default {
   data() {
     return {
-      isActive: false,
     }
-  },
-  mounted() {
-    this.$root.$on('scrolling', () => {
-        let sectionHeight = this.$refs.section.offsetTop + this.$refs.section.offsetHeight;
-        let windowHeight = window.scrollY + window.innerHeight;
-        if (sectionHeight < windowHeight) {
-            this.isActive = true;
-        }
-    });
   }
 }
 </script>

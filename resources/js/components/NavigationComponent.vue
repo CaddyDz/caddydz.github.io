@@ -7,7 +7,7 @@
                 <div class="logo" id="logo">
                     <!-- image logo -->
                     <a href="/" class="image-logo" v-show="!isHtml">
-                    <img src="/img/logo.jpg" :alt="app.name" style="display:inline"/> 
+                    <img src="/img/logo.jpg" :alt="app.name" style="display:inline"/>
                     {{ app.name }}
                 </a>
                     <!-- HTML logo -->
@@ -40,7 +40,7 @@ export default {
       app: {
         name: 'Caddy DZ'
       },
-      isHtml: ''
+      isHtml: false,
     }
   },
   computed: {

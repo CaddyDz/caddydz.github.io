@@ -8,8 +8,8 @@
                             <vue-pure-lightbox
                                 class="profile profile-alt"
                                 alt="{{ $testimony->endorser }}"
-                                thumbnail="{{ secure_asset($testimony->avatar) }}"
-                                :images="['{{ secure_asset($testimony->avatar) }}']"
+                                thumbnail="{{ secure_asset('storage/' . $testimony->avatar) }}"
+                                :images="['{{ secure_asset('storage/' . $testimony->avatar) }}']"
                             ></vue-pure-lightbox>
                         </div>
                         <blockquote>

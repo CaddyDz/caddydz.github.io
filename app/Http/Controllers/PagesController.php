@@ -5,6 +5,7 @@ namespace Caddy\Http\Controllers;
 use Caddy\Meta;
 use Caddy\Article;
 use Caddy\Client;
+use Caddy\Member;
 use Caddy\Project;
 use Caddy\Testimony;
 
@@ -18,11 +19,8 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $clients = Client::latest()->take(6)->get();
-        $projects = Project::latest()->take(6)->get();
-        $testimonies = Testimony::latest()->take(10)->get();
         $articles = Article::latest()->take(3)->get();
-        return view('index', compact('clients', 'projects', 'testimonies', 'articles'));
+        return view('index', compact('articles'));
     }
 
     /**
@@ -57,5 +55,18 @@ class PagesController extends Controller
             'app' => [
                 'name' => config('app.name'),            ]
         ]);
+    }
+
+    /**
+     * Return about page.
+     *
+     * Supply necessary data to about view
+     *
+     * @return View
+     **/
+    public function about()
+    {
+        $members = Member::all();
+        return view('about', compact('members'));
     }
 }

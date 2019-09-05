@@ -6,17 +6,20 @@
                 <!-- Logo -->
                 <div class="logo">
                     <!-- image logo -->
-                    <a href="/" class="image-logo">
-                        {{-- <img src="assets/images/logo.png" alt="One Nexus" /> --}}
+                    <a href="/" class="image-logo" v-show="!isHtml">
+                        <img src="/img/logo.jpg" alt="{{ config('app.name') }}" />
+                        {{ config('app.name') }}
                     </a>
                     <!-- HTML logo -->
-                    <a href="/" class="html-logo"><i class="fa fa-code"></i> {{ config('app.name') }}</a>
+                    <a href="/" class="html-logo" v-show="isHtml"><i class="fa fa-code"></i>
+                        {{ config('app.name') }}</a>
                 </div>
                 <p>Start your new project with a fresh approach.</p>
                 <ul>
                     <li><b><i class="fa fa-globe"></i> Location:</b> Didouche Mourad, Algiers Center City</li>
                     <li><b><i class="fa fa-phone-square"></i> Phone:</b> (+213) 550-647-448</li>
-                    <li><b><i class="fa fa-envelope"></i> Email:</b> <a href="mailto:caddy@salimdj.me">caddy@salimdj.me</a></li>
+                    <li><b><i class="fa fa-envelope"></i> Email:</b> <a
+                            href="mailto:caddy@salimdj.me">caddy@salimdj.me</a></li>
                 </ul>
             </div>
             <div class="span-3 footer-col">
@@ -26,7 +29,8 @@
                 <form class="newsletter h5-valid" action="{{ route('subscribe') }}" method="POST">
                     @csrf
                     <div class="form-element">
-                        <input type="email" class="box" required="" placeholder="Enter your email address" name="email"/>
+                        <input type="email" class="box" required="" placeholder="Enter your email address"
+                            name="email" />
                         <label>Email Address</label>
                         <button type="submit">
                             <i class="fa fa-check"></i>
@@ -37,7 +41,8 @@
                     <a href="https://github.com/CaddyDz" class="icon tooltip" data-tip="Github">
                         <i class="fa fa-github"></i>
                     </a>
-                    <a href="https://stackoverflow.com/users/5581565/caddy-dz" class="icon tooltip" data-tip="Stack Overflow">
+                    <a href="https://stackoverflow.com/users/5581565/caddy-dz" class="icon tooltip"
+                        data-tip="Stack Overflow">
                         <i class="fa fa-stack-overflow"></i>
                     </a>
                     <a href="https://discord.gg/3gC9adW" class="icon tooltip" data-tip="Discord">
@@ -65,9 +70,39 @@
                 <h3><i class="fa fa-twitter"></i> @lang('Twitter Feed')</h3>
                 <h4>@lang('View my latest tweets')</h4>
                 <div id="twitter-feed">
-                    <a class="twitter-timeline" data-width="264" data-height="400" data-theme="dark" data-link-color="#242424" href="https://twitter.com/saly3301?ref_src=twsrc%5Etfw">Tweets by saly3301</a>
+                    <a class="twitter-timeline" data-width="264" data-height="400" data-theme="dark"
+                        data-link-color="#242424" href="https://twitter.com/saly3301?ref_src=twsrc%5Etfw">Tweets by
+                        saly3301</a>
                 </div>
             </div>
+            @if ($testimonies->isNotEmpty())
+            <div class="span-3 footer-col">
+                <h3>Testimonials</h3>
+                <h4>See what my clients say</h4>
+                <div class="owl-carousel footer-testimonials">
+                    @foreach ($testimonies as $testimony)
+                        <div class="testimonial">
+                            <blockquote>
+                                <p>{!! $testimony->quote !!}</p>
+                            </blockquote>
+                            <div class="cf">
+                                <span class="profile">
+                                    <vue-pure-lightbox
+                                        alt="{{ $testimony->endorser }}"
+                                        thumbnail="{{ secure_asset('storage/' . $testimony->avatar) }}"
+                                        :images="['{{ secure_asset('storage/' . $testimony->avatar) }}']"
+                                    ></vue-pure-lightbox>
+                                </span>
+                                <cite>
+                                    <strong>{{ $testimony->endorserName }}</strong>
+                                    <i>{{ $testimony->endorserCompany }}</i>
+                                </cite>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            @endif
         </div>
     </div>
     <div class="bottom-bar">

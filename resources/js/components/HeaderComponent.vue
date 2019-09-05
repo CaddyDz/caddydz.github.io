@@ -23,9 +23,10 @@ export default {
   },
   mounted() {
     this.$root.$on('activate-hero', () => {
+      // Shows the text
       this.isInactive = false;
     });
-    this.$root.$on('scrolling', () => {
+    window.addEventListener('scroll', () => {
       this.transform = "translate3d(0px, "+(window.scrollY/3)+"px, 0px)";
       this.opacity = 1 - window.scrollY / 250;
     });
