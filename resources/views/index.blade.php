@@ -11,6 +11,6 @@
     @include('partials.clients')
     @include('partials.portfolio')
     @include('partials.testimonies')
-    {{-- @include('partials.blog') --}}
+    @include('partials.blog')
     <div id="map"></div>
 @stop

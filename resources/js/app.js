@@ -29,28 +29,13 @@ import VueI18n from 'vue-i18n'
 const i18n = new VueI18n({
     locale: document.documentElement.lang
 });
-import VuePureLightbox from 'vue-pure-lightbox'
-import styles from 'vue-pure-lightbox/dist/VuePureLightbox.css'
 const app = new Vue({
     el: '#app',
     i18n,
-    components: {
-        VuePureLightbox,
-    },
     data() {
         return {
             isScreenLargeEnough: false,
             isHtml: false,
-            lightboxEnabled: false,
-        }
-    },
-    methods: {
-        show(event) {
-            event.target.closest('.portfolio-item').lastElementChild.__vue__.visible = true;
-            this.lightboxEnabled = true;
-            document.body.style.marginRight = '15px';
-            document.body.style.overflow = 'hidden';
-            document.body.classList.add('mfp-zoom-out-cur');
         }
     },
     created() {

@@ -4,7 +4,7 @@
         <div class="welcome-titles">
             <header class="welcome-content">
                 <div class="section-title">
-                    <h2>{{ $t('This is') }}<b>{{ $t('Web Development') }}</b></h2>
+                    <h2>{{ $t('This is') }}&ThinSpace;<b>{{ $t('Web Development') }}</b></h2>
                     <h3>{{ $t('Welcome To the New Experience') }}</h3>
                 </div>
                 <p>
@@ -17,35 +17,14 @@
                     <h2><b>{{ $t('Responsive') }}</b> {{ $t('Design') }}</h2>
                     <h3>{{ $t('Builds For All Browsers & Devices') }}</h3>
                 </div>
-                <p class="welcome-browsers max-bp2">
-                    <i class="livicon tooltip" data-tip="Internet Explorer" data-n="ie" data-c="original" data-s="48"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Firefox" data-n="firefox" data-c="original" data-s="48"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Chrome" data-n="chrome" data-c="original" data-s="48"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Opera" data-n="opera" data-c="original" data-s="48"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Safari" data-n="safari" data-c="original" data-s="48"
-                        data-hc="false"></i>
-                </p>
-                <p class="welcome-browsers min-bp2">
-                    <i class="livicon tooltip" data-tip="Internet Explorer" data-n="ie" data-c="original" data-s="68"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Firefox" data-n="firefox" data-c="original" data-s="68"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Chrome" data-n="chrome" data-c="original" data-s="68"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Opera" data-n="opera" data-c="original" data-s="68"
-                        data-hc="false"></i>
-                    <i class="livicon tooltip" data-tip="Safari" data-n="safari" data-c="original" data-s="68"
-                        data-hc="false"></i>
+                <p class="welcome-browsers">
+                    <i v-for="(browser, code) in browserIcons" :key="browser" class="livicon tooltip" :data-tip="browser" :data-n="code" data-c="original" :data-s="browserIconSize" data-hc="false"></i>
                 </p>
             </header>
             <header class="welcome-content welcome-features">
                 <div class="section-title">
                     <h2>
-                      {{ $t('My') }}<i>{{ $t('Services') }}</i> {{ $t('Are') }}
+                      {{ $t('Our') }}&ThinSpace;<i>{{ $t('Services') }}</i> {{ $t('Are') }}
                       <strong>{{ $t('World Class') }}<i class="fa fa-trophy"></i></strong>
                     </h2>
                 </div>
@@ -56,7 +35,7 @@
                             <div class="title">
                                 <h4>{{ $t('Retina Ready') }}</h4>
                             </div>
-                            <p>{{ $t('Retina display devices show more pixels per square inch to allow for a crisper display and in order not to let the resulting display appear too small elements are mapped to 2 pixels instead of one (for retina2) (otherwise they would be tiny)') }}</p>
+                            <p>{{ $t('retina') }}</p>
                         </div>
                     </div>
                     <div class="widget welcome-feature">
@@ -65,7 +44,7 @@
                             <div class="title">
                                 <h4>{{ $t('Valid HTML5') }}</h4>
                             </div>
-                            <p>{{ $t('In more length: the term "HTML5" is widely used as a buzzword to refer to modern Web technologies, many of which (though by no means all) are developed at the WHATWG. This document is one such; others are available from the WHATWG specification index.') }}</p>
+                            <p>{{ $t('html5') }}</p>
                         </div>
                     </div>
                     <div class="widget welcome-feature">
@@ -75,14 +54,14 @@
                             <div class="title">
                                 <h4><span>100%</span> {{ $t('Responsive') }}</h4>
                             </div>
-                            <p>{{ $t('Responsive design is an approach to web page creation that makes use of flexible layouts, flexible images and cascading style sheet media queries. The goal of responsive design is to build web pages that detect the visitor\'s screen size and orientation and change the layout accordingly.') }}</p>
+                            <p>{{ $t('responsive') }}</p>
                         </div>
                     </div>
                 </div>
             </header>
         </div>
         <div class="earth">
-            <img src="/assets/images/earth.png" alt="" />
+            <img src="/assets/images/earth.png" alt="Earth Image" />
             <div class="pins">
                 <div class="pin-wrapper active">
                     <div class='pin'></div>
@@ -109,10 +88,23 @@
 
 <script>
 export default {
-  data() {
-    return {
+    data() {
+        return {
+            browserIcons: {
+                'ie': 'Internet Explorer',
+                'firefox': 'Firefox',
+                'chrome': 'Chrome',
+                'opera': 'Opera',
+                'safari': 'Safari'
+            },
+            browserIconSize: 48
+        }
+    },
+    created() {
+        if (this.$root.isScreenLargeEnough) {
+            this.browserIconSize = 68;
+        }
     }
-  }
 }
 </script>
 
@@ -128,15 +120,15 @@ export default {
     "Responsive": "Responsive",
     "Design": "Design",
     "Builds For All Browsers & Devices": "Builds For All Browsers & Devices",
-    "My": "My",
+    "Our": "Our",
     "Services": "Services",
     "Are": "Are",
     "World Class": "World Class",
     "Retina Ready": "Retina Ready",
-    "Retina display devices show more pixels per square inch to allow for a crisper display and in order not to let the resulting display appear too small elements are mapped to 2 pixels instead of one (for retina2) (otherwise they would be tiny)": "Retina display devices show more pixels per square inch to allow for a crisper display and in order not to let the resulting display appear too small elements are mapped to 2 pixels instead of one (for retina2) (otherwise they would be tiny)",
+    "retina": "Retina display devices show more pixels per square inch to allow for a crisper display and in order not to let the resulting display appear too small elements are mapped to 2 pixels instead of one (for retina2) (otherwise they would be tiny)",
     "Valid HTML5": "Valid HTML5",
-    "In more length: the term \"HTML5\" is widely used as a buzzword to refer to modern Web technologies, many of which (though by no means all) are developed at the WHATWG. This document is one such; others are available from the WHATWG specification index.": "In more length: the term \"HTML5\" is widely used as a buzzword to refer to modern Web technologies, many of which (though by no means all) are developed at the WHATWG. This document is one such; others are available from the WHATWG specification index.",
-    "Responsive design is an approach to web page creation that makes use of flexible layouts, flexible images and cascading style sheet media queries. The goal of responsive design is to build web pages that detect the visitor's screen size and orientation and change the layout accordingly.": "Responsive design is an approach to web page creation that makes use of flexible layouts, flexible images and cascading style sheet media queries. The goal of responsive design is to build web pages that detect the visitor's screen size and orientation and change the layout accordingly."
+    "html5": "In more length: the term \"HTML5\" is widely used as a buzzword to refer to modern Web technologies, many of which (though by no means all) are developed at the WHATWG. This document is one such; others are available from the WHATWG specification index.",
+    "responsive": "Responsive design is an approach to web page creation that makes use of flexible layouts, flexible images and cascading style sheet media queries. The goal of responsive design is to build web pages that detect the visitor's screen size and orientation and change the layout accordingly."
   }
 }
 </i18n>

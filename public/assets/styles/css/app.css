@@ -470,12 +470,6 @@ hr.large {
     }
 }
 
-@media (min-width: 720px) {
-    .max-bp2 {
-        display: none !important;
-    }
-}
-
 @media (min-width: 940px) {
     .max-bp3 {
         display: none !important;
@@ -1699,10 +1693,6 @@ img {
     max-width: none;
     width: auto !important;
     height: 101%;
-}
-
-.lightbox__image {
-    margin-left: 25%;
 }
 
 .profile.profile-alt {
@@ -3132,7 +3122,7 @@ Modules
 .blog-items .blog-item small {
     position: absolute;
     right: 0;
-    bottom: 1.1em;
+    bottom: 3.1em;
 }
 
 .blog-items .thumb {
@@ -4949,41 +4939,6 @@ body.fh-visible .main-search [type="submit"] {
     opacity: 1;
     visibility: visible;
     top: 50%;
-}
-
-/* TODO: exclude the lighbox shown image */
-.portfolio-items .portfolio-item:hover .lightbox__thumbnail img {
-    /* Scale up the portfolio inner screenshot thumbnail on hover */
-    -webkit-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    transform: scale(1.25);
-}
-
-.lightbox__image {
-    margin: 0;
-}
-
-.lightbox {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin: auto;
-    text-align: left;
-    left: -0.5rem;
-    z-index: 1045;
-    cursor: pointer;
-}
-
-.lightbox__image img {
-    max-height: 949px !important;
-    width: auto !important;
-    max-width: 100% !important;
-    display: block !important;
-    line-height: 0 !important;
-    box-sizing: border-box !important;
-    padding: 40px 0 40px !important;
-    margin: 0 auto !important;
-    transition: 0.4s !important;
 }
 
 @media (min-width: 720px) {

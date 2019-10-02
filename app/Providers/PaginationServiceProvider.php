@@ -2,8 +2,8 @@
 
 namespace Caddy\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\ServiceProvider;
 
 class PaginationServiceProvider extends ServiceProvider
 {

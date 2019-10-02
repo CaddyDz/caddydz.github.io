@@ -7,7 +7,7 @@
                 <h3>@lang('Read About Our Ideas')</h3>
             </div>
             <p class="sub-text">@lang('Read about upcoming projects, products or ideas and software solutions in
-                genereal, follow me on') <a href="https://medium.com/@saly3301">Medium</a> @lang('to get notified!')</p>
+                genereal, follow us on') <a href="https://medium.com/@saly3301">Medium</a> @lang('to get notified!')</p>
         </header>
         <div class="row blog-items">
             @foreach ($articles as $article)
@@ -15,11 +15,9 @@
                 <a href="{{ route('article', ['article' => $article]) }}" class="thumb">
                     <img src="{{ $article->image }}" alt="{{ $article->title }}" />
                 </a>
-                <vue-pure-lightbox
-                    class="profile profile-alt"
-                    thumbnail="{{ $article->posterAvatar }}"
-                    :images="['{{ $article->posterAvatarFull }}']"
-                ></vue-pure-lightbox>
+                <a href="{{ $article->posterAvatarFull }}" class="modal-image profile profile-alt">
+                    <img src="{{ $article->posterAvatar }}" alt="{{ $article->user->name }}" />
+                </a>
                 <div class="date">
                     <span>{{ $article->created_at->shortEnglishMonth }}</span>
                     <span>{{ $article->created_at->day }}</span>
@@ -34,7 +32,7 @@
                 <a class="button round brand-1" href="{{ route('article', ['article' => $article]) }}">@lang('Read
                     More')</a>
                 <small>@lang('Posted in')
-                    <a href="{{ route('category', ['category' => $article->category->name]) }}">
+                    <a href="{{ route('category', ['category' => $article->category]) }}">
                         {{ $article->category->name }}
                     </a>
                 </small>

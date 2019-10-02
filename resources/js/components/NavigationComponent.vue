@@ -16,8 +16,20 @@
                 <!-- Main-Nav -->
                 <nav class="main-nav">
                     <ul>
+                        <li :class="{ active: currentUrl === '' }">
+                            <a href="/">{{ $t('Home') }}</a>
+                        </li>
                         <li :class="{ active: currentUrl === 'about' }">
                             <a href="/about">{{ $t('About') }}</a>
+                        </li>
+                        <li :class="{ active: currentUrl === 'services' }">
+                            <a href="/services">{{ $t('Services') }}</a>
+                        </li>
+                        <li :class="{ active: currentUrl === 'portfolio' }">
+                            <a href="/portfolio">{{ $t('Portfolio') }}</a>
+                        </li>
+                        <li :class="{ active: currentUrl === 'blog' }">
+                            <a href="/blog">{{ $t('Blog') }}</a>
                         </li>
                         <li :class="{ active: currentUrl === 'contact' }">
                             <a href="/contact">{{ $t('Contact') }}</a>
@@ -72,16 +84,28 @@ export default {
 <i18n>
 {
     "en": {
-        "Contact": "Contact",
-        "About": "About"
+        "Home": "Home",
+        "About": "About",
+        "Services": "Services",
+        "Portfolio": "Portfolio",
+        "Blog": "Blog",
+        "Contact": "Contact"
     },
     "fr": {
-        "Contact": "Contact",
-        "About": "À Propos"
+        "Home": "Acceuil",
+        "About": "À Propos",
+        "Services": "Services",
+        "Portfolio": "Portfolio",
+        "Blog": "Blog",
+        "Contact": "Contact"
     },
     "ar": {
-        "Contact": "إتصل بالمبيعات",
-        "About": "حول"
+        "Home": "الصفحة الرئيسية",
+        "About": "حول",
+        "Services": "الخدمات",
+        "Portfolio": "Portfolio",
+        "Blog": "المدونة",
+        "Contact": "إتصل بالمبيعات"
     }
 }
 </i18n>

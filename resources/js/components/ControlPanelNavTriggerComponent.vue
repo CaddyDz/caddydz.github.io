@@ -15,9 +15,9 @@ export default {
   methods: {
     toggleCP() {
       if (!this.cpActive) { // If control panel is inactive, (initial state) then activate it
-        var scaleFactorWhenNavActive = 0.65; // change me if CSS body.cp-active #site-content transform:scale factor ever changes!
+        var scaleFactorWhenNavActive = 0.65; // change us if CSS body.cp-active #site-content transform:scale factor ever changes!
 
-        var vPos = $('html').scrollTop(); // my current scroll position in px
+        var vPos = $('html').scrollTop(); // current scroll position in px
 
         // webkit doesn't consider the html container to have scrolled, so let's check the body container instead
         if (vPos == 0) vPos = $('body').scrollTop();

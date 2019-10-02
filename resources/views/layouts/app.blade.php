@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>     <html class="no-js ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>     <html class="no-js ie ie9 lte9"> <![endif]-->
-<!--[if gt IE 9]>  <html class="no-js"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<!--<![endif]-->
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,13 +22,14 @@
 
     <!-- Fonts -->
     @env('production')
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,800" rel="stylesheet" type="text/css">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,800" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
     @else
-        {{-- Include fonts installed via npm --}}
-        <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" >
+    {{-- Include fonts installed via npm --}}
+    <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet">
     @endenv
 
     <!-- Styles -->
@@ -44,16 +40,16 @@
     <link rel="stylesheet" href="assets/styles/css/theme-options.css">
 
     @env('production')
-        <!-- Modernizr -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js" integrity="sha256-zyXsGPIj9MUc4RKKQuZEzcIkTYj4nRpRRA2dvlH07+g=" crossorigin="anonymous"></script>
+    <!-- Modernizr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"
+        integrity="sha256-zyXsGPIj9MUc4RKKQuZEzcIkTYj4nRpRRA2dvlH07+g=" crossorigin="anonymous"></script>
     @else
-        {{-- Include Modernizr from npm --}}
+    {{-- Include Modernizr from npm --}}
     @endenv
 </head>
 
 <body class="index parallax-bg">
     <div id="app">
-        <div class="mfp-bg mfp-ready" v-if="lightboxEnabled"></div>
         <div id="site-content">
             <navigation-component id-prop="app-header"></navigation-component>
             @yield('content')
@@ -99,11 +95,12 @@
     <!-- SCRIPTS -->
     <script src="{{ mix('js/app.js') }}"></script>
     @env('production')
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <!-- Raphael for livicons -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js" integrity="sha256-Gk+dzc4kV2rqAZMkyy3gcfW6Xd66BhGYjVWa/FjPu+s=" crossorigin="anonymous"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Raphael for livicons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"
+        integrity="sha256-Gk+dzc4kV2rqAZMkyy3gcfW6Xd66BhGYjVWa/FjPu+s=" crossorigin="anonymous"></script>
     @endenv
 
     <!-- LivIcons -->
@@ -127,9 +124,10 @@
     <script src="assets/js/earth-slider.js"></script>
 
     @env('production')
-        <!-- Google Map -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9kOt-o-2NU7_pcjkGIj4f8cKPw_xinco"></script>
-        <script src="assets/js/google-map.js"></script>
+    <!-- Google Map -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9kOt-o-2NU7_pcjkGIj4f8cKPw_xinco"></script>
+    <script src="assets/js/google-map.js"></script>
     @endenv
 </body>
 

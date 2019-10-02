@@ -13,7 +13,7 @@
                     <header>
                         <i class="livicon" data-n="globe" data-op="1" data-c="#C1C1C1" data-s="48" data-hc="false"></i>
                         <div class="title">
-                            <h4>My Address</h4>
+                            <h4>Our Address</h4>
                             <h5>Current Residence</h5>
                         </div>
                     </header>

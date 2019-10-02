@@ -23,15 +23,14 @@
         "algoliasearch": "^3.33.0",
         "axios": "^0.19.0",
         "font-awesome": "^4.7.0",
-        "jquery": "^2.1.1",
+        "jquery": "^2.2.4",
         "lato-webfont": "^2.15.1",
         "modernizr": "^3.7.1",
         "raleway-webfont": "^3.0.1",
         "raphael": "^2.1.4",
         "vlightbox": "^2.0.2",
         "vue": "^2.5.17",
-        "vue-i18n": "^8.12.0",
-        "vue-instantsearch": "^2.2.1",
-        "vue-pure-lightbox": "^3.1.0"
+        "vue-i18n": "^8.14.1",
+        "vue-instantsearch": "^2.5.0"
     }
 }
