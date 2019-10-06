@@ -23,7 +23,7 @@
         "algoliasearch": "^3.33.0",
         "axios": "^0.19.0",
         "font-awesome": "^4.7.0",
-        "jquery": "^2.2.4",
+        "jquery": "^3.4.0",
         "lato-webfont": "^2.15.1",
         "modernizr": "^3.7.1",
         "raleway-webfont": "^3.0.1",
