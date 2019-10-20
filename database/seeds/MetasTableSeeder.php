@@ -30,13 +30,14 @@ class MetasTableSeeder extends Seeder
                 ]
             ],
         ];
+        Meta::truncate();
         foreach ($metas as $meta) {
             Meta::create([
                 'name' => $meta['name'],
                 'content' => $meta['content']['en'],
             ])->setTranslation('content', 'fr', $meta['content']['fr'])
-              ->setTranslation('content', 'ar', $meta['content']['ar'])
-              ->save();
+                ->setTranslation('content', 'ar', $meta['content']['ar'])
+                ->save();
         }
     }
 }

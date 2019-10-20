@@ -10,13 +10,6 @@ $factory->define(Member::class, function (Faker $faker) {
         'name' => $faker->name,
         'position' => $faker->jobTitle,
         'description' => $faker->realText(),
-        'photo' => 'members/' . $faker->image(
-            $dir = storage_path() . '/app/public/members',
-            $width = 800,
-            $height = 614,
-            $category = 'people',
-            $fullPath = false,
-            $randomize = true,
-        ),
+        'photo' => 'members/' . $faker->image(storage_path() . '/app/public/members', 800, 614, 'people', false, true),
     ];
 });

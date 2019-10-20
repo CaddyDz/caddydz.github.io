@@ -20,6 +20,7 @@ class SocialAccountsTableSeeder extends Seeder
             'DeviantArt' => 'fa-deviantart',
             'Behance' => 'fa-behance',
         ];
+        SocialAccount::truncate();
         foreach ($social_platforms as $name => $icon) {
             SocialAccount::create([
                 'platform' => $name,

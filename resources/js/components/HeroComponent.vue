@@ -22,26 +22,6 @@
 	</section>
 </template>
 
-<i18n>
-{
-  "en": {
-    "contact": "Contact Sales",
-    "read": "Read More"
-  },
-  "fr": {
-    "contact": "Contact commercial",
-    "read": "En savoir plus"
-  },
-  "ar": {
-    "contact": "إتصل بالمبيعات",
-    "read": "قراءة المزيد"
-  }
-}
-</i18n>
-
-<style scoped>
-</style>
-
 <script>
 export default {
 	data() {
@@ -66,3 +46,20 @@ export default {
 	}
 };
 </script>
+
+<i18n>
+{
+  "en": {
+    "contact": "Contact Sales",
+    "read": "Read More"
+  },
+  "fr": {
+    "contact": "Contact commercial",
+    "read": "En savoir plus"
+  },
+  "ar": {
+    "contact": "إتصل بالمبيعات",
+    "read": "قراءة المزيد"
+  }
+}
+</i18n>

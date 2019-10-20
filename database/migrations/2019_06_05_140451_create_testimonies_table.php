@@ -15,7 +15,6 @@ class CreateTestimoniesTable extends Migration
     {
         Schema::create('testimonies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('avatar');
             $table->text('quote');
             $table->string('endorser');
             $table->timestamps();

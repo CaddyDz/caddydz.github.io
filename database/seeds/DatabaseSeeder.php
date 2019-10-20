@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TestimoniesTableSeeder::class);
         $this->call(MetasTableSeeder::class);
         $this->call(SocialAccountsTableSeeder::class);
+        $this->call(MembersTableSeeder::class);
+        $this->call(ProjectsTableSeeder::class);
     }
 }

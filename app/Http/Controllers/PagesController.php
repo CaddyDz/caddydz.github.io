@@ -3,11 +3,8 @@
 namespace Caddy\Http\Controllers;
 
 use Caddy\Meta;
-use Caddy\Article;
-use Caddy\Client;
 use Caddy\Member;
-use Caddy\Project;
-use Caddy\Testimony;
+use Caddy\Article;
 
 class PagesController extends Controller
 {
@@ -33,8 +30,8 @@ class PagesController extends Controller
      **/
     public function getHeroData()
     {
-        $heroTitle = Meta::whereName('heroTitle')->first()->content;
-        $heroContent = Meta::whereName('heroContent')->first()->content;
+        $heroTitle = optional(Meta::whereName('heroTitle')->first())->content;
+        $heroContent = optional(Meta::whereName('heroContent')->first())->content;
         return response([
             'title' => $heroTitle,
             'content' => $heroContent,
@@ -53,7 +50,8 @@ class PagesController extends Controller
     {
         return response([
             'app' => [
-                'name' => config('app.name'),            ]
+                'name' => config('app.name'),
+            ]
         ]);
     }
 
