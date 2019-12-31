@@ -19,7 +19,8 @@ class TestimoniesTableSeeder extends Seeder
         Storage::disk('public')->deleteDirectory('testimonies');
         Storage::disk('public')->makeDirectory('testimonies');
         factory(Testimony::class, 3)->create()->each(function ($testimony) use ($faker) {
-            $testimony->addMedia($faker->unique()->image('/tmp', 463, 309, 'people'))->toMediaCollection('avatars');
+            $image = $faker->unique()->image('/tmp', 463, 309, 'people');
+            $testimony->addMedia($image)->toMediaCollection('avatars');
         });
     }
 }

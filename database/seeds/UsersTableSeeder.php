@@ -14,10 +14,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        User::truncate(); // Delete all previous users (necessary when seeding this table alone)
         // Cleanup old seed files
         Storage::disk('public')->deleteDirectory('avatars');
         Storage::disk('public')->makeDirectory('avatars');
+        Storage::disk('public')->deleteDirectory('articles');
+        Storage::disk('public')->makeDirectory('articles');
         // Create caddy as an admin user
         User::create([
             'name' => 'Caddy',

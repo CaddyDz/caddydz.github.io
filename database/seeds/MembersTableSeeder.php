@@ -14,6 +14,8 @@ class MembersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        Storage::disk('public')->deleteDirectory('members');
+        Storage::disk('public')->makeDirectory('members');
         $accounts = SocialAccount::all('id');
         factory(Member::class, 3)->create()->each(function($member) use ($accounts, $faker) {
             $member->addMedia($member->photo)->toMediaCollection('avatars');
