@@ -10,19 +10,20 @@
         </header>
         <div class="portfolio-items">
             @foreach ($projects as $project)
-                <div class="portfolio-item">
-                    <div class="controls">
-                        <a href="{{ route('project', ['project' => $project]) }}" class="icon-round-border" target="_blank">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a href="{{ secure_asset('storage/' . $project->screenshot) }}" class="icon-round-border icon-view">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                    <h4><a href="{{ route('project', ['project' => $project]) }}">{{ $project->name }}</a></h4>
-                    <p>{{ $project->title }}</p>
-                    <img src="{{ secure_asset('storage/' . $project->screenshot) }}" alt="{{ $project->name }}" />
+            <div class="portfolio-item">
+                <div class="controls">
+                    <a href="{{ route('project', ['project' => $project]) }}" class="icon-round-border" target="_blank"
+                        rel="noopener">
+                        <i class="fa fa-link"></i>
+                    </a>
+                    <a href="{{ secure_asset('storage/' . $project->screenshot) }}" class="icon-round-border icon-view">
+                        <i class="fa fa-search"></i>
+                    </a>
                 </div>
+                <h4><a href="{{ route('project', ['project' => $project]) }}">{{ $project->name }}</a></h4>
+                <p>{{ $project->title }}</p>
+                <img src="{{ secure_asset('storage/' . $project->screenshot) }}" alt="{{ $project->name }}" />
+            </div>
             @endforeach
         </div>
     </div>
