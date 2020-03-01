@@ -31,6 +31,8 @@
     {{-- Include fonts installed via npm --}}
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet">
     @endenv
+    <!-- SCRIPTS -->
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ secure_asset('assets/styles/css/app.css') }}" rel="stylesheet">
@@ -91,9 +93,6 @@
         <theme-component></theme-component>
     </div>
 
-
-    <!-- SCRIPTS -->
-    <script src="{{ mix('js/app.js') }}"></script>
     @env('production')
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <!-- jQuery -->

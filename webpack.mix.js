@@ -14,11 +14,11 @@ mix.extend('i18n', new class {
 mix.options({
     hmrOptions: {
         host: 'caddy.dev',
-        port: '8080' // sskks
+        port: '8080'
     }
 });
 
 // Call the .i18n() (to load the loader) before .js(..., ...)
 mix.i18n()
-   .js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
