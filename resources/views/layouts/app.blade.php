@@ -52,7 +52,7 @@
 
 <body class="index parallax-bg">
     <div id="app">
-        <div id="site-content">
+        <div id="site-content" style="display: none;">
             <navigation-component id-prop="app-header"></navigation-component>
             @yield('content')
             @include('layouts.footer')
