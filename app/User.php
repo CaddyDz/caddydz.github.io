@@ -27,23 +27,14 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 	public function registerMediaConversions(Media $media = null)
 	{
 		$this->addMediaConversion('article_poster')
-				->width('64')
-				->height('42');
+			->width('64')
+			->height('42');
 	}
 
 	public function registerMediaCollections()
 	{
 		$this->addMediaCollection('avatars');
 	}
-
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'name', 'email', 'password',
-	];
 
 	/**
 	 * The attributes that should be hidden for arrays.
