@@ -7,24 +7,24 @@ use Illuminate\Support\ServiceProvider;
 
 class PaginationServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        Paginator::defaultView('partials.pagination');
-        Paginator::defaultSimpleView('partials.pagination');
-    }
+	/**
+	 * Bootstrap services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		Paginator::defaultView('partials.pagination');
+		Paginator::defaultSimpleView('partials.pagination');
+	}
 
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
+	/**
+	 * Register services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		//
+	}
 }

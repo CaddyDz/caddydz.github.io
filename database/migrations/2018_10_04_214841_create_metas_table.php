@@ -6,28 +6,28 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateMetasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('metas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->json('content');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('metas', function (Blueprint $table) {
+			$table->increments('id');
+			$table->string('name')->unique();
+			$table->json('content');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('metas');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('metas');
+	}
 }

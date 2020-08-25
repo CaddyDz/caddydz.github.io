@@ -9,28 +9,28 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class Contact extends Mailable
 {
-    use Queueable, SerializesModels;
+	use Queueable, SerializesModels;
 
-    public $details;
+	public $details;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct($details)
-    {
-        $this->details = $details;
-    }
+	/**
+	 * Create a new message instance.
+	 *
+	 * @return void
+	 */
+	public function __construct($details)
+	{
+		$this->details = $details;
+	}
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->from(['address' => $this->details->email, 'name' => $this->details->fullname])
-                    ->markdown('emails.contact');
-    }
+	/**
+	 * Build the message.
+	 *
+	 * @return $this
+	 */
+	public function build()
+	{
+		return $this->from(['address' => $this->details->email, 'name' => $this->details->fullname])
+					->markdown('emails.contact');
+	}
 }

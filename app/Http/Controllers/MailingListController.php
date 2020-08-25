@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class MailingListController extends Controller
 {
-    public function subscribe(Request $request)
-    {
-        Newsletter::subscribe($request->email);
-        return back();
-    }
+	public function subscribe(Request $request)
+	{
+		Newsletter::subscribe($request->email);
+		return back();
+	}
 }

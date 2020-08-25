@@ -6,28 +6,28 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTestimoniesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('testimonies', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('quote');
-            $table->string('endorser');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('testimonies', function (Blueprint $table) {
+			$table->increments('id');
+			$table->text('quote');
+			$table->string('endorser');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('testimonies');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('testimonies');
+	}
 }

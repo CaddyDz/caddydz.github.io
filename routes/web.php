@@ -1,8 +1,8 @@
 <?php
 
 Route::get('lang/{locale}', 'LocaleController@update')
-    ->name('locale')
-    ->where('locale', '(en|fr|ar)');
+	->name('locale')
+	->where('locale', '(en|fr|ar)');
 // Further filter in route regex (accepts only English, French and Arabic)
 
 Route::get('/', 'PagesController@index')->name('index');
@@ -21,4 +21,4 @@ Route::get('categories/{category}', 'CategoriesController@show')->name('category
 Route::get('project/{project}', 'ProjectsController@index')->name('project');
 // Wildcard should be the last, this helps for SEO
 Route::get('{article}', 'ArticlesController@show')
-    ->name('article')->where('article', '^(?!admin)[أ-يa-zA-Z0-9-_]*$');
+	->name('article')->where('article', '^(?!admin)[أ-يa-zA-Z0-9-_]*$');

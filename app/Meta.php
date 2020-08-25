@@ -7,7 +7,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Meta extends Model
 {
-    use HasTranslations;
-    
-    public $translatable = ['content'];
+	use HasTranslations;
+	
+	public $translatable = ['content'];
 }

@@ -17,3 +17,4 @@ yarn-error.log
 /nova
 /resources/lang/vendor
 /resources/views/vendor
+.php_cs.cache
