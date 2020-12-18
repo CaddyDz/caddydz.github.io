@@ -1,21 +1,25 @@
 <?php
 
-namespace Caddy\Providers;
+declare(strict_types=1);
 
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider;
+namespace App\Providers;
+
+use Illuminate\Support\{Facades\Blade, ServiceProvider};
 
 class BladeServiceProvider extends ServiceProvider
 {
 	/**
 	 * Bootstrap services.
 	 *
+	 * Register a blade global directive
+	 * available to all views
+	 * determines app environment
+	 * use it to load assets or cdn based on env
+	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(): void
 	{
-		Blade::if('env', function ($env) {
-			return app()->environment($env);
-		});
+		Blade::if('env', fn ($env) => app()->environment($env));
 	}
 }

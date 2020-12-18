@@ -1,9 +1,10 @@
 <?php
 
-namespace Caddy\Providers;
+declare(strict_types=1);
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Broadcast;
+namespace App\Providers;
+
+use Illuminate\Support\{Facades\Broadcast, ServiceProvider};
 
 class BroadcastServiceProvider extends ServiceProvider
 {
@@ -12,7 +13,7 @@ class BroadcastServiceProvider extends ServiceProvider
 	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(): void
 	{
 		Broadcast::routes();
 

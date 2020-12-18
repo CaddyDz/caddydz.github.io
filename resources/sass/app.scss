@@ -1,13 +1,8 @@
-// Variables
-// @import 'variables';
-@import '~lato-webfont/lato.css';
-@import '~raleway-webfont/raleway.css';
-@import '~font-awesome/scss/font-awesome';
-// .hero-title>h3 {
-//     line-height: 110%;
-// }
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// .section header p {
-//     font-weight: 200;
-//     color: black;
-// }
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

@@ -1,6 +1,8 @@
 <?php
 
-namespace Caddy\Http;
+declare(strict_types=1);
+
+namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -14,11 +16,13 @@ class Kernel extends HttpKernel
 	 * @var array
 	 */
 	protected $middleware = [
-		\Caddy\Http\Middleware\CheckForMaintenanceMode::class,
+		\App\Http\Middleware\TrustHosts::class,
+		\App\Http\Middleware\TrustProxies::class,
+		\Fruitcake\Cors\HandleCors::class,
+		\App\Http\Middleware\PreventRequestsDuringMaintenance::class,
 		\Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-		\Caddy\Http\Middleware\TrimStrings::class,
+		\App\Http\Middleware\TrimStrings::class,
 		\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-		\Caddy\Http\Middleware\TrustProxies::class,
 	];
 
 	/**
@@ -28,20 +32,20 @@ class Kernel extends HttpKernel
 	 */
 	protected $middlewareGroups = [
 		'web' => [
-			\Caddy\Http\Middleware\EncryptCookies::class,
+			\App\Http\Middleware\EncryptCookies::class,
 			\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
 			\Illuminate\Session\Middleware\StartSession::class,
 			// \Illuminate\Session\Middleware\AuthenticateSession::class,
 			\Illuminate\View\Middleware\ShareErrorsFromSession::class,
-			\Caddy\Http\Middleware\VerifyCsrfToken::class,
+			\App\Http\Middleware\VerifyCsrfToken::class,
 			\Illuminate\Routing\Middleware\SubstituteBindings::class,
-			\Caddy\Http\Middleware\Locale::class,
 		],
 
 		'api' => [
-			'throttle:60,1',
-			'bindings',
-			'locale',
+			\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+			'throttle:api',
+			\Illuminate\Routing\Middleware\SubstituteBindings::class,
+			\App\Http\Middleware\API::class,
 		],
 	];
 
@@ -53,31 +57,14 @@ class Kernel extends HttpKernel
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => \Caddy\Http\Middleware\Authenticate::class,
+		'auth' => \App\Http\Middleware\Authenticate::class,
 		'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-		'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
 		'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
 		'can' => \Illuminate\Auth\Middleware\Authorize::class,
-		'guest' => \Caddy\Http\Middleware\RedirectIfAuthenticated::class,
-		'locale' => \Caddy\Http\Middleware\ApiLocalizationMiddleware::class,
+		'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+		'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
 		'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
 		'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 		'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-	];
-
-	/**
-	 * The priority-sorted list of middleware.
-	 *
-	 * This forces the listed middleware to always be in the given order.
-	 *
-	 * @var array
-	 */
-	protected $middlewarePriority = [
-		\Illuminate\Session\Middleware\StartSession::class,
-		\Illuminate\View\Middleware\ShareErrorsFromSession::class,
-		\Caddy\Http\Middleware\Authenticate::class,
-		\Illuminate\Session\Middleware\AuthenticateSession::class,
-		\Illuminate\Routing\Middleware\SubstituteBindings::class,
-		\Illuminate\Auth\Middleware\Authorize::class,
 	];
 }
