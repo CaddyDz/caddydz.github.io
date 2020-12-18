@@ -56,6 +56,8 @@ return [
 
 	'url' => env('APP_URL', 'http://localhost'),
 
+	'domain' => env('APP_DOMAIN', 'localhost'),
+
 	'asset_url' => env('ASSET_URL', null),
 
 	/*
@@ -176,6 +178,8 @@ return [
 		App\Providers\BladeServiceProvider::class,
 		// App\Providers\BroadcastServiceProvider::class,
 		App\Providers\EventServiceProvider::class,
+		App\Providers\NovaServiceProvider::class,
+		App\Providers\ObserversServiceProvider::class,
 		App\Providers\RouteServiceProvider::class,
 
 	],
