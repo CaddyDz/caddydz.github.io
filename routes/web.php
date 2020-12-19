@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
-
 /*
 * Configure download center subdomain, to be caught by nginx wildcard
 * All routes in this group should point to a storage directory
