@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
-use Illuminate\Contracts\Support\Renderable;
 
 /*
 * Configure download center subdomain, to be caught by nginx wildcard
@@ -18,11 +17,3 @@ Route::domain('downloads.' . config('app.domain'))->group(function () {
 		Route::get('{book}', [BooksController::class, 'download']);
 	});
 });
-
-Route::get('/', function (): Renderable {
-	return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
