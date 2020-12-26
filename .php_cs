@@ -1,13 +1,17 @@
 <?php
 
 $finder = PhpCsFixer\Finder::create()
-	->exclude('/vendor')
-	->exclude('/nova')
-	->exclude('/node_modules')
-	->exclude('/bootstrap')
-	->exclude('_ide_helper.php')
-	->exclude('/storage')
-	->in(__DIR__);
+	->notPath('bootstrap/cache')
+	->notPath('storage')
+	->notPath('vendor')
+	->notPath('node_modules')
+	->notPath('nova')
+	->in(__DIR__)
+	->name('*.php')
+	->notName('*.blade.php')
+	->notName('_ide_helper.php')
+	->ignoreDotFiles(true)
+	->ignoreVCS(true);
 
 return PhpCsFixer\Config::create()
 	->setRules([
@@ -17,5 +21,6 @@ return PhpCsFixer\Config::create()
 		'declare_strict_types' => true,
 		'ordered_imports' => ['sort_algorithm' => 'length'],
 		'no_unused_imports' => true,
+		'group_import' => true,
 	])->setIndent("\t")
 	->setFinder($finder);
