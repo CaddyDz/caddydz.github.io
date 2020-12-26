@@ -15,7 +15,7 @@
 		"fruitcake/laravel-cors": "^2.0",
 		"guzzlehttp/guzzle": "^7.0.1",
 		"itsgoingd/clockwork": "^5.0",
-		"laravel/framework": "^8.18",
+		"laravel/framework": "^8.20",
 		"laravel/helpers": "^1.4",
 		"laravel/nova": "*",
 		"laravel/sanctum": "^2.8",
