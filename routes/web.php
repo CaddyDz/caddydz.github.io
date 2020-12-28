@@ -17,3 +17,5 @@ Route::domain('downloads.' . config('app.domain'))->group(function () {
 		Route::get('{book}', [BooksController::class, 'download']);
 	});
 });
+
+Route::view('/', 'index');
