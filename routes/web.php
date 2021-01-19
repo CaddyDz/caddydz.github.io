@@ -19,3 +19,5 @@ Route::domain('downloads.' . config('app.domain'))->group(function () {
 });
 
 Route::view('/', 'index');
+
+Route::get('cv', fn () => response()->download(public_path('cv.pdf'), 'CV Salim Djerbouh.pdf'))->name('cv');
