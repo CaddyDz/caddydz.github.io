@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row personal-profile">
 				<div class="col-md-4 personal-profile__avatar">
-					<img class="" src="assets/img/img_avatar.jpg" alt="avatar">
+					<img src="assets/img/img_avatar.jpg" alt="avatar">
 				</div>
 				<div class="col-md-8">
 					<p class="personal-profile__name">Salim Djerbouh</p>
@@ -80,9 +80,7 @@
 						<span class="progress-list__skill-value">90%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 80%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -91,9 +89,7 @@
 						<span class="progress-list__skill-value">70%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 70%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -102,9 +98,7 @@
 						<span class="progress-list__skill-value">90%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 90%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -113,9 +107,7 @@
 						<span class="progress-list__skill-value">80%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 80%"></div>
 					</div>
 				</div>
 			</div>
@@ -126,9 +118,7 @@
 						<span class="progress-list__skill-value">80%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 80%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -137,9 +127,7 @@
 						<span class="progress-list__skill-value">60%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 60%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -148,9 +136,7 @@
 						<span class="progress-list__skill-value">90%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 90%"></div>
 					</div>
 				</div>
 				<div class="progress-list__skill">
@@ -159,17 +145,12 @@
 						<span class="progress-list__skill-value">80%</span>
 					</p>
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-							aria-valuemax="100">
-						</div>
+						<div class="progress-bar" role="progressbar" style="width: 80%"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<script src="assets/js/jquery-2.2.4.min.js"></script>
-	<script src="assets/js/jquery.waypoints.js"></script>
-	<script src="assets/js/progress-list.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TKDEBR8TB"></script>
 	<script>
