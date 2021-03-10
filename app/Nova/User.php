@@ -6,6 +6,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\{Gravatar, ID, Password, Text};
+
 class User extends Resource
 {
 	/**

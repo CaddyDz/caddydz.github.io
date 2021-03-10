@@ -5,7 +5,6 @@ $finder = PhpCsFixer\Finder::create()
 	->notPath('storage')
 	->notPath('vendor')
 	->notPath('node_modules')
-	->notPath('nova')
 	->in(__DIR__)
 	->name('*.php')
 	->notName('*.blade.php')
@@ -20,7 +19,11 @@ return PhpCsFixer\Config::create()
 		'blank_line_after_opening_tag' => true,
 		'declare_strict_types' => true,
 		'ordered_imports' => ['sort_algorithm' => 'length'],
+		'ordered_traits' => true,
 		'no_unused_imports' => true,
 		'group_import' => true,
+		'cast_spaces' => ['space' => 'single'],
+		'use_arrow_functions' => true,
+		'single_line_after_imports' => true,
 	])->setIndent("\t")
 	->setFinder($finder);

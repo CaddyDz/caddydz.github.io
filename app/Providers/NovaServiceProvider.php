@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\{Nova, NovaApplicationServiceProvider};
+
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
 	/**
