@@ -27,7 +27,7 @@
                     <div class="personal-profile__contacts">
                         <dl class="contact-list contact-list__opacity-titles">
                             <dt>Age:</dt>
-                            <dd>26</dd>
+                            <dd>{{ (int) date('Y') - 1994 }}</dd>
                             <dt>Phone:</dt>
                             <dd><a href="tel:+213551081911">+213551081911</a></dd>
                             <dt>Email:</dt>
