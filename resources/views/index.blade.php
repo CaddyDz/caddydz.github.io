@@ -27,7 +27,7 @@
                     <div class="personal-profile__contacts">
                         <dl class="contact-list contact-list__opacity-titles">
                             <dt>Age:</dt>
-                            <dd>{{ (int) date('Y') - 1994 }}</dd>
+                            <dd>{{ \Carbon\Carbon::create('1994-10-02')->diff(now())->y }}</dd>
                             <dt>Phone:</dt>
                             <dd><a href="tel:+213551081911">+213551081911</a></dd>
                             <dt>Email:</dt>
