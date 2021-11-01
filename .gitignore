@@ -3,7 +3,6 @@
 /public/storage
 /public/vendor
 /storage/*.key
-/nova
 /vendor
 /resources/views/vendor/nova
 .env
