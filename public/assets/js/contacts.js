@@ -50,6 +50,7 @@ function submitForm(e, formName) {
 		url: '/contact',
 		data: formData,
 		success: function (response) {
+			e.target.reset();
 			swal({
 				title: response.message,
 				text: 'Thank you for reaching out',
