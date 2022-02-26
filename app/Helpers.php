@@ -45,3 +45,22 @@ if (!function_exists('sluggify')) {
 		return $url;
 	}
 }
+
+/**
+ * Remove any additional data on the request
+ * Merely a security measure.
+ *
+ * @return array $details
+ */
+if (!function_exists('trimRequest')) {
+	function trimRequest(array $data): array
+	{
+		$details = [
+			'name' => $data['name'],
+			'email' => $data['email'],
+			'message' => $data['message'],
+		];
+
+		return $details;
+	}
+}

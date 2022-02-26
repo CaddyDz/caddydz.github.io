@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ContactController;
 
 /*
 * Configure download center subdomain, to be caught by nginx wildcard
@@ -21,3 +22,5 @@ Route::domain('downloads.' . config('app.domain'))->group(function () {
 Route::view('/', 'index');
 
 Route::get('cv', fn () => response()->download(public_path('cv.pdf'), 'CV Salim Djerbouh.pdf'))->name('cv');
+
+Route::post('contact', [ContactController::class, 'send'])->name('contact');
