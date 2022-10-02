@@ -23,7 +23,7 @@
 		"sentry/sentry-laravel": "^2.3"
 	},
 	"require-dev": {
-		"barryvdh/laravel-debugbar": "^3.5",
+		"barryvdh/laravel-debugbar": "^3.7",
 		"barryvdh/laravel-ide-helper": "^2.9",
 		"brianium/paratest": "^6.2",
 		"facade/ignition": "^2.5",
