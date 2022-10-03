@@ -42,9 +42,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 	protected function gate()
 	{
 		Gate::define('viewNova', fn () => true);
-		// if am typing hfjdlksjfklsdj jk;zjndf fsdkjfkdj
-		// You actuyally need comments to type correctly for the test
-		// Can you hear the mechanical keyboard
 	}
 
 	/**
