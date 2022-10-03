@@ -38,9 +38,9 @@
 						</dl>
 					</div>
 					<p class="personal-profile__social">
-						<a href="https://github.com/CaddyDz" target="_blank"><i class="fa fa-github"></i></a>
-						<a href="https://linkedin.com/in/CaddyDz" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-						<a href="https://facebook.com/saly3301" target="_blank"><i class="fa fa-facebook-square"></i></a>
+						<a href="https://github.com/CaddyDz" target="_blank"><i class="fa-brands fa-github"></i></a>
+						<a href="https://linkedin.com/in/CaddyDz" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="https://stackoverflow.com/users/5581565/salim-djerbouh" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a>
 					</p>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 					proficient in an array of scripting languages and multimedia Web tools.
 				</p>
 				<a href="{{ route('cv') }}" class="section_btn site-btn">
-					<img src="/assets/img/img_btn_icon.png">
+					<img src="/assets/img/img_btn_icon.png" alt="CV">
 					Download CV
 				</a>
 			</div>
@@ -288,21 +288,21 @@
 					<div class="contacts__social">
 						<ul>
 							<li>
-								<a href="https://facebook.com/saly3301" target="_blank">
-									<i class="fa fa-facebook-square"></i>
-									Facebook
+								<a href="https://github.com/CaddyDz" target="_blank">
+									<i class="fa-brands fa-square-github"></i>
+									GitHub
 								</a>
 							</li>
 							<li>
 								<a href="https://linkedin.com/in/CaddyDz" target="_blank">
-									<i class="fa fa-linkedin-square"></i>
+									<i class="fa-brands fa-linkedin"></i>
 									Linkedin
 								</a>
 							</li>
 							<li>
-								<a href="https://github.com/CaddyDz" target="_blank">
-									<i class="fa fa-github"></i>
-									GitHub
+								<a href="https://stackoverflow.com/users/5581565/salim-djerbouh" target="_blank">
+									<i class="fa-brands fa-stack-overflow"></i>
+									StackOverflow
 								</a>
 							</li>
 						</ul>
@@ -353,17 +353,18 @@
 	<script src="/assets/js/site-btn.js"></script>
 	<script src="/assets/js/style-switcher.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://kit.fontawesome.com/f8923ce61c.js" crossorigin="anonymous"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TKDEBR8TB"></script>
 	<script>
-	 window.dataLayer = window.dataLayer || [];
+		window.dataLayer = window.dataLayer || [];
 
-	 function gtag() {
-	  dataLayer.push(arguments);
-	 }
-	 gtag('js', new Date());
+		function gtag() {
+		dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-	 gtag('config', 'G-0TKDEBR8TB');
+		gtag('config', 'G-0TKDEBR8TB');
 	</script>
 </body>
 
