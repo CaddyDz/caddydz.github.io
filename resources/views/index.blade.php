@@ -38,9 +38,15 @@
 						</dl>
 					</div>
 					<p class="personal-profile__social">
-						<a href="https://github.com/CaddyDz" target="_blank"><i class="fa-brands fa-github"></i></a>
-						<a href="https://linkedin.com/in/CaddyDz" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="https://stackoverflow.com/users/5581565/salim-djerbouh" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a>
+						<a href="https://github.com/CaddyDz" target="_blank">
+							<em class="fa-brands fa-github"></em>
+						</a>
+						<a href="https://linkedin.com/in/CaddyDz" target="_blank">
+							<em class="fa-brands fa-linkedin"></em>
+						</a>
+						<a href="https://stackoverflow.com/users/5581565/salim-djerbouh" target="_blank">
+							<em class="fa-brands fa-stack-overflow"></em>
+						</a>
 					</p>
 				</div>
 			</div>
@@ -289,19 +295,19 @@
 						<ul>
 							<li>
 								<a href="https://github.com/CaddyDz" target="_blank">
-									<i class="fa-brands fa-square-github"></i>
+									<em class="fa-brands fa-square-github"></em>
 									GitHub
 								</a>
 							</li>
 							<li>
 								<a href="https://linkedin.com/in/CaddyDz" target="_blank">
-									<i class="fa-brands fa-linkedin"></i>
+									<em class="fa-brands fa-linkedin"></em>
 									Linkedin
 								</a>
 							</li>
 							<li>
 								<a href="https://stackoverflow.com/users/5581565/salim-djerbouh" target="_blank">
-									<i class="fa-brands fa-stack-overflow"></i>
+									<em class="fa-brands fa-stack-overflow"></em>
 									StackOverflow
 								</a>
 							</li>
