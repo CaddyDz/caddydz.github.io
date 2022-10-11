@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5470e20b09c2ba60708dbb0a64f4b57e",
+    "content-hash": "79ab02b62808f5d327d1e173ba9587b3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2801,16 +2801,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.1.9",
+            "version": "1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "094defdb4a7001845300334e7c1ee2335925ef99"
+                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/094defdb4a7001845300334e7c1ee2335925ef99",
-                "reference": "094defdb4a7001845300334e7c1ee2335925ef99",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3239285c825c152bcc315fe0e87d6b55f5972ed1",
+                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1",
                 "shasum": ""
             },
             "require": {
@@ -2883,7 +2883,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/1.1.9"
+                "source": "https://github.com/thephpleague/flysystem/tree/1.1.10"
             },
             "funding": [
                 {
@@ -2891,7 +2891,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-12-09T09:40:50+00:00"
+            "time": "2022-10-04T09:16:37+00:00"
         },
         {
             "name": "league/glide",
@@ -5087,16 +5087,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "3.8.1",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "5150776a0a9835c4ea56ff0ecd94e0a109b6c163"
+                "reference": "0d162e2516f8254e821a1376018e1e021f910bff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/5150776a0a9835c4ea56ff0ecd94e0a109b6c163",
-                "reference": "5150776a0a9835c4ea56ff0ecd94e0a109b6c163",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/0d162e2516f8254e821a1376018e1e021f910bff",
+                "reference": "0d162e2516f8254e821a1376018e1e021f910bff",
                 "shasum": ""
             },
             "require": {
@@ -5141,7 +5141,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.8.x-dev"
+                    "dev-master": "3.9.x-dev"
                 }
             },
             "autoload": {
@@ -5175,7 +5175,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-php/issues",
-                "source": "https://github.com/getsentry/sentry-php/tree/3.8.1"
+                "source": "https://github.com/getsentry/sentry-php/tree/3.9.0"
             },
             "funding": [
                 {
@@ -5187,20 +5187,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-09-21T11:01:17+00:00"
+            "time": "2022-10-05T09:35:42+00:00"
         },
         {
             "name": "sentry/sentry-laravel",
-            "version": "2.14.0",
+            "version": "2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-laravel.git",
-                "reference": "cad98d81bc68a785ab108740c7262edcb82f5e2d"
+                "reference": "5c696daa2d4e32447211cd7c306e7427c1b7720e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/cad98d81bc68a785ab108740c7262edcb82f5e2d",
-                "reference": "cad98d81bc68a785ab108740c7262edcb82f5e2d",
+                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/5c696daa2d4e32447211cd7c306e7427c1b7720e",
+                "reference": "5c696daa2d4e32447211cd7c306e7427c1b7720e",
                 "shasum": ""
             },
             "require": {
@@ -5263,7 +5263,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-laravel/issues",
-                "source": "https://github.com/getsentry/sentry-laravel/tree/2.14.0"
+                "source": "https://github.com/getsentry/sentry-laravel/tree/2.14.1"
             },
             "funding": [
                 {
@@ -5275,7 +5275,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-10-03T14:25:29+00:00"
+            "time": "2022-10-10T10:18:04+00:00"
         },
         {
             "name": "spatie/image",
