@@ -72,6 +72,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section id="resume" class="container section">
 		<div class="row">
 			<div class="col-md-10">
@@ -125,10 +126,17 @@
 			<div class="col-md-8 section__resume resume-list">
 				<h3 class="resume-list_title">employment</h3>
 				<div class="resume-list__block">
-					<p class="resume-list__block-title">Shyfter, SRL.</p>
-					<p class="resume-list__block-date">Feb. 2021 - Present</p>
+					<p class="resume-list__block-title">Pierry, Inc.</p>
+					<p class="resume-list__block-date">Jun. 2021 - Dec. 2021</p>
 					<p>
-						Backend Engineer, DevOps Assist
+						Full Stack Web Developer
+					</p>
+				</div>
+				<div class="resume-list__block">
+					<p class="resume-list__block-title">Shyfter, SRL.</p>
+					<p class="resume-list__block-date">Feb. 2021 - Sep. 2022</p>
+					<p>
+						Backend Engineer, DevOps Lead
 					</p>
 				</div>
 				<div class="resume-list__block">
@@ -271,6 +279,101 @@
 			</div>
 		</div>
 	</section>
+
+	<!--Portfolio-->
+	<section id="portfolio" class="container section">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 id="portfolio_header" class="section__title">My projects_</h2>
+			</div>
+		</div>
+		<div class="row portfolio-menu">
+			<div class="col-md-12">
+				<nav aria-label="Portfolio menus">
+					<ul>
+						<li><a href="#" data-portfolio-target-tag="all">all</a></li>
+						<li><a href="#" data-portfolio-target-tag="mobile apps">mobile apps</a></li>
+						<li><a href="#" data-portfolio-target-tag="web-sites">web-sites</a></li>
+						<li><a href="#" data-portfolio-target-tag="landing-pages">landing pages</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="portfolio-cards">
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
+				data-portfolio-tag="web-sites">
+				<div class="col-md-6 col-lg-5 project-card__img">
+					<img class="" src="assets/img/img_project_1_mono.png" alt="project-img">
+				</div>
+				<div class="col-md-6 col-lg-7 project-card__info">
+					<h3 class="project-card__title">Mobile and desktop app for London hostel store </h3>
+					<p class="project-card__description">
+						Do answered bachelor occasion in of offended no concerns. Supply worthy warmth branch of no ye.
+						Voice tried known to as my to. Though wished merits or be. Alone visit use these smart rooms
+						ham.
+					</p>
+					<p class="project-card__stack">Used stack:</p>
+					<ul class="tags">
+						<li>html5</li>
+						<li>css3</li>
+						<li>JavaScript</li>
+						<li>bower</li>
+						<li>grunt</li>
+					</ul>
+					<a href="#" class="project-card__link">www.superapp.com</a>
+				</div>
+			</div>
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
+				data-portfolio-tag="mobile apps">
+				<div class="col-md-6 col-lg-5 project-card__img">
+					<img class="" src="assets/img/img_project_2_mono.png" alt="project-img">
+				</div>
+				<div class="col-md-6 col-lg-7 project-card__info">
+					<h3 class="project-card__title">Web app page for trevel company</h3>
+					<p class="project-card__description">
+						Preference any astonished unreserved mrs. Prosperous understood middletons in conviction an
+						uncommonly do. Supposing so be resolving breakfast am or perfectly. Is drew am hill from mr.
+					</p>
+					<p class="project-card__stack">Used stack:</p>
+					<ul class="tags">
+						<li>html5</li>
+						<li>css3</li>
+						<li>JavaScript</li>
+						<li>BEM</li>
+						<li>bower</li>
+						<li>grunt</li>
+					</ul>
+					<a href="#" class="project-card__link">www.travellend.com</a>
+				</div>
+			</div>
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
+				data-portfolio-tag="landing-pages">
+				<div class="col-md-6 col-lg-5 project-card__img">
+					<img class="" src="assets/img/img_project_3_mono.png" alt="project-img">
+				</div>
+				<div class="col-md-6 col-lg-7 project-card__info">
+					<h3 class="project-card__title">Admin template for Photo Service</h3>
+					<p class="project-card__description">
+						Do answered bachelor occasion in of offended no concerns. Supply worthy warmth branch of no ye.
+						Voice tried known to as my to. Though wished merits or be. Alone visit use these smart rooms
+						ham.
+					</p>
+					<p class="project-card__stack">Used stack:</p>
+					<ul class="tags">
+						<li>html5</li>
+						<li>css3</li>
+						<li>JavaScript</li>
+						<li>BEM</li>
+						<li>bower</li>
+						<li>grunt</li>
+					</ul>
+					<a href="#" class="project-card__link">www.coolphoto.com</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Portfolio-->
+
 	<!--Contact-->
 	<div class="background" style="background-image: url(assets/img/img_bg_main.jpg)">
 		<div id="contact" class="container section">
