@@ -16,13 +16,14 @@ jobs:
 
     steps:
     - name: Setup PHP
-    - uses: shivammathur/setup-php@v2
+      uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'
+    
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - uses: actions/checkout@v2
-
-    - name: Authenticate Larevel Nova
+    - name: Authenticate Laravel Nova
       run: composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_LICENSE_KEY }}
 
     - name: Install Dependencies
