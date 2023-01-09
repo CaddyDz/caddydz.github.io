@@ -2,7 +2,6 @@
 /public/vendor
 /storage/*.key
 /vendor
-/resources/views/vendor/nova
 .env
 .env.backup
 .phpunit.result.cache

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use App\Models\Book as BookModel;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\{ID, KeyValue, Text};
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 
@@ -35,8 +36,10 @@ class Book extends Resource
 
 	/**
 	 * Get a fresh instance of the model represented by the resource.
+	 *
+	 * @return \App\Models\Book $book
 	 */
-	public static function newModel()
+	public static function newModel(): BookModel
 	{
 		$model = static::$model;
 		$book = new $model();
@@ -48,10 +51,11 @@ class Book extends Resource
 	/**
 	 * Get the fields displayed by the resource.
 	 *
-	 * @param \Illuminate\Http\Request $request
+	 * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+	 *
 	 * @return array
 	 */
-	public function fields(Request $request)
+	public function fields(NovaRequest $request)
 	{
 		return [
 			ID::make('id')->sortable(),
@@ -69,49 +73,5 @@ class Book extends Resource
 			Files::make('Files', 'files')->setFileName(fn ($originalFilename, $extension, $model) =>
 			str_slug($model->title) . '.' . $extension),
 		];
-	}
-
-	/**
-	 * Get the cards available for the request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return array
-	 */
-	public function cards(Request $request)
-	{
-		return [];
-	}
-
-	/**
-	 * Get the filters available for the resource.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return array
-	 */
-	public function filters(Request $request)
-	{
-		return [];
-	}
-
-	/**
-	 * Get the lenses available for the resource.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return array
-	 */
-	public function lenses(Request $request)
-	{
-		return [];
-	}
-
-	/**
-	 * Get the actions available for the resource.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return array
-	 */
-	public function actions(Request $request)
-	{
-		return [];
 	}
 }

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
+use Throwable;
+use Illuminate\Foundation\Inspiring;
 use Laravel\Nova\{Nova, NovaApplicationServiceProvider};
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -17,6 +18,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 	public function boot(): void
 	{
 		parent::boot();
+
+		Nova::initialPath('/resources/books');
+
+		// Randomly show new quotes in the footer
+		Nova::footer(
+			fn () => view('vendor.nova.footer', [
+				'quote' => Inspiring::quote(),
+			])->render()
+		);
 	}
 
 	/**
@@ -33,54 +43,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 	}
 
 	/**
-	 * Register the Nova gate.
-	 *
-	 * This gate determines who can access Nova in non-local environments.
-	 *
-	 * @return void
-	 */
-	protected function gate()
-	{
-		Gate::define('viewNova', fn () => true);
-	}
-
-	/**
-	 * Get the cards that should be displayed on the default Nova dashboard.
-	 *
-	 * @return array
-	 */
-	protected function cards()
-	{
-		return [];
-	}
-
-	/**
-	 * Get the extra dashboards that should be displayed on the Nova dashboard.
-	 *
-	 * @return array
-	 */
-	protected function dashboards()
-	{
-		return [];
-	}
-
-	/**
-	 * Get the tools that should be listed in the Nova sidebar.
-	 *
-	 * @return array
-	 */
-	public function tools()
-	{
-		return [];
-	}
-
-	/**
 	 * Register any application services.
 	 *
 	 * @return void
 	 */
-	public function register()
+	public function register(): void
 	{
-		//
+		Nova::report(function (Throwable $exception) {
+			if (app()->bound('sentry')) {
+				app('sentry')->captureException($exception);
+			}
+		});
 	}
 }
