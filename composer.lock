@@ -11674,16 +11674,16 @@
         },
         {
             "name": "spatie/ssh",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ssh.git",
-                "reference": "76b09b8547b976cc5e07138293aa947b7ce5e15b"
+                "reference": "ba5fc61f0da98dfc683fd6544d925a9e9c2a7a14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ssh/zipball/76b09b8547b976cc5e07138293aa947b7ce5e15b",
-                "reference": "76b09b8547b976cc5e07138293aa947b7ce5e15b",
+                "url": "https://api.github.com/repos/spatie/ssh/zipball/ba5fc61f0da98dfc683fd6544d925a9e9c2a7a14",
+                "reference": "ba5fc61f0da98dfc683fd6544d925a9e9c2a7a14",
                 "shasum": ""
             },
             "require": {
@@ -11721,7 +11721,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ssh/issues",
-                "source": "https://github.com/spatie/ssh/tree/1.8.0"
+                "source": "https://github.com/spatie/ssh/tree/1.8.1"
             },
             "funding": [
                 {
@@ -11729,7 +11729,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-09-07T10:01:01+00:00"
+            "time": "2023-01-09T08:55:35+00:00"
         },
         {
             "name": "theseer/tokenizer",
