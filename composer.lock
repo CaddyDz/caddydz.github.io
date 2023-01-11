@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be01b63aff416f20c4f7cd5b3939f47d",
+    "content-hash": "2b8bfcdda75cc110989474a531c7ab59",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1744,26 +1744,26 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "v0.6.4",
+            "version": "v0.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "b00fe8cf741766b41de69978f9e90ee6d1470d36"
+                "reference": "5fbcf32a86ab0e34c17c20148e50baa095f424af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/b00fe8cf741766b41de69978f9e90ee6d1470d36",
-                "reference": "b00fe8cf741766b41de69978f9e90ee6d1470d36",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/5fbcf32a86ab0e34c17c20148e50baa095f424af",
+                "reference": "5fbcf32a86ab0e34c17c20148e50baa095f424af",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "laravel/framework": "^6.0|^7.0|^8.74|^9.0",
+                "laravel/framework": "^6.0|^7.0|^8.74|^9.0|^10.0",
                 "php": "^7.2|~8.0.0|~8.1.0|~8.2.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3.3",
-                "orchestra/testbench": "^4.0|^5.0|^6.4|^7.0",
+                "orchestra/testbench": "^4.0|^5.0|^6.4|^7.0|^8.0",
                 "phpunit/phpunit": "^8.0|^9.5.8",
                 "roave/security-advisories": "dev-master"
             },
@@ -1801,7 +1801,7 @@
             ],
             "support": {
                 "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.4"
+                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.5"
             },
             "funding": [
                 {
@@ -1809,7 +1809,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-08T12:44:02+00:00"
+            "time": "2023-01-10T15:59:48+00:00"
         },
         {
             "name": "intervention/image",
@@ -2253,17 +2253,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.19.6",
+            "version": "4.20.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "63c89dcf701a0345b03d4be2a504ed1d74127b2f"
+                "reference": "6b3fd89927d6c717524fcb2f5a9fbf85613c5dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-63c89dcf701a0345b03d4be2a504ed1d74127b2f-zip-ffac32.zip",
-                "reference": "63c89dcf701a0345b03d4be2a504ed1d74127b2f",
-                "shasum": "88876041ffb75e15003f0b97f67cc6a4025bb6e2"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-6b3fd89927d6c717524fcb2f5a9fbf85613c5dcc-zip-7d7854.zip",
+                "reference": "6b3fd89927d6c717524fcb2f5a9fbf85613c5dcc",
+                "shasum": "9873679e47fbae699df58cef7fd62ae39953ebbf"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0",
@@ -2282,7 +2282,7 @@
                 "symfony/process": "^5.4|^6.0"
             },
             "require-dev": {
-                "laravel/nova-dusk-suite": "dev-fixes-5194",
+                "laravel/nova-dusk-suite": "8.4.x-dev|9.4.x-dev",
                 "laravel/pint": "^1.0",
                 "laravel/scout": "^9.4",
                 "mockery/mockery": "^1.4.4",
@@ -2358,9 +2358,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.19.6"
+                "source": "https://github.com/laravel/nova/tree/v4.20.0"
             },
-            "time": "2023-01-03T18:14:28+00:00"
+            "time": "2023-01-10T19:37:55+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3651,16 +3651,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.11.1",
+            "version": "v4.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "278952f27a3f753b7e2c34928685a411d883bc98"
+                "reference": "3c645504a09c9441ab68068bdfe31eee6d13f086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/278952f27a3f753b7e2c34928685a411d883bc98",
-                "reference": "278952f27a3f753b7e2c34928685a411d883bc98",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/3c645504a09c9441ab68068bdfe31eee6d13f086",
+                "reference": "3c645504a09c9441ab68068bdfe31eee6d13f086",
                 "shasum": ""
             },
             "require": {
@@ -3728,7 +3728,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.11.1"
+                "source": "https://github.com/openspout/openspout/tree/v4.12.0"
             },
             "funding": [
                 {
@@ -3740,7 +3740,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-02T09:11:35+00:00"
+            "time": "2023-01-10T07:39:16+00:00"
         },
         {
             "name": "opis/closure",
