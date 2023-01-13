@@ -20,7 +20,7 @@
 		"laravel/nova": "^4.0",
 		"laravel/sanctum": "^2.9",
 		"laravel/tinker": "^2.5",
-		"sentry/sentry-laravel": "^2.3"
+		"sentry/sentry-laravel": "^3.1"
 	},
 	"require-dev": {
 		"barryvdh/laravel-debugbar": "^3.5",
