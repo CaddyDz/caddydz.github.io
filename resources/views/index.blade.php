@@ -9,7 +9,7 @@
 	<meta name="author" content="Salim Djerbouh">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Salim Djerbouh</title>
-	<link rel="stylesheet" href="/assets/css/color.css">
+	<link rel="stylesheet" href="/css/app.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata" rel="stylesheet">
 	<link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
