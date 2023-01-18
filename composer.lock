@@ -11674,16 +11674,16 @@
         },
         {
             "name": "spatie/ssh",
-            "version": "1.8.0",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ssh.git",
-                "reference": "76b09b8547b976cc5e07138293aa947b7ce5e15b"
+                "reference": "d3576bea064dddb512daee9884eb01daaf8df9dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ssh/zipball/76b09b8547b976cc5e07138293aa947b7ce5e15b",
-                "reference": "76b09b8547b976cc5e07138293aa947b7ce5e15b",
+                "url": "https://api.github.com/repos/spatie/ssh/zipball/d3576bea064dddb512daee9884eb01daaf8df9dd",
+                "reference": "d3576bea064dddb512daee9884eb01daaf8df9dd",
                 "shasum": ""
             },
             "require": {
@@ -11691,8 +11691,8 @@
                 "symfony/process": "^4.4|^5.3|^6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "pestphp/pest": "^1.22",
+                "spatie/pest-plugin-snapshots": "^1.1",
                 "symfony/var-dumper": "^5.3|6.0"
             },
             "type": "library",
@@ -11721,7 +11721,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ssh/issues",
-                "source": "https://github.com/spatie/ssh/tree/1.8.0"
+                "source": "https://github.com/spatie/ssh/tree/1.8.2"
             },
             "funding": [
                 {
@@ -11729,7 +11729,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-09-07T10:01:01+00:00"
+            "time": "2023-01-17T16:49:02+00:00"
         },
         {
             "name": "theseer/tokenizer",
