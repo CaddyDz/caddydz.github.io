@@ -469,8 +469,8 @@
 	<script src="/assets/js/style-switcher.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://kit.fontawesome.com/f8923ce61c.js" crossorigin="anonymous"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TKDEBR8TB"></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-V08QC6HMRT"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -479,7 +479,7 @@
 		}
 		gtag('js', new Date());
 
-		gtag('config', 'G-0TKDEBR8TB');
+		gtag('config', 'G-V08QC6HMRT');
 	</script>
 </body>
 
