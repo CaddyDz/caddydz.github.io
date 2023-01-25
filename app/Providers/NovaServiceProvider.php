@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use Throwable;
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\{Nova, NovaApplicationServiceProvider};
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -27,6 +28,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 				'quote' => Inspiring::quote(),
 			])->render()
 		);
+	}
+
+	/**
+	 * Register the Nova gate.
+	 *
+	 * This gate determines who can access Nova in non-local environments.
+	 *
+	 * @return void
+	 */
+	protected function gate(): void
+	{
+		Gate::define('viewNova', fn (): bool => true);
 	}
 
 	/**
