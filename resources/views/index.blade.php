@@ -32,7 +32,7 @@
 							<dt>Phone:</dt>
 							<dd><a href="tel:+213551081911">+213551081911</a></dd>
 							<dt>Email:</dt>
-							<dd><a href="mailto:salim@zidweb.com">salim@zidweb.com</a></dd>
+							<dd><a href="mailto:caddydz4@gmail.com">caddydz4@gmail.com</a></dd>
 							<dt>Address:</dt>
 							<dd>Akid Lotfi, Oran, Algeria</dd>
 						</dl>
@@ -66,8 +66,16 @@
 					proficient in an array of scripting languages and multimedia Web tools.
 				</p>
 				<a href="{{ route('cv') }}" class="section_btn site-btn">
-					<img src="/assets/img/img_btn_icon.png" alt="CV">
+					<em class="fa-solid fa-download"></em>&nbsp;
 					Download CV
+				</a>
+				<a href="/cv.pdf" class="section_btn site-btn" target="_blank">
+					<em class="fa-solid fa-eye"></em>&nbsp;
+					View CV online
+				</a>
+				<a href="https://github.com/CaddyDz/CV" class="section_btn site-btn" target="_blank">
+					<i class="fa-solid fa-book-bookmark"></i>&nbsp;
+					CV LaTex source code
 				</a>
 			</div>
 		</div>
@@ -300,8 +308,7 @@
 			</div>
 		</div>
 		<div class="portfolio-cards">
-			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-				data-portfolio-tag="web-sites">
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal" data-portfolio-tag="web-sites">
 				<div class="col-md-6 col-lg-5 project-card__img">
 					<img class="" src="assets/img/img_project_1_mono.png" alt="project-img">
 				</div>
@@ -323,8 +330,7 @@
 					<a href="#" class="project-card__link">www.superapp.com</a>
 				</div>
 			</div>
-			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal"
-				data-portfolio-tag="mobile apps">
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal" data-portfolio-tag="mobile apps">
 				<div class="col-md-6 col-lg-5 project-card__img">
 					<img class="" src="assets/img/img_project_2_mono.png" alt="project-img">
 				</div>
@@ -391,7 +397,7 @@
 							<dt>Skype:</dt>
 							<dd><a href="skype:tbitw.mestery">tbitw.mestery</a></dd>
 							<dt>Email:</dt>
-							<dd><a href="mailto:salim@zidweb.com">salim@zidweb.com</a></dd>
+							<dd><a href="mailto:caddydz4@gmail.com">caddydz4@gmail.com</a></dd>
 						</dl>
 					</div>
 					<div class="contacts__social">
@@ -469,7 +475,7 @@
 		window.dataLayer = window.dataLayer || [];
 
 		function gtag() {
-		dataLayer.push(arguments);
+			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
 
