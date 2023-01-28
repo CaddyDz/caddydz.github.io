@@ -10,6 +10,20 @@ use Illuminate\Foundation\Console\{ClearCompiledCommand, OptimizeClearCommand};
 
 class Clean extends Command
 {
+	/**
+	 * The name and signature of the console command.
+	 *
+	 * @var string
+	 */
+	protected $signature = 'clean';
+
+	/**
+	 * The console command description.
+	 *
+	 * @var string
+	 */
+	protected $description = 'Delete temporary files';
+
 	/** @var array $files List of files to delete */
 	private array $files = [
 		'.php-cs-fixer.cache',
@@ -26,20 +40,6 @@ class Clean extends Command
 		OptimizeClearCommand::class,
 		'debugbar:clear',
 	];
-
-	/**
-	 * The name and signature of the console command.
-	 *
-	 * @var string
-	 */
-	protected $signature = 'clean';
-
-	/**
-	 * The console command description.
-	 *
-	 * @var string
-	 */
-	protected $description = 'Delete temporary files';
 
 	/**
 	 * Execute the console command.
