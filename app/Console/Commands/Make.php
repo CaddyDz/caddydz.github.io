@@ -58,7 +58,10 @@ class Make extends Command
 	public function handle(): int
 	{
 		$this->model = $this->argument('model');
+		$this->comment("Making model, migration and resourceful controller for {$this->model}.");
+		// TODO: check if files already exist and skip outputting warnings
 		Artisan::call('make:model ' . $this->model . ' -mcr');
+		$this->info("Model, migration and resourceful controller for {$this->model} created successfully.");
 		$this->createClasses($this->classes);
 		$this->createRequests($this->requests);
 		Artisan::call('nova:resource ' . $this->model);

@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-8">
 					<p class="personal-profile__name">Salim Djerbouh</p>
-					<p class="personal-profile__work">backend developer, Software engineer</p>
+					<p class="personal-profile__work">Backend Developer, Software Engineer</p>
 					<div class="personal-profile__contacts">
 						<dl class="contact-list contact-list__opacity-titles">
 							<dt>Age:</dt>
@@ -54,6 +54,7 @@
 	</header>
 	<!--Header-->
 
+	<!--Hello-->
 	<section id="hello" class="container section">
 		<div class="row">
 			<div class="col-md-10">
@@ -80,7 +81,11 @@
 			</div>
 		</div>
 	</section>
+	<!--Hello-->
 
+	<hr>
+
+	<!--Resume-->
 	<section id="resume" class="container section">
 		<div class="row">
 			<div class="col-md-10">
@@ -287,6 +292,7 @@
 			</div>
 		</div>
 	</section>
+	<!--Resume-->
 
 	<!--Portfolio-->
 	<section id="portfolio" class="container section">
@@ -300,9 +306,9 @@
 				<nav aria-label="Portfolio menus">
 					<ul>
 						<li><a href="#" data-portfolio-target-tag="all">all</a></li>
-						<li><a href="#" data-portfolio-target-tag="mobile apps">mobile apps</a></li>
-						<li><a href="#" data-portfolio-target-tag="web-sites">web-sites</a></li>
-						<li><a href="#" data-portfolio-target-tag="landing-pages">landing pages</a></li>
+						<li><a href="#" data-portfolio-target-tag="web-sites">Web Sites</a></li>
+						<li><a href="#" data-portfolio-target-tag="mobile-apps">Mobile Apps</a></li>
+						<li><a href="#" data-portfolio-target-tag="landing-pages">Landing Pages</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -330,7 +336,7 @@
 					<a href="#" class="project-card__link">www.superapp.com</a>
 				</div>
 			</div>
-			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal" data-portfolio-tag="mobile apps">
+			<div class="row project-card" data-toggle="modal" data-target="#portfolioModal" data-portfolio-tag="mobile-apps">
 				<div class="col-md-6 col-lg-5 project-card__img">
 					<img class="" src="assets/img/img_project_2_mono.png" alt="project-img">
 				</div>
