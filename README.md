@@ -8,4 +8,5 @@
 
 #### Prerequisites
 
+* PHP v8.1.x
 * Node v12.x
