@@ -24,8 +24,13 @@ class Make extends Command
 	 */
 	protected $description = 'Scaffold an entity';
 
-	/** @var string $model */
-	private string $model;
+	/**
+	 * The classname for the Eloquent model to create
+	 * This property is loaded from console argument
+	 *
+	 * @var string $model
+	*/
+	private string $model = 'Model';
 
 	/**
 	 * The entity classes types to be created.
