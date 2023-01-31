@@ -1,14 +1,13 @@
 {
-    "recommendations": [
-        "amiralizadeh9480.laravel-extra-intellisense",
-        "bmewburn.vscode-intelephense-client",
-        "breezelin.phpstan",
-        "irongeek.vscode-env",
-        "junstyle.php-cs-fixer",
-        "octref.vetur",
-        "onecentlin.laravel-blade",
-        "shufo.vscode-blade-formatter",
-        "sonarsource.sonarlint-vscode",
-        "xdebug.php-debug"
-    ]
+	"recommendations": [
+		"amiralizadeh9480.laravel-extra-intellisense",
+		"bmewburn.vscode-intelephense-client",
+		"breezelin.phpstan",
+		"irongeek.vscode-env",
+		"junstyle.php-cs-fixer",
+		"onecentlin.laravel-blade",
+		"shufo.vscode-blade-formatter",
+		"sonarsource.sonarlint-vscode",
+		"xdebug.php-debug"
+	]
 }
