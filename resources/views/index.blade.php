@@ -74,7 +74,7 @@
 					<em class="fa-solid fa-eye"></em>&nbsp;
 					View CV online
 				</a>
-				<a href="https://github.com/CaddyDz/CV" class="section_btn site-btn" target="_blank">
+				<a href="https://github.com/CaddyDz/Caddy/tree/master/CV" class="section_btn site-btn" target="_blank">
 					<i class="fa-solid fa-book-bookmark"></i>&nbsp;
 					CV LaTex source code
 				</a>
