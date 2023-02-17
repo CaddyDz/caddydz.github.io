@@ -8,19 +8,40 @@
 %	CONTENT
 %-------------------------------------------------------------------------------
 \begin{cventries}
+%---------------------------------------------------------
+  \cventry
+    {Full-stack web developer} % Job title
+    {Salesforce, Inc} % Organization
+    {San Francisco, California} % Location
+    {June. 2021 - December 2021} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {Wrote the full test-suite for Unit, Feature and Browser QA tests.}
+        \item {Developed and maintained CI/CD pipeline on GitHub with actions and Heroku deployments as well as review apps on branches connecting everything to Jira development board.}
+        \item {Audited and mitigated unnoticed security advisories.}
+        \item {Built Redis based queue system and moved long processing operations to background jobs.}
+        \item {Worked on end-to-end features as part of a larger team, took responsibility of instantly pushing bug fixes as they arrive on Sentry and Bugsnag.}
+        \item {Building campaign manager assets through Cloudinary API was dying in the background and it was hard to debug and tell what went wrong, I integrated Laravel Horizon \& a queue worker dyno on Heroku that immensely helped developers maintain a healthy codebase.}
+        \item {Managers had the futile task of manually inviting users from Salesforce CRM to the campaign builder, I wrote a script to parse users export as CSV files, I created an admin panel where a manager can upload the CSV and it send out email invitations for people to register and because the project is deployed in the Heroku platform that Salesforce owns, I wrote a bash script to execute seeders and artisan commands on the release phase.}
+        \item {Users leave their campaign builder form open in the office so I wrote a frontend code to detect inactivity and send an API request to auto logout and invalidate session (saving current unsubmitted work) at a configurable interval.}
+        \item {Added a way for managers to flag users as (free access) so they don't get charged via Stripe.}
+        \item {Sometimes logos get rendered incorrectly on top of certain backgrounds, I used Cloudinary API to intelligently invert or place the logo on a proper background.}
+        \item {Certain developers and HTML designers kept on misspelling the brand name Salesforce, so I created a GitHub action that combs through the entire codebase and automatically correct the spelling with a bash script that uses grep and sed.}
+      \end{cvitems}
+     }
 
 %---------------------------------------------------------
   \cventry
     {Backend developer, DevOps lead} % Job title
     {Order Spark} % Organization
     {Remote, USA (Freelance)} % Location
-    {Oct. 2022 - Present} % Date(s)
+    {Oct. 2022 - Jan. 2023} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Building customer account API...}
-        \item {Implemented Sentry error reporting on all systems.}
+        \item {Built management portal UI and backend (Laravel Nova)}
+        \item {Built marketing site API}
+        \item {Handled all DevOps infrastructure and software architecture}
         \item {Organized, secured, cleaned up and documented system resources.}
-        \item {Organized and documented API endpoints.}
       \end{cvitems}
     }
 
@@ -60,7 +81,7 @@
     {Backend Engineer, DevOps Assist} % Job title
     {Shyfter, SRL.} % Organization
     {Brussels, Belgium} % Location
-    {Feb. 2021 - March 2022} % Date(s)
+    {Feb. 2021 - Aug 2022} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {Integrated government services with compliance to security requirements like Dimona and audited and mitigated unnoticed security advisories.}
@@ -72,28 +93,6 @@
         \item {Built a printable dynamic GATT documents and assisted frontend team on API consumption.}
       \end{cvitems}
     }
-
-%---------------------------------------------------------
-  \cventry
-    {Full-stack web developer} % Job title
-    {Salesforce, Inc} % Organization
-    {San Francisco, California} % Location
-    {June. 2021 - December 2021} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Wrote the full test-suite for Unit, Feature and Browser QA tests.}
-        \item {Developed and maintained CI/CD pipeline on GitHub with actions and Heroku deployments as well as review apps on branches connecting everything to Jira development board.}
-        \item {Audited and mitigated unnoticed security advisories.}
-        \item {Built Redis based queue system and moved long processing operations to background jobs.}
-        \item {Worked on end-to-end features as part of a larger team, took responsibility of instantly pushing bug fixes as they arrive on Sentry and Bugsnag.}
-        \item {Building campaign manager assets through Cloudinary API was dying in the background and it was hard to debug and tell what went wrong, I integrated Laravel Horizon \& a queue worker dyno on Heroku that immensely helped developers maintain a healthy codebase.}
-        \item {Managers had the futile task of manually inviting users from Salesforce CRM to the campaign builder, I wrote a script to parse users export as CSV files, I created an admin panel where a manager can upload the CSV and it send out email invitations for people to register and because the project is deployed in the Heroku platform that Salesforce owns, I wrote a bash script to execute seeders and artisan commands on the release phase.}
-        \item {Users leave their campaign builder form open in the office so I wrote a frontend code to detect inactivity and send an API request to auto logout and invalidate session (saving current unsubmitted work) at a configurable interval.}
-        \item {Added a way for managers to flag users as (free access) so they don't get charged via Stripe.}
-        \item {Sometimes logos get rendered incorrectly on top of certain backgrounds, I used Cloudinary API to intelligently invert or place the logo on a proper background.}
-        \item {Certain developers and HTML designers kept on misspelling the brand name Salesforce, so I created a GitHub action that combs through the entire codebase and automatically correct the spelling with a bash script that uses grep and sed.}
-      \end{cvitems}
-     }
 
 %---------------------------------------------------------
   \cventry
@@ -124,33 +123,6 @@
         \item {Implemented an ACL architecture for Backend API}
         \item {Wrote mutations mapping module for state management following the Flux pattern for the Frontend application}
         \item {Implemented several CRUD models}
-      \end{cvitems}
-    }
-
-%---------------------------------------------------------
-  \cventry
-    {Full Stack web developer} % Job title
-    {A-Tech Solutions LLC.} % Organization
-    {Algiers, Algeria} % Location
-    {Jan. 2019 - March. 2019} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Wrote an HRM Module in ASP.NET Core for an ERP Platform}
-        \item {Ported an existing application to Linux environment}
-        \item {Wrote a CRUD view module in AngularJS}
-      \end{cvitems}
-    }
-
-%---------------------------------------------------------
-  \cventry
-    {Co-Founder and Lead Developer} % Job title
-    {Bitshopit} % Organization
-    {Algiers, Algeria} % Location
-    {Apr. 2018 - Dec. 2018} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {FIFA 2018 video streaming site, implemented RTMP, Redis queues, ffmpeg encoding, VideoJS HLS and Google IMA VAST}
-        \item {Database architecture, business logic and API integration of Binance cryptocurrency exchange platform}
       \end{cvitems}
     }
 

@@ -4,7 +4,7 @@
 %
 % Author:
 % Salim Djerbouh <caddydz4@gmail.com>
-% https://salim.zidweb.com
+% https://caddydz.github.io
 %
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
@@ -15,7 +15,7 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use letter paper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, a4paper]{resume}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.7cm, right=1.4cm, bottom=1.5cm, footskip=.5cm}
@@ -24,51 +24,34 @@
 \fontdir[fonts/]
 
 % Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-emerald}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
+% Available Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete
+\colorlet{awesome}{awesome-skyblue}
 
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
-% Set false if you don't want to highlight section with awesome color
+% Set false if you don't want to highlight section with accent color
 \setbool{acvSectionColorHighlight}{true}
 
-% If you would like to change the social information separator from a pipe (|) to something else
+% contact information separator (|)
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-\photo[rectangle,noedge,right]{./profile.png}
-\name{Djerbouh}{Salim}
-\position{Backend Engineer{\enskip\cdotp\enskip} Full-Stack Web Developer}
-\address{Hasnaoui Residency, Cité Salam 31000, Oran, Algeria}
 
-\mobile{(+213) 551-081-911}
-\email{salim@zidweb.com}
-\homepage{salim.zidweb.com}
+\photo[rectangle,noedge,right]{./me.jpeg}
+\name{Djerbouh}{Salim}
+\position{BE heavy{\enskip\cdotp\enskip} Full-Stack Web Developer}
+\address{Résidence Ouarsenis, Akid Lotfi, Oran, Algeria}
+
+\mobile{+213551081911}
+\email{caddydz4@gmail.com}
+\homepage{caddydz.github.io}
 \github{CaddyDz}
 \linkedin{CaddyDz}
-% \gitlab{CaddyDz}
 \stackoverflow{5581565}{salim-djerbouh}
 \twitter{saly3301}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \medium{madium-id}
-% \googlescholar{googlescholar-id}{name-to-display}
-%% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
-% \extrainfo{extra informations}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -84,7 +67,6 @@
   {Djerbouh Salim~~~·~~~Resume}
   {\thepage}
 
-
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
@@ -92,7 +74,7 @@
 \input{resume/summary.tex}
 \input{resume/skills.tex}
 \input{resume/experience.tex}
-% \input{resume/honors.tex}
+\input{resume/honors.tex}
 \input{resume/presentation.tex}
 \input{resume/education.tex}
 
