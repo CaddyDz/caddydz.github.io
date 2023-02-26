@@ -7,6 +7,19 @@
     <meta name="description" content="Modern web developer, Laravel artisan" />
     <meta name="author" content="Salim Djerbouh" />
     <title>Salim Djerbouh</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+      integrity="sha512-ymdTQyUk0UfVv71LHB/INBdluI7qg0WKX5Wy9DZNsYcliOVveSy42TBPcgbhm/RSsIHLj+3YlAfDL+/WgBMaIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/app.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata"
@@ -72,7 +85,9 @@
             <img src="/assets/img/img_avatar.jpg" alt="avatar" />
           </div>
           <div class="col-md-8">
-            <p class="personal-profile__name">Salim Djerbouh</p>
+            <p class="personal-profile__name" data-value="Salim Djerbouh">
+              Salim Djerbouh
+            </p>
             <p class="personal-profile__work">
               BE Heavy full-stack web developer
             </p>
@@ -108,343 +123,357 @@
     </header>
     <!--Header-->
 
-    <!--Intro-->
-    <section id="intro" class="container section">
-      <div class="row">
-        <div class="col-md-10">
-          <h2 id="hello_header" class="section__title">Hi_</h2>
-          <p class="section__description">
-            I am a senior Web developer able to build a Web presence from the
-            ground up - from concept, navigation, layout and programming to UX
-            and SEO. Skilled at writing well-designed, testable and efficient
-            code using current best practices in Web development. Fast learner,
-            hard worker and team player who is proficient in an array of
-            scripting languages and multimedia Web tools.
-          </p>
-          <a href="/cv.pdf" class="section_btn site-btn" target="_blank">
-            <em class="fa-solid fa-download"></em>&nbsp; Resume CV
-          </a>
-          <a
-            href="https://github.com/CaddyDz/caddydz.github.io/tree/master/CV"
-            class="section_btn site-btn"
-            target="_blank"
+    <!-- Main content -->
+    <main>
+      <div id="blob"></div>
+      <div id="blur"></div>
+      <!--Intro-->
+      <section id="intro" class="container section">
+        <div class="row">
+          <div class="col-md-10">
+            <h2 id="hello_header" class="section__title">Hi_</h2>
+            <p class="section__description">
+              I am a senior Web developer able to build a Web presence from the
+              ground up - from concept, navigation, layout and programming to UX
+              and SEO. Skilled at writing well-designed, testable and efficient
+              code using current best practices in Web development. Fast
+              learner, hard worker and team player who is proficient in an array
+              of scripting languages and multimedia Web tools.
+            </p>
+            <a href="/cv.pdf" class="section_btn site-btn" target="_blank">
+              <em class="fa-solid fa-download"></em>&nbsp; Resume CV
+            </a>
+            <a
+              href="https://github.com/CaddyDz/caddydz.github.io/tree/master/CV"
+              class="section_btn site-btn"
+              target="_blank"
+            >
+              <i class="fa-solid fa-book-bookmark"></i>&nbsp; CV LaTex source
+              code
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--Intro-->
+
+      <hr />
+
+      <!--Resume-->
+      <section id="resume" class="container section">
+        <div class="row">
+          <div class="col-md-10">
+            <h2
+              id="resume_header"
+              class="section__title"
+              style="text-indent: 0px"
+            >
+              Resume_
+            </h2>
+            <p class="section__description">
+              Currently a freelancer on the platform Upwork, Formerly Backend
+              Engineer and DevOps assist at Belgian company Shyfter SRL, Chief
+              Technology Officer and Lead Developer at start-up company Zidweb.
+              6+ years experience specializing in the backend development,
+              infrastructure engineering, CI/CD pipelines automation, Super nerd
+              who loves Vim, macOS and Linux and enjoys to customize all of the
+              development environment. Interested in devising a better
+              problem-solving method for challenging tasks, and learning new
+              technologies and tools when the need arises.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 section__resume resume-list">
+            <h3 class="resume-list_title">employment</h3>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Pierry, Inc.</p>
+              <p class="resume-list__block-date">Jun. 2021 - Dec. 2021</p>
+              <p>Full Stack Web Developer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Shyfter, SRL.</p>
+              <p class="resume-list__block-date">Feb. 2021 - Sep. 2022</p>
+              <p>Backend Engineer, DevOps Lead</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Zidweb, LLC.</p>
+              <p class="resume-list__block-date">Feb. 2020 - Feb. 2021</p>
+              <p>Co-Founder, CTO and Lead Developer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Didata LLC.</p>
+              <p class="resume-list__block-date">March. 2020 - April. 2020</p>
+              <p>Full stack Software Engineer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Upwork.</p>
+              <p class="resume-list__block-date">Feb. 2020 - Present</p>
+              <p>Freelance Backend developer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">A-Tech Solutions LLC.</p>
+              <p class="resume-list__block-date">Jan. 2019 - March. 2019</p>
+              <p>Full Stack web developer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">SARL TPHST.</p>
+              <p class="resume-list__block-date">Feb. 2018 - Sep. 2019</p>
+              <p>International Relations Consulting and IT support</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Bitshopit</p>
+              <p class="resume-list__block-date">Apr. 2018 - Dec. 2018</p>
+              <p>Co-Founder and Lead Developer</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">AlgoTech Orestor LLC.</p>
+              <p class="resume-list__block-date">Mar. 2017 - Dec. 2017</p>
+              <p>Lead developer and system admin</p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">MNI Martship</p>
+              <p class="resume-list__block-date">Jun. 2017, Aug. 2017</p>
+              <p>Full stack web developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 section__resume resume-list">
+            <h3 class="resume-list_title">education</h3>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Crash Course</p>
+              <p class="resume-list__block-date">Feb. 2017 - Dec. 2017</p>
+              <p>
+                Followed the course with enthusiasm and practice upon theory,
+                briefly dabbled in OSDev as a result.
+              </p>
+            </div>
+            <div class="resume-list__block">
+              <p class="resume-list__block-title">Lounici Ali University</p>
+              <p class="resume-list__block-date">Sep. 2013 - Jan. 2016</p>
+              <p>
+                Final year English literature, dropped out due to lack of
+                interest, switched to computer science
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row section__resume progress-list js-progress-list">
+          <div class="col-md-12">
+            <h2 class="progress-list__title">general skills</h2>
+          </div>
+          <div class="col-md-5 mr-auto">
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">Laravel</span>
+                <span class="progress-list__skill-value">90%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">MySQL</span>
+                <span class="progress-list__skill-value">70%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">Redis</span>
+                <span class="progress-list__skill-value">90%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">DevOps</span>
+                <span class="progress-list__skill-value">80%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">Postman</span>
+                <span class="progress-list__skill-value">80%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 mr-auto">
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">VueJS</span>
+                <span class="progress-list__skill-value">80%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">Bootstrap</span>
+                <span class="progress-list__skill-value">60%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">git</span>
+                <span class="progress-list__skill-value">90%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">NuxtJS</span>
+                <span class="progress-list__skill-value">80%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-list__skill">
+              <p>
+                <span class="progress-list__skill-title">Docker</span>
+                <span class="progress-list__skill-value">50%</span>
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Resume-->
+
+      <!--Portfolio-->
+      <section id="portfolio" class="container section">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 id="portfolio_header" class="section__title">My projects_</h2>
+          </div>
+        </div>
+        <div class="portfolio-cards">
+          <div
+            class="row project-card"
+            data-toggle="modal"
+            data-target="#portfolioModal"
+            data-portfolio-tag="web-sites"
           >
-            <i class="fa-solid fa-book-bookmark"></i>&nbsp; CV LaTex source code
-          </a>
-        </div>
-      </div>
-    </section>
-    <!--Intro-->
-
-    <hr />
-
-    <!--Resume-->
-    <section id="resume" class="container section">
-      <div class="row">
-        <div class="col-md-10">
-          <h2
-            id="resume_header"
-            class="section__title"
-            style="text-indent: 0px"
-          >
-            Resume_
-          </h2>
-          <p class="section__description">
-            Currently a freelancer on the platform Upwork, Formerly Backend
-            Engineer and DevOps assist at Belgian company Shyfter SRL, Chief
-            Technology Officer and Lead Developer at start-up company Zidweb. 6+
-            years experience specializing in the backend development,
-            infrastructure engineering, CI/CD pipelines automation, Super nerd
-            who loves Vim, macOS and Linux and enjoys to customize all of the
-            development environment. Interested in devising a better
-            problem-solving method for challenging tasks, and learning new
-            technologies and tools when the need arises.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 section__resume resume-list">
-          <h3 class="resume-list_title">employment</h3>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Pierry, Inc.</p>
-            <p class="resume-list__block-date">Jun. 2021 - Dec. 2021</p>
-            <p>Full Stack Web Developer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Shyfter, SRL.</p>
-            <p class="resume-list__block-date">Feb. 2021 - Sep. 2022</p>
-            <p>Backend Engineer, DevOps Lead</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Zidweb, LLC.</p>
-            <p class="resume-list__block-date">Feb. 2020 - Feb. 2021</p>
-            <p>Co-Founder, CTO and Lead Developer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Didata LLC.</p>
-            <p class="resume-list__block-date">March. 2020 - April. 2020</p>
-            <p>Full stack Software Engineer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Upwork.</p>
-            <p class="resume-list__block-date">Feb. 2020 - Present</p>
-            <p>Freelance Backend developer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">A-Tech Solutions LLC.</p>
-            <p class="resume-list__block-date">Jan. 2019 - March. 2019</p>
-            <p>Full Stack web developer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">SARL TPHST.</p>
-            <p class="resume-list__block-date">Feb. 2018 - Sep. 2019</p>
-            <p>International Relations Consulting and IT support</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Bitshopit</p>
-            <p class="resume-list__block-date">Apr. 2018 - Dec. 2018</p>
-            <p>Co-Founder and Lead Developer</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">AlgoTech Orestor LLC.</p>
-            <p class="resume-list__block-date">Mar. 2017 - Dec. 2017</p>
-            <p>Lead developer and system admin</p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">MNI Martship</p>
-            <p class="resume-list__block-date">Jun. 2017, Aug. 2017</p>
-            <p>Full stack web developer</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 section__resume resume-list">
-          <h3 class="resume-list_title">education</h3>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Crash Course</p>
-            <p class="resume-list__block-date">Feb. 2017 - Dec. 2017</p>
-            <p>
-              Followed the course with enthusiasm and practice upon theory,
-              briefly dabbled in OSDev as a result.
-            </p>
-          </div>
-          <div class="resume-list__block">
-            <p class="resume-list__block-title">Lounici Ali University</p>
-            <p class="resume-list__block-date">Sep. 2013 - Jan. 2016</p>
-            <p>
-              Final year English literature, dropped out due to lack of
-              interest, switched to computer science
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row section__resume progress-list js-progress-list">
-        <div class="col-md-12">
-          <h3 class="progress-list__title">general skills</h3>
-        </div>
-        <div class="col-md-5 mr-auto">
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">Laravel</span>
-              <span class="progress-list__skill-value">90%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+            <div class="col-md-6 col-lg-5 project-card__img">
+              <img class="" src="/assets/img/shyfter.webp" alt="project-img" />
             </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">MySQL</span>
-              <span class="progress-list__skill-value">70%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="70"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">Redis</span>
-              <span class="progress-list__skill-value">90%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="90"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">DevOps</span>
-              <span class="progress-list__skill-value">80%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">Postman</span>
-              <span class="progress-list__skill-value">80%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+            <div class="col-md-6 col-lg-7 project-card__info">
+              <h3 class="project-card__title">
+                Shift Work Management. Employee scheduling & time attendance
+                app.
+              </h3>
+              <p class="project-card__description">
+                Fixed or flexible schedules, planning and schedule management
+                app that saves considerable time. With leaves and absences
+                management and time & attendance, track the work time of
+                employees in a transparent way.
+              </p>
+              <p class="project-card__stack">Used stack:</p>
+              <ul class="tags">
+                <li>React (webapp)</li>
+                <li>React Native (mobile)</li>
+                <li>Apache Cordova (embedded)</li>
+                <li>Laravel API</li>
+                <li>MySQL</li>
+                <li>Redis</li>
+                <li>Mailgun</li>
+                <li>Twillio</li>
+                <li>ChargeBee</li>
+              </ul>
+              <a
+                rel="noreferrer nofollow noopenner"
+                href="https://shyfter.co/en"
+                class="project-card__link"
+                target="_blank"
+                >Shyfter CO</a
+              >
             </div>
           </div>
         </div>
-        <div class="col-md-5 mr-auto">
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">VueJS</span>
-              <span class="progress-list__skill-value">80%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">Bootstrap</span>
-              <span class="progress-list__skill-value">60%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="60"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">git</span>
-              <span class="progress-list__skill-value">90%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="90"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">NuxtJS</span>
-              <span class="progress-list__skill-value">80%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-          <div class="progress-list__skill">
-            <p>
-              <span class="progress-list__skill-title">Docker</span>
-              <span class="progress-list__skill-value">50%</span>
-            </p>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Resume-->
-
-    <!--Portfolio-->
-    <section id="portfolio" class="container section">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 id="portfolio_header" class="section__title">My projects_</h2>
-        </div>
-      </div>
-      <div class="portfolio-cards">
-        <div
-          class="row project-card"
-          data-toggle="modal"
-          data-target="#portfolioModal"
-          data-portfolio-tag="web-sites"
-        >
-          <div class="col-md-6 col-lg-5 project-card__img">
-            <img class="" src="/assets/img/shyfter.webp" alt="project-img" />
-          </div>
-          <div class="col-md-6 col-lg-7 project-card__info">
-            <h3 class="project-card__title">
-              Shift Work Management. Employee scheduling & time attendance app.
-            </h3>
-            <p class="project-card__description">
-              Fixed or flexible schedules, planning and schedule management app
-              that saves considerable time. With leaves and absences management
-              and time & attendance, track the work time of employees in a
-              transparent way.
-            </p>
-            <p class="project-card__stack">Used stack:</p>
-            <ul class="tags">
-              <li>React (webapp)</li>
-              <li>React Native (mobile)</li>
-              <li>Apache Cordova (embedded)</li>
-              <li>Laravel API</li>
-              <li>MySQL</li>
-              <li>Redis</li>
-              <li>Mailgun</li>
-              <li>Twillio</li>
-              <li>ChargeBee</li>
-            </ul>
-            <a rel="noreferrer nofollow noopenner" href="https://shyfter.co/en" class="project-card__link" target="_blank">Shyfter CO</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Portfolio-->
+      </section>
+      <!--Portfolio-->
+    </main>
+    <!-- End main content -->
 
     <!--Contact-->
     <div
@@ -520,6 +549,7 @@
     <script src="/js/mobile-menu.js"></script>
     <script src="/js/mbclicker.min.js"></script>
     <script src="/js/site-btn.js"></script>
+    <script src="/js/app.js"></script>
     <script
       src="https://kit.fontawesome.com/f8923ce61c.js"
       crossorigin="anonymous"
