@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row personal-profile">
 				<div class="col-md-4 personal-profile__avatar">
-					<img src="assets/img/img_avatar.jpg" alt="avatar">
+					<img src="/assets/img/img_avatar.jpg" alt="avatar">
 				</div>
 				<div class="col-md-8">
 					<p class="personal-profile__name">Salim Djerbouh</p>
