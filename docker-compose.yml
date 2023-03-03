@@ -1,0 +1,116 @@
+services:
+
+  backend:
+    # This configuration tells Docker Compose to build a local image for the backend service,
+    # using the specified path (context) and Dockerfile for instructions.
+    # The arguments user and uid are injected into the Dockerfile to customize user creation commands at build time.
+    build:
+      args:
+        # We define a user because PHP Composer complains about running it as root
+        user: caddy-user
+        uid: 1000
+      context: ./docker/php
+      dockerfile: Dockerfile
+    # The name that will be used for the image being built.
+    image: caddy-backend-image
+    # Sets up the container name for this service.
+    container_name: backend-container
+    # Always restart this service, unless it is explicitly stopped.
+    restart: unless-stopped
+    # Sets the default directory for this service as /var/www/html.
+    working_dir: /var/www/html
+    # Bind mount everything from host pwd to the container's /var/www/html
+    # Creates a shared volume that will synchronize content
+    # from the current directory to /var/www/html inside the container.
+    volumes:
+      - ./:/var/www/html
+    # Sets up this service to use a network named caddy-network
+    networks:
+      - caddy-network
+
+  frontend:
+    # This configuration tells Docker Compose to build a local image for the frontend service,
+    # using the specified path (context) and Dockerfile for instructions.
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+    # The name that will be used for the image being built.
+    image: caddy-frontend-image
+    # Sets up the container name for this service.
+    container_name: frontend-container
+    command: sh -c "tail -f /dev/null"
+    # Always restart this service, unless it is explicitly stopped.
+    restart: unless-stopped
+    # Sets the default directory for this service as /var/www/html.
+    working_dir: /var/www/html
+    # Bind mount everything from host pwd to the container's /var/www/html
+    # Creates a shared volume that will synchronize contents
+    # from the current directory to /var/www/html inside the container.
+    volumes:
+      - ./:/var/www/html
+    # Sets up this service to use a network named caddy-network
+    networks:
+      - caddy-network
+
+  db:
+    # Defines the Docker image that should be used for this container.
+    # In this case, we're using a MySQL 8.0 image from Docker Hub.
+    image: mysql:8.0
+    # Sets up the container name for this service
+    container_name: db-container
+    # Always restart this service, unless it is explicitly stopped.
+    restart: unless-stopped
+    # Because Docker Compose automatically loads .env variables file
+    # located in the same directory as the docker-compose.yml file
+    # we can obtain our database settings from the Laravel .env file
+    # Defines environment variables in the new container.
+    # We're using values obtained from the Laravel .env file
+    # to set up our MySQL service,
+    # which will automatically create a new database and user
+    # based on the provided environment variables.
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - caddy-mysql-data:/var/lib/mysql
+    # Sets up this service to use a network named caddy-network
+    networks:
+      - caddy-network
+
+  nginx:
+    # Defines the Docker image that should be used for this container.
+    # In this case, we're using the Nginx Alpine image.
+    image: nginx:alpine
+    # Sets up the container name for this service: nginx-container
+    container_name: nginx-container
+    # Always restart this service, unless it is explicitly stopped.
+    restart: unless-stopped
+    # Sets up a port redirection that will allow external access
+    # via port 8000 to the web server running on port 80 inside the container.
+    ports:
+      - 8000:80
+    # Creates two shared volumes.
+    # The first one will synchronize contents
+    # from the current directory to /var/www/html inside the container.
+    # This way, when you make local changes to the application files,
+    # they will be quickly reflected in the application being served by Nginx inside the container.
+    # The second volume will make sure our Nginx configuration file,
+    # located at docker/nginx/caddy.conf,
+    # is copied to the container's Nginx configuration folder.
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    # Sets up this service to use a network named caddy-network
+    networks:
+      - caddy-network
+
+volumes:
+  caddy-mysql-data:
+
+networks:
+  caddy-network:
+    driver: bridge

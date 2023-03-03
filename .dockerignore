@@ -1,10 +1,10 @@
-/public/storage
-/public/css
+public/storage
+public/vendor
+public/css
+vendor
 .env
 .phpunit.result.cache
 _ide_helper.php
 .phpstorm.meta.php
 .DS_Store
-
-vendor
 node_modules
