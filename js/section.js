@@ -15,9 +15,9 @@ var animateHeader = function(header, text) {
     //and animate it
     var nextAnimationStep = function() {
         if (text.length > 0) {
-            header.text(header.text() + text.substr(0,1));
+            header.text(header.text() + text.substr(0, 1));
             text = text.substr(1);
-            setTimeout(nextAnimationStep, 100);
+            setTimeout(nextAnimationStep, 50);
         }
     };
     nextAnimationStep();
@@ -42,10 +42,10 @@ var animateHeaders = function(headers) {
     }).reduce(Object.assign, {});
 };
 
-//All ids of titles should be written here to animation work
+// All ids of titles should be written here to animation work
 var animatedHeaders = animateHeaders({
     "#hello_header": '90%',
-    "#resume_header": '70%',
+    "#resume_header": '90%',
     "#portfolio_header": '70%',
     "#testimonials_header": '70%',
     "#blog_header": '70%',
