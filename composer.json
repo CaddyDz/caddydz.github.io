@@ -17,7 +17,7 @@
 		"itsgoingd/clockwork": "^5.0",
 		"laravel/framework": "^8.23",
 		"laravel/helpers": "^1.4",
-		"laravel/nova": "^4.0",
+		"laravel/nova": "^4.22",
 		"laravel/tinker": "^2.5",
 		"sentry/sentry-laravel": "^2.3"
 	},
