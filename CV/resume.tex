@@ -1,0 +1,82 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% CV/Resume in LaTex
+%
+% Author:
+% Salim Djerbouh <caddydz4@gmail.com>
+% https://caddydz.github.io
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use letter paper' for US letter
+\documentclass[11pt, a4paper]{resume}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.7cm, right=1.4cm, bottom=1.5cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Available Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete
+\colorlet{awesome}{awesome-skyblue}
+
+% Set false if you don't want to highlight section with accent color
+\setbool{acvSectionColorHighlight}{true}
+
+% contact information separator (|)
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\photo[rectangle,noedge,right]{./me.jpeg}
+\name{Salim}{Djerbouh}
+\position{BE heavy{\enskip\cdotp\enskip} Full-Stack Web Developer}
+\address{Résidence Ouarsenis, Akid Lotfi, Oran, Algeria}
+
+\mobile{+213551081911}
+\email{caddydz4@gmail.com}
+\homepage{caddydz.github.io}
+\github{CaddyDz}
+\linkedin{CaddyDz}
+\stackoverflow{5581565}{salim-djerbouh}
+\twitter{saly3301}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+% {\today}
+  {Salim Djerbouh~~~·~~~Resume}
+  {\thepage}
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\input{resume/summary.tex}
+\input{resume/skills.tex}
+\input{resume/experience.tex}
+\input{resume/honors.tex}
+\input{resume/presentation.tex}
+\input{resume/education.tex}
+
+%-------------------------------------------------------------------------------
+\end{document}
