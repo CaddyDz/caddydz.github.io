@@ -6,7 +6,7 @@
 %
 % Author:
 % Salim. Djerbouh <caddydz4@gmail.com>
-% https://caddydz.github.io
+% https://dsalim.dev
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (resume.tex).
