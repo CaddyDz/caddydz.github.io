@@ -714,6 +714,10 @@ section {
   top: 60px;
   width: 100%;
 }
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
 .progress-list {
   margin-top: 30px;
 }
@@ -1138,5 +1142,26 @@ section {
 .style-switcher.style-switcher--active {
   right: 0;
 }
-
+.octojekyll {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 370px;
+}
+@media screen and (max-width: 576px) {
+  .octojekyll {
+    width: 60%;
+    position: absolute;
+    top: -150px;
+    left: 148px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .octojekyll {
+    width: 60%;
+    position: absolute;
+    top: 205px;
+    left: 325px;
+  }
+}
 /*# sourceMappingURL=app.css.map*/
