@@ -17,6 +17,7 @@ docker build --no-cache -t caddy-img .
 ```
 4. Run a container binding the project into its volume
 ```shell
-docker run -dp 4000:4000 -v $(pwd):/srv test
+docker run -dp 4000:4000 -p 35729:35729 -v $(pwd):/srv test
 ```
+> Port 35729 is bound for live reload
 5. Open http://localhost:4000 in a browser
