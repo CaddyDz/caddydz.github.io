@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
+  {% capture og_meta %}
+  <meta property="og:site_name" content="Salim Djerbouh">
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:image" content="{{ page.thumbnail | absolute_url }}" />
+  <meta property="twitter:title" content="{{ page.title }}" />
+  <meta property="twitter:description" content="{{ page.excerpt | strip_html }}" />
+  <meta property="twitter:url" content="{{ page.url | absolute_url }}" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:image" content="{{ page.thumbnail | absolute_url }}" />
+  <meta name="twitter:image:alt" content="{{ page.title }}">
+  <meta name="twitter:site" content="@saly3301">
+  {% endcapture %}
+
+  {% include head.html og_meta=og_meta %}
 
   <body>
     <!--Main menu-->
