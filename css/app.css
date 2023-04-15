@@ -894,7 +894,8 @@ section {
 }
 @media screen and (max-width: 576px) {
   .article {
-    padding: 30px 10px 40px;
+    padding: 30px 20px 40px;
+    font-size: 14px;
   }
 }
 .posts .posts__item {
