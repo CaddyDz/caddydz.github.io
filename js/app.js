@@ -1,6 +1,14 @@
 /* -- Glow effect -- */
 
 const blob = document.getElementById("blob");
+const blur = document.getElementById("blur");
+const article = document.getElementsByClassName("article");
+// If there's an article (we're on the blog page)
+if (article.length > 0) {
+  blur.style.height = `${article[0].clientHeight + 710}px`
+} else {
+  blur.style.height = "289vh"
+}
 
 window.onpointermove = (event) => {
   const { clientX, clientY } = event;
@@ -20,7 +28,7 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-document.querySelector(".personal-profile__name").onmouseover = (event) => {
+document.querySelector(".text-effect").onmouseover = (event) => {
   let iteration = 0;
 
   clearInterval(interval);

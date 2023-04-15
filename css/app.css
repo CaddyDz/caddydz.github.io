@@ -9,6 +9,7 @@ html {
   box-sizing: inherit;
 }
 body {
+  background-color: black;
   color: #555;
   font-family: Roboto, sans-serif;
   font-size: 18px;
@@ -83,7 +84,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 main {
-  background-color: black;
   color: white;
 }
 section {
@@ -120,7 +120,8 @@ section {
 }
 
 #blur {
-  height: 289vh;
+  right: 0;
+  left: 0;
   width: 100%;
   position: absolute;
   z-index: 2;
@@ -153,16 +154,9 @@ section {
   line-height: 50px;
   margin-bottom: 10px;
   margin-top: 40px;
-  /* font-family: 'Space Mono', monospace; */
-  /* font-size: clamp(3rem, 10vw, 10rem); */
-  /* color: white; */
-  /* padding: 0rem clamp(1rem, 2vw, 3rem); */
+}
+.text-effect {
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  /* margin: 0rem; */
-  /* position: absolute;
-  left: 50%;
-  top: 50%; */
-  /* translate: -50% -50%; */
   z-index: 3;
 }
 .personal-profile .personal-profile__work {
@@ -462,9 +456,6 @@ section {
   line-height: 20px;
   padding-bottom: 10px;
 }
-.post-cards {
-  margin-bottom: 40px;
-}
 .post-cards a:hover {
   text-decoration: none;
 }
@@ -518,13 +509,12 @@ section {
   margin-bottom: 0;
 }
 .background {
-  background-color: #6d56c1;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  height: 100%;
   position: relative;
+  z-index: 2;
 }
 .background:before {
   background: linear-gradient(
@@ -827,14 +817,17 @@ section {
 }
 .blog-header {
   height: 400px;
-  z-index: -1;
+  z-index: 3;
 }
 .article {
-  background-color: #fff;
+  background-color: #150320;
   box-shadow: 0 1px 21px rgba(0, 0, 0, 0.14);
   margin-bottom: 40px;
   margin-top: -270px;
   padding: 50px 70px 60px;
+  color: #bdb4c6;
+  position: relative;
+  z-index: 3;
 }
 .article .article__back-link {
   color: #999;
@@ -1164,4 +1157,45 @@ section {
     left: 325px;
   }
 }
+blockquote {
+  background: #2c0546;
+  border-left: 10px solid #ccc;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: "\26A0";
+  font-size: 42px;
+  margin-right: 0.25em;
+  vertical-align: -10px;
+}
+blockquote p {
+  display: inline;
+}
+
+table {
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background: linear-gradient(45deg, #051c83, #3a065d);
+  margin-bottom: 20px;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+  border: #3a065d 1px solid;
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead th {
+	background-color: rgb(114, 85, 143, 0.2);
+}
+
 /*# sourceMappingURL=app.css.map*/

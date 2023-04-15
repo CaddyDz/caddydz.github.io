@@ -1,31 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Modern web developer, Laravel artisan" />
-    <meta name="author" content="Salim Djerbouh" />
-    <title>Salim Djerbouh</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
-      integrity="sha512-ymdTQyUk0UfVv71LHB/INBdluI7qg0WKX5Wy9DZNsYcliOVveSy42TBPcgbhm/RSsIHLj+3YlAfDL+/WgBMaIA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/app.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata"
-      rel="stylesheet"
-    />
-  </head>
+  {% include head.html %}
 
   <body>
     <!--Main menu-->
@@ -39,7 +14,7 @@
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <!-- <li><a href="#blog">Blog</a></li> -->
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </nav>
@@ -85,7 +60,7 @@
             <img src="/assets/img/img_avatar.jpg" alt="avatar" />
           </div>
           <div class="col-md-8">
-            <p class="personal-profile__name" data-value="Salim Djerbouh">
+            <p class="personal-profile__name text-effect" data-value="Salim Djerbouh">
               Salim Djerbouh
             </p>
             <p class="personal-profile__work">
@@ -610,7 +585,13 @@
                       </p>
                       <hr />
                       <p class="slider-carousel__description">
-                        Salim is the best programmer. He delivered hight quality code in short time. He managed everything perfectly and he was finding bugs in my own code and was solved them quickly and easily. He took care about the whole task. He is really perfect choice and very responsible. I will always work with him again with pleasure. I recommend him. Thank you a lot Salim.
+                        Salim is the best programmer. He delivered hight quality
+                        code in short time. He managed everything perfectly and
+                        he was finding bugs in my own code and was solved them
+                        quickly and easily. He took care about the whole task.
+                        He is really perfect choice and very responsible. I will
+                        always work with him again with pleasure. I recommend
+                        him. Thank you a lot Salim.
                       </p>
                     </div>
                   </div>
@@ -620,11 +601,16 @@
                     <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
                       <p class="slider-carousel__title">Alex Geana (USA)</p>
                       <p class="slider-carousel__caption">
-                        Project: OrderSpark, online web store builder for the fashion and beauty industries.
+                        Project: OrderSpark, online web store builder for the
+                        fashion and beauty industries.
                       </p>
                       <hr />
                       <p class="slider-carousel__description">
-                        I hired Salim for something simple but he ended up being the axis power on which my team worked, he demonstrated solid software architecture knowledge, provided positive feedback and constructive criticism. his critical thinking is really impressive. <br>
+                        I hired Salim for something simple but he ended up being
+                        the axis power on which my team worked, he demonstrated
+                        solid software architecture knowledge, provided positive
+                        feedback and constructive criticism. his critical
+                        thinking is really impressive. <br />
                         Thank you Salim
                       </p>
                     </div>
@@ -633,14 +619,24 @@
                 <div class="carousel-item">
                   <div class="row">
                     <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                      <p class="slider-carousel__title">Lionel Hermans (Belgium)</p>
+                      <p class="slider-carousel__title">
+                        Lionel Hermans (Belgium)
+                      </p>
                       <p class="slider-carousel__caption">
-                        Project: Shyfter, Shift Work Management, employee scheduling and time attendance app
+                        Project: Shyfter, Shift Work Management, employee
+                        scheduling and time attendance app
                       </p>
                       <hr />
                       <p class="slider-carousel__description">
-                        Talented Laravel API developer, throughout Salim's time with us, he demonstrated exceptional skills and commitment to delivering high-quality work that truly exceeded our expectations. <br>
-                        In addition to his development skills, Salim also excelled as a SysAdmin and DevOps lead, he single-handedly reduced our hosting costs by almost 10 times whilst improving performance, stability and availability.
+                        Talented Laravel API developer, throughout Salim's time
+                        with us, he demonstrated exceptional skills and
+                        commitment to delivering high-quality work that truly
+                        exceeded our expectations. <br />
+                        In addition to his development skills, Salim also
+                        excelled as a SysAdmin and DevOps lead, he
+                        single-handedly reduced our hosting costs by almost 10
+                        times whilst improving performance, stability and
+                        availability.
                       </p>
                     </div>
                   </div>
@@ -648,14 +644,26 @@
                 <div class="carousel-item">
                   <div class="row">
                     <div class="col-md-10 col-sm-10 col-10 mr-auto ml-auto">
-                      <p class="slider-carousel__title">Jeffrey Kauffman (USA)</p>
+                      <p class="slider-carousel__title">
+                        Jeffrey Kauffman (USA)
+                      </p>
                       <p class="slider-carousel__caption">
-                        Project: Digital Marketing Campaign Generator for Salesforce partners.
+                        Project: Digital Marketing Campaign Generator for
+                        Salesforce partners.
                       </p>
                       <hr />
                       <p class="slider-carousel__description">
-                        I am delighted to write this testimonial for Salim, as I truly believe I got lucky hiring him, he's quick and focused and have shown dedication to the project as if it was his own, satisified all the requirements and has always been ahead of the deadlines, identified underlying issues we've completely missed and fixed them allowing rapid growth, he has also been great for team morale with his positive attitude, energy and sense of humor. <br>
-                        I am confident that he will be successful in any role he takes on the future.
+                        I am delighted to write this testimonial for Salim, as I
+                        truly believe I got lucky hiring him, he's quick and
+                        focused and have shown dedication to the project as if
+                        it was his own, satisified all the requirements and has
+                        always been ahead of the deadlines, identified
+                        underlying issues we've completely missed and fixed them
+                        allowing rapid growth, he has also been great for team
+                        morale with his positive attitude, energy and sense of
+                        humor. <br />
+                        I am confident that he will be successful in any role he
+                        takes on the future.
                       </p>
                     </div>
                   </div>
@@ -693,111 +701,40 @@
         </div>
       </div>
       <!--Testimonials-->
+
+      <!--Blog-->
+      <section id="blog" class="container section">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 id="blog_header" class="section__title">Straight to the point blog posts_</h2>
+          </div>
+        </div>
+
+        <div class="row post-cards">
+          {% for post in site.posts %}
+          <div class="col-md-4">
+            <a href="{{ post.url }}">
+              <div class="post-cards__card">
+                <div class="post-cards__img">
+                  <img src="{{ post.thumbnail }}" alt="Article thumbnail" />
+                </div>
+                <div class="post-cards__info">
+                  <p class="post-cards__date">{{ post.date | date_to_string: "%B %d, %Y" }}</p>
+                  <h3 class="post-cards_title">{{ post.title }}</h3>
+                  <p class="post-cards_description">
+                    {{ post.excerpt }}
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      <!--Blog-->
     </main>
     <!-- End main content -->
 
-    <!--Contact-->
-    <div
-      class="background"
-      style="background-image: url(/assets/img/img_bg_main.jpg)"
-    >
-      <div id="contact" class="container section">
-        <div class="row">
-          <div class="col-md-12">
-            <p id="contacts_header" class="section__title">Get in touch_</p>
-          </div>
-        </div>
-        <div class="row contacts">
-          <div class="col-md-5 col-lg-4">
-            <div class="contacts__list">
-              <dl class="contact-list">
-                <dt>Phone:</dt>
-                <dd><a href="tel:+213551081911">+213551081911</a></dd>
-                <dd><a href="tel:+213551081911">+31629153326</a></dd>
-                <dt>Skype:</dt>
-                <dd><a href="skype:tbitw.mestery">tbitw.mestery</a></dd>
-                <dt>Email:</dt>
-                <dd>
-                  <a href="mailto:caddydz4@gmail.com">caddydz4@gmail.com</a>
-                </dd>
-              </dl>
-            </div>
-            <div class="contacts__social">
-              <ul>
-                <li>
-                  <a href="https://github.com/CaddyDz" target="_blank">
-                    <em class="fa-brands fa-square-github"></em>
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a href="https://linkedin.com/in/CaddyDz" target="_blank">
-                    <em class="fa-brands fa-linkedin"></em>
-                    Linkedin
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://stackoverflow.com/users/5581565"
-                    target="_blank"
-                  >
-                    <em class="fa-brands fa-stack-overflow"></em>
-                    StackOverflow
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-7 col-lg-4 float-right">
-            <img
-              class="octojekyll"
-              src="/assets/img/octojekyll.png"
-              alt="GitHub Octocat holding Jekyll test tube"
-            />
-          </div>
-        </div>
-        <div class="clearfix footer">
-          <span class="float-left"
-            >© 2023 Salim Djerbouh. All Rights Reserved</span
-          >
-          <span class="float-right">
-            Powered by <a href="https://jekyllrb.com/">Jekyll</a>, hosted by
-            <a href="https://pages.github.com/">GitHub pages</a>
-          </span>
-        </div>
-      </div>
-    </div>
-    <!--Contact-->
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/menu.js"></script>
-    <script src="/js/jquery.waypoints.js"></script>
-    <script src="/js/progress-list.js"></script>
-    <script src="/js/section.js"></script>
-    <script src="/js/slider-carousel.js"></script>
-    <script src="/js/mobile-menu.js"></script>
-    <script src="/js/mbclicker.min.js"></script>
-    <script src="/js/site-btn.js"></script>
-    <script src="/js/app.js"></script>
-    <script
-      src="https://kit.fontawesome.com/f8923ce61c.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-V08QC6HMRT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-V08QC6HMRT");
-    </script>
+    {% include contact.html %} {% include scripts.html %}
   </body>
 </html>
