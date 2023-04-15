@@ -7,11 +7,11 @@
   <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:image" content="{{ page.thumbnail | absolute_url }}" />
-  <meta property="twitter:title" content="{{ page.title }}" />
-  <meta property="twitter:description" content="{{ page.excerpt | strip_html }}" />
-  <meta property="twitter:url" content="{{ page.url | absolute_url }}" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}" />
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:image" content="{{ page.thumbnail | absolute_url }}" />
+  <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}" />
   <meta name="twitter:image:alt" content="{{ page.title }}">
   <meta name="twitter:site" content="@saly3301">
   {% endcapture %}
