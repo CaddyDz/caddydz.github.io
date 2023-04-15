@@ -1,8 +1,4 @@
 ---
 layout: default
-title: "Happy Jekylling!"
+title: "Salim Djerbouh"
 ---
-
-## You're ready to go!
-
-Start developing your Jekyll website.
