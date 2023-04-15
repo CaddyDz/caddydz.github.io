@@ -1141,7 +1141,7 @@ section {
   top: 50px;
   left: 370px;
 }
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .octojekyll {
     width: 60%;
     position: absolute;
@@ -1149,7 +1149,7 @@ section {
     left: 148px;
   }
 }
-@media screen and (max-width: 992px) {
+@media only screen and (min-width: 577px) and (max-width: 992px) {
   .octojekyll {
     width: 60%;
     position: absolute;
