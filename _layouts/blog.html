@@ -7,6 +7,8 @@
   <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:image" content="{{ page.thumbnail | absolute_url }}" />
+  <meta name="image" property="og:image" content="{{ page.thumbnail | absolute_url }}">
+  <meta name="publish_date" property="og:publish_date" content="{{ page.date }}">
   <meta name="twitter:title" content="{{ page.title }}" />
   <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
   <meta name="twitter:url" content="{{ page.url | absolute_url }}" />
