@@ -898,6 +898,14 @@ section {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 576px) {
+  #blur {
+    display: none;
+  }
+  #blob {
+    display: none;
+  }
+}
 .posts .posts__item {
   margin-bottom: 40px;
 }
