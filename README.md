@@ -3,6 +3,17 @@
 ## Installation Instructions
 ### Prerequisites
 - Docker Desktop
+#### Runtime only
+1. Run a container binding the project into its volume
+- macOS
+```shell
+docker run --name dsalim.dev -dp 4000:4000 -v $(pwd):/srv caddydz/caddydz.github.io && open http://localhost
+```
+- Windows
+```shell
+docker run --name dsalim.dev -dp 4000:4000 -v $(pwd):/srv caddydz/caddydz.github.io && start "http://localhost"
+```
+#### Development
 1. Clone the repository
 ```shell
 git clone https://github.com/CaddyDz/caddydz.github.io Caddy
