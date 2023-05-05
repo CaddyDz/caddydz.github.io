@@ -1,0 +1,7 @@
+{
+    "schedule": "daily",
+    "aggressiveCompression": "true",
+    "minKBReduced": null,
+    "prTitle": "Optimized image size",
+    "prBody": "Verify image rendered resolution before merging"
+}
