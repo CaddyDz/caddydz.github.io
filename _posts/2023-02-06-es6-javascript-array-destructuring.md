@@ -2,7 +2,7 @@
 layout: blog
 title: "Array destructuring in ES6+ JavaScript"
 date: 2023-02-06
-thumbnail: "/assets/img/js-destructuring.webp"
+thumbnail: "/assets/img/js-destructuring.png"
 categories: javascript
 ---
 Assign values to multiple variables in an array by the result of evaluation

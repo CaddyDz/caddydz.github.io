@@ -475,11 +475,9 @@ section {
   position: relative;
 }
 .post-cards .post-cards__img img {
-  height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   position: absolute;
-  top: 0;
+  bottom: 0;
   width: 100%;
 }
 .post-cards .post-cards__info {

@@ -2,7 +2,7 @@
 layout: blog
 title: "Understanding Unix Change Mode (chmod)"
 date: 2023-02-06
-thumbnail: "/assets/img/chmod.webp"
+thumbnail: "/assets/img/chmod.png"
 categories: unix
 ---
 CHMOD is used to change permissions of a file, here's how to calculate permission
