@@ -7,11 +7,11 @@
 1. Run a container binding the project into its volume
 - macOS
 ```shell
-docker run --name dsalim.dev -dp 4000:4000 -v $(pwd):/srv --rm caddydz/caddydz.github.io && open http://localhost
+docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && open http://localhost
 ```
 - Windows
 ```shell
-docker run --name dsalim.dev -dp 4000:4000 -v $(pwd):/srv --rm caddydz/caddydz.github.io && start "http://localhost"
+docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && start "http://localhost"
 ```
 #### Development
 1. Clone the repository
