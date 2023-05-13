@@ -456,10 +456,14 @@ section {
   line-height: 20px;
   padding-bottom: 10px;
 }
+.post-cards {
+  justify-content: space-around;
+}
 .post-cards a:hover {
   text-decoration: none;
 }
 .post-cards .post-cards__card {
+  height: 100%;
   transition: all 0.3s;
 }
 .post-cards .post-cards__card:hover {
@@ -482,7 +486,8 @@ section {
 }
 .post-cards .post-cards__info {
   border: 1px solid #f1f1f1;
-  padding: 20px 40px 40px 20px;
+  padding: 20px;
+  height: 41%;
 }
 .post-cards .post-cards__date {
   color: #999;
