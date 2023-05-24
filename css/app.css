@@ -1,7 +1,8 @@
 html {
-  -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 *,
 :after,

@@ -10,12 +10,10 @@ if (article.length > 0) {
 }
 
 const animateBlob = () => {
+  const blob = document.getElementById("blob");
+  blob.style.display = "block";
   window.onpointermove = (event) => {
     const { clientX, clientY } = event;
-    console.log(`Horizontal: ${clientX}`);
-    console.log(`Vertical: ${clientY}`);
-    const blob = document.getElementById("blob");
-    blob.style.display = "block";
     blob.animate(
       {
         left: `${clientX}px`,
