@@ -1,26 +1,45 @@
 /* -- Glow effect -- */
 
-const blob = document.getElementById("blob");
 const blur = document.getElementById("blur");
 const article = document.getElementsByClassName("article");
 // If there's an article (we're on the blog page)
 if (article.length > 0) {
-  blur.style.height = `${article[0].clientHeight + 710}px`
+  blur.style.height = `${article[0].clientHeight + 710}px`;
 } else {
-  blur.style.height = "289vh"
+  blur.style.height = "289vh";
 }
 
-window.onpointermove = (event) => {
-  const { clientX, clientY } = event;
-
-  blob.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    { duration: 3000, fill: "forwards" }
-  );
+const animateBlob = () => {
+  window.onpointermove = (event) => {
+    const { clientX, clientY } = event;
+    console.log(`Horizontal: ${clientX}`);
+    console.log(`Vertical: ${clientY}`);
+    const blob = document.getElementById("blob");
+    blob.style.display = "block";
+    blob.animate(
+      {
+        left: `${clientX}px`,
+        top: `${clientY}px`,
+      },
+      { duration: 3000, fill: "forwards" }
+    );
+  };
 };
+
+/*
+  Only trigger the blob animation after document fully loaded.  This is
+  necessary for cases where page load takes a significant length
+  of time to fully load.
+*/
+if (document.readyState == "complete") {
+  animateBlob();
+} else {
+  document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+      animateBlob();
+    }
+  };
+}
 
 /* -- Text effect -- */
 

@@ -106,6 +106,7 @@ section {
 }
 
 #blob {
+  display: none;
   background-color: white;
   height: 34vmax;
   aspect-ratio: 1;
