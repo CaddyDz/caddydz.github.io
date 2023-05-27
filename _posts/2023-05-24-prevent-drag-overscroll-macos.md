@@ -20,6 +20,7 @@ Your browser does not support the video tag.
 defaults write -g NSScrollViewRubberbanding -int 0
 ```
 > Tested on Monterey and Lion (must restart chrome)
+
 #### But to solve this problem on the web both horizontal & vertical:
 hide horizontal overflow and prevent overscroll behavior vertically by using the [overscroll-behavior-y](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y) `CSS` property on the `HTML` element
 ```css
