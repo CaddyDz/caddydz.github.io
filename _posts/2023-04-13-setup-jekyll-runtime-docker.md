@@ -5,14 +5,14 @@ date: 2023-04-13
 thumbnail: "/assets/img/gh-jekyll-docker.png"
 categories: docker jekyll
 ---
-To get a minimal Docker image (~115 MB) for your Jekyll site, write the following Dockerfile:
+To get a minimal Docker image (~46 MB) for your Jekyll site, write the following Dockerfile:
 
 > Make sure to remove `jekyll` or any other [native Ruby extensions](https://guides.rubygems.org/gems-with-extensions/) from your `Gemfile`
 
 ```docker
 # syntax=docker/dockerfile:1.2
 
-FROM ruby:alpine
+FROM alpine:3.17
 RUN apk add --no-cache jekyll
 WORKDIR /srv
 COPY . .
@@ -20,9 +20,9 @@ CMD [ "jekyll", "serve", "--livereload", "-H", "0.0.0.0" ]
 EXPOSE 4000
 ```
 
-This sets the latest `Ruby Alpine Linux` from the `DockerHub` registry as the base image with Gems and Bundle installed.
+This sets the very minimal `Alpine Linux` version 3.17 from the `DockerHub` registry as the base image (~15 MB).
 
-Now, `Jekyll` is a native Ruby extension and thus requires installing `GCC`, `G++` and `Make` which increases the build time and the image size significantly (+340 MB) and so the trick is to install a ready binary from the [Alpine repository](https://pkgs.alpinelinux.org/package/edge/community/x86/jekyll)
+Now, `Jekyll` is a native Ruby extension and thus requires installing `GCC`, `G++` and `Make` which increases the build time and the image size significantly (+340 MB) and so the trick is to install a ready binary from the [Alpine repository](https://pkgs.alpinelinux.org/package/edge/community/x86/jekyll) which in turns downloads all the dependencies including `Ruby`, `Gem` and `Bundle` resulting in a much smaller image (~46 MB)
 
 ### Build the image
 ```shell
