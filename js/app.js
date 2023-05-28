@@ -25,18 +25,20 @@ const animateBlob = () => {
 };
 
 /*
-  Only trigger the blob animation after document fully loaded.  This is
-  necessary for cases where page load takes a significant length
+  Only trigger the blob animation on desktop after document fully loaded.
+  This is necessary for cases where page load takes a significant length
   of time to fully load.
 */
-if (document.readyState == "complete") {
-  animateBlob();
-} else {
-  document.onreadystatechange = function () {
-    if (document.readyState === "complete") {
-      animateBlob();
-    }
-  };
+if (window.innerWidth > 576) {
+  if (document.readyState == "complete") {
+    animateBlob();
+  } else {
+    document.onreadystatechange = function () {
+      if (document.readyState === "complete") {
+        animateBlob();
+      }
+    };
+  }
 }
 
 /* -- Text effect -- */
