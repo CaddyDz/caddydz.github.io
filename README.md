@@ -4,14 +4,14 @@
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 #### Runtime only
-1. Run a container (downloads image from the default registry [Docker Hub](https://hub.docker.com/) ~115 MBs)
+1. Run a container (downloads image from the default registry [Docker Hub](https://hub.docker.com/) ~16.95 MB)
 - macOS
 ```shell
-docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && open http://localhost
+docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && open http://localhost:4000
 ```
 - Windows
 ```shell
-docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && start "http://localhost"
+docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io && start "http://localhost:4000"
 ```
 #### Development
 1. Clone the repository
