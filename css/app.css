@@ -230,6 +230,8 @@ section {
 }
 .section {
   padding-bottom: 60px;
+}
+#intro, #contact {
   padding-top: 60px;
 }
 .section .section__title {
@@ -243,8 +245,13 @@ section {
 }
 @media screen and (max-width: 760px) {
   .section {
-    padding-bottom: 50px;
-    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-top: 20px !important;
+  }
+  .footer {
+    margin-bottom: unset !important;
+    top: unset !important;
+    padding-top: 40px;
   }
 }
 .site-btn {
@@ -327,26 +334,26 @@ section {
   opacity: 1;
 }
 .menu.menu--active {
-  background-color: #fff;
+  background: linear-gradient(to right, #2c278d, rgb(160, 112, 255));
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.14);
 }
 .menu.menu--active .menu__wrapper {
   margin-top: 15px;
 }
 .menu.menu--active .menu__wrapper a {
-  color: #555 !important;
+  color: #fff !important;
   opacity: 1;
 }
 .menu.menu--active .menu__wrapper a:hover {
-  color: #6d56c1 !important;
+  color: #aba8b5 !important;
 }
 .menu.menu--active .menu__wrapper a:after {
-  background: #6d56c1 !important;
+  background: #e6e2f6 !important;
 }
 .menu.menu--active .menu__mobile-button {
   background-color: transparent;
   border: none;
-  color: #555 !important;
+  color: #fff !important;
   margin-top: -5px;
   opacity: 0.9;
   transition: all 0.3s;
@@ -499,7 +506,7 @@ section {
   text-transform: uppercase;
 }
 .post-cards .post-cards_title {
-  color: #555;
+  color: #fff;
   font-family: Roboto Mono, monospace;
   font-size: 14px;
   font-weight: 700;
