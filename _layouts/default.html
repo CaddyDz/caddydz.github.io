@@ -60,7 +60,10 @@
             <img src="/assets/img/img_avatar.jpeg" alt="avatar" />
           </div>
           <div class="col-md-8">
-            <p class="personal-profile__name text-effect" data-value="Salim Djerbouh">
+            <p
+              class="personal-profile__name text-effect"
+              data-value="Salim Djerbouh"
+            >
               Salim Djerbouh
             </p>
             <p class="personal-profile__work">
@@ -401,157 +404,38 @@
           </div>
         </div>
         <div class="portfolio-cards">
+          {% for project in site.projects %}
           <div
             class="row project-card"
             data-toggle="modal"
-            data-target="#portfolioModal"
+            data-target="#{{ project.name }}Modal"
             data-portfolio-tag="web-sites"
           >
             <div class="col-md-6 col-lg-5 project-card__img">
-              <img src="/assets/img/murafiq.png" alt="project-img" />
+              <img src="{{ project.image }}" alt="{{ project.image_alt }}" />
             </div>
             <div class="col-md-6 col-lg-7 project-card__info">
               <h3 class="project-card__title">
-                Islamic pilgrims management web application
+                {{ project.title }}
               </h3>
               <p class="project-card__description">
-                Multi lingual, polymorphic anonymous relationships, user
-                attachable models, highly configurable, recurrences, task
-                scheduling and realtime notifications.
+                {{ project.description }}
               </p>
               <p class="project-card__stack">Used stack:</p>
               <ul class="tags">
-                <li>Vue 3 (webapp)</li>
-                <li>Laravel API</li>
-                <li>MySQL Database</li>
-                <li>Redis cache & queue worker</li>
-                <li>Mailgun</li>
-                <li>Twillio</li>
-                <li>Pusher</li>
-                <li>AWS EC2</li>
+              {% for tech in project.stack %}
+                <li>{{ tech }}</li>
+              {% endfor %}
               </ul>
               <a
-                href="https://murafiq.dsalim.dev"
+                href="https://{{ project.demo }}"
                 class="project-card__link"
                 target="_blank"
-                >Murafiq (DEMO)</a
+                >{{ project.demo }}</a
               >
             </div>
           </div>
-          <div
-            class="row project-card"
-            data-toggle="modal"
-            data-target="#portfolioModal"
-            data-portfolio-tag="web-sites"
-          >
-            <div class="col-md-6 col-lg-5 project-card__img">
-              <img src="/assets/img/shyfter.webp" alt="project-img" />
-            </div>
-            <div class="col-md-6 col-lg-7 project-card__info">
-              <h3 class="project-card__title">
-                Shift Work Management. Employee scheduling & time attendance
-                app.
-              </h3>
-              <p class="project-card__description">
-                Fixed or flexible schedules, planning and schedule management
-                app that saves considerable time. With leaves and absences
-                management and time & attendance, track the work time of
-                employees in a transparent way.
-              </p>
-              <p class="project-card__stack">Used stack:</p>
-              <ul class="tags">
-                <li>React (webapp)</li>
-                <li>React Native (mobile)</li>
-                <li>Apache Cordova (embedded)</li>
-                <li>Laravel API</li>
-                <li>MySQL</li>
-                <li>Redis</li>
-                <li>Mailgun</li>
-                <li>Twillio</li>
-                <li>ChargeBee</li>
-              </ul>
-              <a
-                href="https://shyfter.dsalim.dev"
-                class="project-card__link"
-                target="_blank"
-                >Shyfter app (DEMO)</a
-              >
-            </div>
-          </div>
-          <div
-            class="row project-card"
-            data-toggle="modal"
-            data-target="#portfolioModal"
-            data-portfolio-tag="web-sites"
-          >
-            <div class="col-md-6 col-lg-5 project-card__img">
-              <img src="/assets/img/orsp.png" alt="project-img" />
-            </div>
-            <div class="col-md-6 col-lg-7 project-card__info">
-              <h3 class="project-card__title">
-                BUILD YOUR ONLINE STORE QUICKLY AND EASILY. REALLY.
-              </h3>
-              <p class="project-card__description">
-                OrderSpark allows you to get your online store up quickly,
-                easily and cost effectively. It got all the tools you need to
-                build, grow and scale your business in one uncomplicated
-                platform.
-              </p>
-              <p class="project-card__stack">Used stack:</p>
-              <ul class="tags">
-                <li>NuxtJS (webapp)</li>
-                <li>Laravel (API)</li>
-                <li>MySQL (database)</li>
-                <li>Redis (cache & queue)</li>
-                <li>Mailgun (Transactional email)</li>
-                <li>Stripe (Subscription)</li>
-                <li>DigitalOcean API (Infra)</li>
-                <li>Forge (Servers)</li>
-              </ul>
-              <a
-                href="https://orsp.dsalim.dev"
-                class="project-card__link"
-                target="_blank"
-                >OrderSpark (DEMO)</a
-              >
-            </div>
-          </div>
-          <div
-            class="row project-card"
-            data-toggle="modal"
-            data-target="#portfolioModal"
-            data-portfolio-tag="web-sites"
-          >
-            <div class="col-md-6 col-lg-5 project-card__img">
-              <img src="/assets/img/sf.png" alt="project-img" />
-            </div>
-            <div class="col-md-6 col-lg-7 project-card__info">
-              <h3 class="project-card__title">
-                Salesforce Digital Marketing Services Campaign Builder
-              </h3>
-              <p class="project-card__description">
-                This website will show you how to build valuable assets for your
-                marketing campaign.
-              </p>
-              <p class="project-card__stack">Used stack:</p>
-              <ul class="tags">
-                <li>Inertia JS (webapp)</li>
-                <li>Laravel (API)</li>
-                <li>Cloudinary (Image & Video)</li>
-                <li>Postgres (database)</li>
-                <li>Redis (cache & queue)</li>
-                <li>Mailgun (Transactional email)</li>
-                <li>Stripe (Subscription)</li>
-                <li>Heroku (Infra)</li>
-              </ul>
-              <a
-                href="https://dms.dsalim.dev"
-                class="project-card__link"
-                target="_blank"
-                >DMS (DEMO)</a
-              >
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </section>
       <!--Portfolio-->
@@ -709,7 +593,9 @@
       <section id="blog" class="container section">
         <div class="row">
           <div class="col-md-12">
-            <h2 id="blog_header" class="section__title">Straight to the point blog posts_</h2>
+            <h2 id="blog_header" class="section__title">
+              Straight to the point blog posts_
+            </h2>
           </div>
         </div>
 
@@ -722,11 +608,11 @@
                   <img src="{{ post.thumbnail }}" alt="Article thumbnail" />
                 </div>
                 <div class="post-cards__info">
-                  <p class="post-cards__date">{{ post.date | date_to_string: "%B %d, %Y" }}</p>
-                  <h3 class="post-cards_title">{{ post.title }}</h3>
-                  <p class="post-cards_description">
-                    {{ post.excerpt }}
+                  <p class="post-cards__date">
+                    {{ post.date | date_to_string: "%B %d, %Y" }}
                   </p>
+                  <h3 class="post-cards_title">{{ post.title }}</h3>
+                  <p class="post-cards_description">{{ post.excerpt }}</p>
                 </div>
               </div>
             </a>
@@ -738,6 +624,57 @@
     </main>
     <!-- End main content -->
 
-    {% include contact.html %} {% include scripts.html %}
+    {% include contact.html %}
+    <!-- Portfolio Modal -->
+    {% for project in site.projects %}
+    <div
+      class="modal fade portfolio-modal"
+      id="{{ project.name }}Modal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body col-md-11 col-lg-9 ml-auto mr-auto">
+            <p class="portfolio-modal__title">
+              {{ project.title }}
+            </p>
+            <img
+              class="portfolio-modal__img"
+              src="{{ project.image }}"
+              alt="{{ project.image_alt }}"
+            />
+            <p class="portfolio-modal__description">
+              {{ project.description }}
+            </p>
+            <div class="portfolio-modal__link">
+              <a href="https://{{ project.demo }}">{{ project.demo }}</a>
+            </div>
+            <div class="portfolio-modal__stack">
+              <p class="portfolio-modal__stack-title">Using stack:</p>
+              <ul class="tags">
+              {% for tech in project.stack %}
+                <li>{{ tech }}</li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- Portfolio Modal -->
+    {% include scripts.html %}
   </body>
 </html>
