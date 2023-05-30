@@ -11,7 +11,7 @@ html {
 }
 body {
   background-color: black;
-  color: #555;
+  color: #fff;
   font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -409,7 +409,7 @@ section {
 .project-card .project-card__link {
   float: right;
   font-family: Roboto Mono, monospace;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 20px;
   margin-top: 55px;
 }
@@ -751,7 +751,7 @@ section {
   background-color: #6d56c1;
 }
 .portfolio-modal .modal-content {
-  background-color: #f6f5f5;
+  background-color: #18134e;
   border-radius: 0;
 }
 .portfolio-modal .modal-header {
@@ -764,11 +764,11 @@ section {
   }
 }
 .portfolio-modal .modal-header .close {
-  color: #999;
+  color: #fff;
   font-size: 20px;
   font-weight: 300;
   position: absolute;
-  right: 20px;
+  right: 35px;
   top: 20px;
   width: 20px;
 }
@@ -792,6 +792,9 @@ section {
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 0;
+}
+.portfolio-modal .portfolio-modal__link a {
+  color: #fff;
 }
 .portfolio-modal .portfolio-modal__link {
   font-family: Roboto Mono, monospace;
