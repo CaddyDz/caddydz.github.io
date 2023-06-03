@@ -1,0 +1,32 @@
+name: Request Review
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  request_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request Review
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+
+            // Retrieve the pull request author's username
+            const author = pr.user.login;
+
+            // Specify the desired reviewer's username
+            const reviewer = 'CaddyDz';
+
+            // Request review from the reviewer if they are not the author
+            if (author !== reviewer) {
+              await github.pulls.createReviewRequest({
+                owner: pr.base.user.login,
+                repo: pr.base.repo.name,
+                pull_number: pr.number,
+                reviewers: [reviewer]
+              });
+            }
