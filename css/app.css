@@ -24,8 +24,15 @@ ul {
 }
 ol,
 ul {
-  list-style: none;
+  list-style-type: square;
   padding: 0;
+}
+ul li {
+  margin-left: 20px;
+}
+.article li {
+  line-height: 30px;
+  padding-bottom: 15px;
 }
 a {
   color: #6d56c1;
@@ -935,7 +942,7 @@ section {
   text-decoration: underline;
 }
 .posts .posts__title {
-  color: #555;
+  color: #6d56c1;
   font-family: Roboto Mono, monospace;
   font-size: 14px;
   font-weight: 700;
@@ -943,7 +950,7 @@ section {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-.posts .posts__description {
+.posts__item p {
   color: #999;
   font-size: 16px;
   line-height: 24px;
