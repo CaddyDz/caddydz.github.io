@@ -1,4 +1,10 @@
 .git
 _site
+.github
+CV
 .jekyll-cache
 .DS_Store
+.imgbotconfig
+CNAME
+cv.pdf
+README.md

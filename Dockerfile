@@ -4,5 +4,5 @@ FROM alpine:3.17
 RUN apk add --no-cache jekyll
 WORKDIR /srv
 COPY . .
-CMD [ "jekyll", "serve", "--livereload", "-H", "0.0.0.0" ]
+CMD [ "sh", "-c", "jekyll serve --trace --livereload --host 0.0.0.0" ]
 EXPOSE 4000
