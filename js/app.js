@@ -25,11 +25,12 @@ const animateBlob = () => {
 };
 
 /*
-  Only trigger the blob animation on desktop after document fully loaded.
+  Only trigger the blob animation on chrome desktop after document fully loaded.
   This is necessary for cases where page load takes a significant length
   of time to fully load.
+  Also blob animation isn't supported by used Safari versions
 */
-if (window.innerWidth > 576) {
+if (window.innerWidth > 576 && navigator.userAgent.indexOf("Chrome") !== -1) {
   if (document.readyState == "complete") {
     animateBlob();
   } else {
