@@ -14,7 +14,7 @@ CHEATSHEET_URL = 'https://fontawesome.com/v4/cheatsheet'
 OUTPUT_FILE = 'fontawesome.sty'
 
 OUTPUT_HEADER = r'''
-%% Copyright 2023 Salim. Djerbouh <caddydz4@gmail.com>
+%% Copyright 2023 Salim. Djerbouh <contact@dsalim.dev>
 %% It is based on plorcupine's latex-fontawesome project.
 
 % Identify this package.
