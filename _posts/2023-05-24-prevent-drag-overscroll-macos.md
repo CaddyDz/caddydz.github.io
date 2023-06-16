@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Preventing drag overscrolling behavior on macOS"
+title: "Preventing drag overscrolling behavior (Rubber Band) on macOS"
 date: 2023-05-24
 thumbnail: "/assets/img/elastic.png"
 categories: css
