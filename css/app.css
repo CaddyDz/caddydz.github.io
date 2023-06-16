@@ -1,8 +1,5 @@
 html {
-  -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
 }
 *,
 :after,
@@ -113,29 +110,6 @@ section {
   }
 }
 
-#blob {
-  display: none;
-  background-color: white;
-  height: 34vmax;
-  aspect-ratio: 1;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background: linear-gradient(to right, aquamarine, mediumpurple);
-  animation: rotate 20s infinite;
-  opacity: 0.8;
-}
-
-#blur {
-  right: 0;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  z-index: 2;
-  backdrop-filter: blur(12vmax);
-}
 .personal-profile {
   color: #fff;
   font-family: Roboto Mono, monospace;
@@ -920,14 +894,6 @@ section {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 576px) {
-  #blur {
-    display: none;
-  }
-  #blob {
-    display: none;
-  }
-}
 .posts .posts__item {
   margin-bottom: 40px;
 }
@@ -1166,28 +1132,6 @@ section {
 .style-switcher.style-switcher--active {
   right: 0;
 }
-.octojekyll {
-  width: 100%;
-  position: absolute;
-  top: 50px;
-  left: 370px;
-}
-@media only screen and (max-width: 576px) {
-  .octojekyll {
-    width: 60%;
-    position: absolute;
-    top: -150px;
-    left: 148px;
-  }
-}
-@media only screen and (min-width: 577px) and (max-width: 992px) {
-  .octojekyll {
-    width: 60%;
-    position: absolute;
-    top: 205px;
-    left: 325px;
-  }
-}
 blockquote {
   background: #2c0546;
   border-left: 10px solid #ccc;
@@ -1228,5 +1172,3 @@ th {
 thead th {
 	background-color: rgb(114, 85, 143, 0.2);
 }
-
-/*# sourceMappingURL=app.css.map*/
