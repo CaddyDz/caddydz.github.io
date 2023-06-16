@@ -5,7 +5,7 @@
 % https://github.com/CaddyDz/caddydz.github.io/tree/master/CV/resume.cls
 %
 % Author:
-% Salim. Djerbouh <caddydz4@gmail.com>
+% Salim. Djerbouh <contact@dsalim.dev>
 % https://dsalim.dev
 %
 % Notes:
