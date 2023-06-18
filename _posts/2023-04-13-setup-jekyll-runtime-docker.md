@@ -6,6 +6,7 @@ thumbnail: "/assets/img/gh-jekyll-docker.png"
 categories: docker jekyll
 ---
 To get a minimal Docker image (~43 MB) for your Jekyll site, write the following Dockerfile:
+{: class="post-cards_description"}
 
 > Make sure to remove `jekyll` or any other [native Ruby extensions](https://guides.rubygems.org/gems-with-extensions/) from your `Gemfile`
 
