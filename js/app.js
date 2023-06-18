@@ -28,3 +28,6 @@ document.querySelector(".text-effect").onmouseover = (event) => {
     iteration += 1 / 3;
   }, 30);
 };
+
+hljs.highlightAll();
+hljs.configure({ ignoreUnescapedHTML: true })
