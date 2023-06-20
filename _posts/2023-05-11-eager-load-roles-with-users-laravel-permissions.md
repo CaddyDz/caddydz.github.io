@@ -6,6 +6,7 @@ thumbnail: "/assets/img/acl.png"
 categories: laravel
 ---
 > Error: Class name must be a valid object or a string in file ... HasRelationships.php
+{: class="post-cards_description"}
 
 # TL;DR?
 in `config/auth.php` add this to the `guards` array
