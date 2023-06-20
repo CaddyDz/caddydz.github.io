@@ -6,6 +6,7 @@ thumbnail: "/assets/img/js-destructuring.png"
 categories: javascript
 ---
 Assign values to multiple variables in an array by the result of evaluation
+{: class="post-cards_description"}
 
 ```js
 [firstName, lastName] = fullName.split(' ')

@@ -6,6 +6,7 @@ thumbnail: "/assets/img/inertia.png"
 categories: javascript
 ---
 The missing pagination component in Laravel Breeze Inertia Vue Tailwind application scaffolding
+{: class="post-cards_description"}
 
 ```vue
 <script setup>

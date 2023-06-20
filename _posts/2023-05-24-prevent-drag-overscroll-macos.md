@@ -6,6 +6,7 @@ thumbnail: "/assets/img/elastic.png"
 categories: css
 ---
 Elastic (Rubber Band) scrolling in macOS can make your website look quirky if you have a background image or animation with a blurry block on top for example
+{: class="post-cards_description"}
 
 The animation will appear at the top when you pull the page down by dragging two fingers on the trackpad for example, not nice at all
 > Here's an example from this website (background blob rotating animation behind a blurry block)
