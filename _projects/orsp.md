@@ -3,7 +3,7 @@ name: orsp
 image: /assets/img/orsp.png
 image_alt: OrderSpark Store management dashboard screenshot
 title: BUILD YOUR ONLINE STORE QUICKLY AND EASILY. REALLY.
-demo: orsp.dsalim.dev
+demo: orderspark.com
 stack:
   - NuxtJS (webapp)
   - Laravel (API)

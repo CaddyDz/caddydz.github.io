@@ -3,7 +3,7 @@ name: murafiq
 image: /assets/img/murafiq.png
 image_alt: Murafiq dashboard screenshot
 title: Islamic pilgrims management web application
-demo: murafiq.dsalim.dev
+demo: murafiq.u4i.org
 stack:
   - Vue 3 (webapp)
   - Laravel API

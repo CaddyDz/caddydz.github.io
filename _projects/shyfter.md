@@ -3,7 +3,7 @@ name: shyfter
 image: /assets/img/shyfter.webp
 image_alt: Shyfter dashboard screenshot
 title: Shift Work Management. Employee scheduling & time attendance app.
-demo: shyfter.dsalim.dev
+demo: shyfter.co
 stack:
   - React (webapp)
   - React Native (mobile)
