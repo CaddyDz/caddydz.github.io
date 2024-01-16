@@ -2,23 +2,29 @@
 <html lang="en">
   {% capture og_meta %}
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Salim Djerbouh">
+  <meta property="og:site_name" content="Salim Djerbouh" />
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:image" content="{{ page.thumbnail | absolute_url }}" />
-  <meta name="image" property="og:image" content="{{ page.thumbnail | absolute_url }}">
-  <meta name="publish_date" property="og:publish_date" content="{{ page.date }}">
+  <meta
+    name="image"
+    property="og:image"
+    content="{{ page.thumbnail | absolute_url }}"
+  />
+  <meta
+    name="publish_date"
+    property="og:publish_date"
+    content="{{ page.date }}"
+  />
   <meta name="twitter:title" content="{{ page.title }}" />
   <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
   <meta name="twitter:url" content="{{ page.url | absolute_url }}" />
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}" />
-  <meta name="twitter:image:alt" content="{{ page.title }}">
-  <meta name="twitter:site" content="@saly3301">
-  {% endcapture %}
-
-  {% include head.html og_meta=og_meta %}
+  <meta name="twitter:image:alt" content="{{ page.title }}" />
+  <meta name="twitter:site" content="@saly3301" />
+  {% endcapture %} {% include head.html og_meta=og_meta %}
 
   <body>
     <!--Main menu-->
@@ -76,7 +82,9 @@
             <a class="article__back-link" href="/"
               ><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Back</a
             >
-            <h1 class="article__title text-effect" data-value="{{ page.title }}">{{ page.title }}</h1>
+            <h1 class="article__title" data-value="{{ page.title }}">
+              {{ page.title }}
+            </h1>
             <p class="article_date">
               {{ page.date | date_to_string: "%B %d, %Y" }}
             </p>
