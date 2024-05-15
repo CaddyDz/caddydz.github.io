@@ -72,7 +72,7 @@
             <div class="personal-profile__contacts">
               <dl class="contact-list contact-list__opacity-titles">
                 <dt>Age:</dt>
-                <dd>28</dd>
+                <dd>29</dd>
                 <dt>Phone:</dt>
                 <dd><a href="tel:+31629153326">+31629153326</a></dd>
                 <dd><a href="tel:+213551081911">+213551081911</a></dd>
@@ -81,7 +81,7 @@
                   <a href="mailto:contact@dsalim.dev">contact@dsalim.dev</a>
                 </dd>
                 <dt>Address:</dt>
-                <dd>Akid Lotfi, Oran, Algeria</dd>
+                <dd>Frange Maritime, Oran, Algeria</dd>
               </dl>
             </div>
             <p class="personal-profile__social">
@@ -413,17 +413,13 @@
               <img src="{{ project.image }}" alt="{{ project.image_alt }}" />
             </div>
             <div class="col-md-6 col-lg-7 project-card__info">
-              <h3 class="project-card__title">
-                {{ project.title }}
-              </h3>
-              <p class="project-card__description">
-                {{ project.description }}
-              </p>
+              <h3 class="project-card__title">{{ project.title }}</h3>
+              <p class="project-card__description">{{ project.description }}</p>
               <p class="project-card__stack">Used stack:</p>
               <ul class="tags">
-              {% for tech in project.stack %}
+                {% for tech in project.stack %}
                 <li>{{ tech }}</li>
-              {% endfor %}
+                {% endfor %}
               </ul>
               <a
                 href="https://{{ project.demo }}"
@@ -645,9 +641,7 @@
             </button>
           </div>
           <div class="modal-body col-md-11 col-lg-9 ml-auto mr-auto">
-            <p class="portfolio-modal__title">
-              {{ project.title }}
-            </p>
+            <p class="portfolio-modal__title">{{ project.title }}</p>
             <img
               class="portfolio-modal__img"
               src="{{ project.image }}"
@@ -663,9 +657,9 @@
             <div class="portfolio-modal__stack">
               <p class="portfolio-modal__stack-title">Using stack:</p>
               <ul class="tags">
-              {% for tech in project.stack %}
+                {% for tech in project.stack %}
                 <li>{{ tech }}</li>
-              {% endfor %}
+                {% endfor %}
               </ul>
             </div>
           </div>
