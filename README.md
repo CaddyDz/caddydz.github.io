@@ -32,3 +32,10 @@ docker run --name dsalim.dev -dp 35729:35729 -p 4000:4000 -v $(pwd):/srv --rm ca
 ```
 > Port 35729 is bound for live reload
 5. Open http://localhost:4000 in a browser
+
+#### Development behind Traefik
+If a local [Traefik](https://traefik.io) instance is running on the external Docker network `traefik` (entrypoint `web` on port 80), use Compose instead of steps 3–4:
+```shell
+docker compose up -d --build
+```
+Then open http://dsalim.localhost in a browser. Live reload still works (port 35729 is published).
