@@ -29,7 +29,7 @@ docker compose up -d --build
 
 - **Production is GitHub Pages**, building `master` at `/` with the legacy Jekyll builder (custom domain via `CNAME`). Nothing in the repo deploys the site; merging to `master` is the deploy.
 - `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. Put `[skip ci]` in the commit message to skip it.
-- The Alpine `jekyll` package in the Docker image and the GitHub Pages Jekyll version are independent; a local render is not a guarantee of the Pages render. Concrete example: `collections.projects.order` in `_config.yml` is honoured locally but ignored on production (see Projects below).
+- The Alpine `jekyll` package in the Docker image (4.x) and the GitHub Pages Jekyll (3.10) are independent; a local render is not a guarantee of the Pages render. Concrete example: `collections.projects.order` is a Jekyll 4 key that Pages ignores, which is why `_layouts/default.html` applies it by hand (see Projects below). Test anything version-sensitive against the `github-pages` gem before trusting it.
 - `_site/` and `.jekyll-cache/` are build output and gitignored.
 
 ## Architecture
@@ -61,7 +61,7 @@ The first paragraph is the excerpt (no `excerpt_separator` is configured) and ev
 
 Front-matter only, no body. Fields: `name` (used as the modal DOM id `<name>Modal`, so keep it unique and id-safe), `image`, `image_alt`, `title`, `demo` (bare domain, the template prepends `https://`), `stack` (list), `description`.
 
-`collections.projects.order` in `_config.yml` only works in the local Docker build (unlisted projects render after the ordered ones). **Production ignores it** and renders projects alphabetically by filename (verified on dsalim.dev: dms, money, murafiq, orsp, shyfter). To control production order, rename the files.
+Display order is `collections.projects.order` in `_config.yml`. Jekyll 4 honours that key natively but GitHub Pages (Jekyll 3.10) ignores it, so `_layouts/default.html` builds an `ordered_projects` array itself from `site.collections` and both project loops (cards and modals) iterate that array. Unlisted projects render last. **Do not revert those loops to plain `site.projects`**; that silently reverts production to filename order.
 
 ### CV (`CV/`)
 

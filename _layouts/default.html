@@ -402,7 +402,27 @@
           </div>
         </div>
         <div class="portfolio-cards">
-          {% for project in site.projects %}
+          {% comment %}
+            Honour collections.projects.order from _config.yml on every Jekyll
+            version. Jekyll 4 sorts site.projects by it natively, but GitHub
+            Pages runs Jekyll 3.10, which ignores the key and falls back to
+            filename order. Projects not listed in `order` render last, as in
+            Jekyll 4. Do not revert these loops to plain `site.projects`.
+          {% endcomment %}
+          {% assign projects_coll = site.collections | where: "label", "projects" | first %}
+          {% assign ordered_projects = "" | split: "" %}
+          {% for file in projects_coll.order %}
+            {% assign rel = "_projects/" | append: file %}
+            {% assign doc = site.projects | where: "path", rel | first %}
+            {% if doc %}{% assign ordered_projects = ordered_projects | push: doc %}{% endif %}
+          {% endfor %}
+          {% for doc in site.projects %}
+            {% assign fname = doc.path | split: "/" | last %}
+            {% unless projects_coll.order contains fname %}
+              {% assign ordered_projects = ordered_projects | push: doc %}
+            {% endunless %}
+          {% endfor %}
+          {% for project in ordered_projects %}
           <div
             class="row project-card"
             data-toggle="modal"
@@ -619,8 +639,8 @@
     <!-- End main content -->
 
     {% include contact.html %}
-    <!-- Portfolio Modal -->
-    {% for project in site.projects %}
+    <!-- Portfolio Modal (same order as the cards, see portfolio-cards above) -->
+    {% for project in ordered_projects %}
     <div
       class="modal fade portfolio-modal"
       id="{{ project.name }}Modal"
