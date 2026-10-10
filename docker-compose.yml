@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    image: caddydz/caddydz.github.io
+    restart: unless-stopped
+    volumes:
+      - .:/srv
+    ports:
+      - '35729:35729' # Jekyll live reload (the injected script connects to the page host on this port)
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.dsalim.rule=Host(`dsalim.localhost`)
+      - traefik.http.routers.dsalim.entrypoints=web
+      - traefik.http.routers.dsalim.service=dsalim
+      - traefik.http.services.dsalim.loadbalancer.server.port=4000
+
+networks:
+  traefik:
+    external: true

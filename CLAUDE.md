@@ -18,7 +18,12 @@ docker run --name dsalim.dev -dp 35729:35729 -p 4000:4000 -v $(pwd):/srv --rm ca
 
 # Runtime only (pulls the published image, no local build)
 docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io
+
+# Behind the local Traefik (external network `traefik`, entrypoint `web`): http://dsalim.localhost
+docker compose up -d --build
 ```
+
+`docker-compose.yml` and the plain `docker run` both publish port 35729 for live reload, so run only one at a time.
 
 ## Deployment
 
