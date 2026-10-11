@@ -4,40 +4,48 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Jekyll personal site for https://dsalim.dev (portfolio, blog, CV). No Gemfile, no package.json, no tests, no linter. Jekyll is not installed locally; Docker is the only dev path.
+Jekyll personal site for https://dsalim.dev (portfolio, blog, CV), styled with the Glaz Tailwind CSS template (ported from the separate `glaz` repo in 2026-10; that repo is now only a reference). Jekyll is not installed on the host; Docker is the Jekyll path. Node is used for Tailwind and tests.
 
 ## Commands
 
 ```shell
-# Build the dev image (Alpine + apk jekyll)
-docker build --no-cache -t caddydz/caddydz.github.io .
-
-# Serve with live reload, repo mounted into the container
-docker run --name dsalim.dev -dp 35729:35729 -p 4000:4000 -v $(pwd):/srv --rm caddydz/caddydz.github.io
-# then open http://localhost:4000
-
-# Runtime only (pulls the published image, no local build)
-docker run --name dsalim.dev -dp 4000:4000 --rm caddydz/caddydz.github.io
-
-# Behind the local Traefik (external network `traefik`, entrypoint `web`): http://dsalim.localhost
-docker compose up -d --build
+npm ci                                   # once; Tailwind, vitest, Playwright, serve
+docker compose up -d --build             # Tailwind watcher + Jekyll 4 behind local Traefik: http://dsalim.localhost
+npm run watch:css                        # Tailwind watcher on the host instead of the compose service
+npm run build:css                        # one-shot minified build to css/style.css (gitignored)
+npm run check:site                       # URL invariant + CNAME + leak check on _site/
+npm test                                 # vitest (tests/unit)
+npm run test:e2e                         # Playwright against _site/ (npx playwright install chromium once)
+PLAYWRIGHT_BASE_URL=http://dsalim.localhost npm run test:e2e   # against the running compose stack
 ```
 
-`docker-compose.yml` and the plain `docker run` both publish port 35729 for live reload, so run only one at a time.
+The compose stack and the `glaz` repo's compose stack both register the Traefik router `dsalim` on `dsalim.localhost`; never run both.
 
 ## Deployment
 
-- **Production is GitHub Pages**, building `master` at `/` with the legacy Jekyll builder (custom domain via `CNAME`). Nothing in the repo deploys the site; merging to `master` is the deploy.
-- `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. **Do not use `[skip ci]`**: GitHub's skip applies to every push workflow, so it would also skip the Pages deploy (`pages.yml`).
-- The Alpine `jekyll` package in the Docker image (4.x) and the GitHub Pages Jekyll (3.10) are independent; a local render is not a guarantee of the Pages render. Concrete example: `collections.projects.order` is a Jekyll 4 key that Pages ignores, which is why `_layouts/default.html` applies it by hand (see Projects below). Test anything version-sensitive against the `github-pages` gem before trusting it.
-- `_site/` and `.jekyll-cache/` are build output and gitignored.
+- **Production is GitHub Pages deployed by `.github/workflows/pages.yml`** (Pages source = "GitHub Actions"): `npm run build:css` → `bundle exec jekyll build` (Jekyll 4 from `Gemfile.lock`, `JEKYLL_ENV=production`) → `tests/check-site.sh` → vitest → Playwright → `deploy-pages`. Pull requests run everything except the deploy. Merging to `master` is the deploy.
+- Compiled CSS is never committed (`css/style.css` is gitignored). Docker, CI and production all run the same locked Jekyll, so a local render matches production.
+- `Gemfile.lock` must be regenerated inside `ruby:3.3-slim` with `--add-platform x86_64-linux aarch64-linux` (command in README), never with the host Ruby.
+- `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. **Do not use `[skip ci]`**: GitHub's skip applies to every push workflow, so it would also skip the Pages deploy (`pages.yml`). The Docker Hub image has no `css/style.css`; it is a runtime shell for the bind-mounted dev loop.
+- `_site/`, `.jekyll-cache/`, `node_modules/`, `test-results/`, `playwright-report/` are build output and gitignored.
+- `_config.yml` `exclude` lists every tooling file explicitly; `tests/check-site.sh` fails the build if any leaks into `_site/`.
+
+## Hard invariants (CI enforces the first two)
+
+- **Post URLs never change.** They come from front-matter `date` + `categories` (default permalink `/:categories/:year/:month/:day/:title.html`); three posts have front-matter dates that differ from their filenames (chmod, vue3, gh-pr). `tests/expected-pages.txt` lists every live page and `tests/check-site.sh` fails if one disappears (subset check: new posts are fine; add them to the list if you want them guarded).
+- **All asset paths are root-relative** (`/css/style.css`, `/js/app.js`, `/img/...`, `/assets/img/...`) so they work from nested post URLs. Nav anchors are `/#about` etc. for the same reason.
+- `_includes/head.html` links `/css/style.css` BEFORE the highlight.js theme; the typography plugin's `pre code` reset and `.hljs` have equal specificity, so order decides whether code blocks have colour.
+- The inline theme script in `head.html` must stay inline (prevents a flash of the wrong theme).
 
 ## Architecture
 
-- **`index.md` is an empty shell.** The whole homepage lives in `_layouts/default.html`: nav, intro, resume, portfolio, testimonials, blog list, contact. It loops `site.projects` for the portfolio cards and again at the bottom to render one Bootstrap modal per project, and loops `site.posts` for the blog cards.
-- **`_layouts/blog.html` wraps posts.** It captures OG/Twitter meta from `page.title`, `page.excerpt`, `page.thumbnail` and passes it into `_includes/head.html` as `og_meta`. The post body is followed by an "Other Posts" list and the shared contact include.
-- **Frontend is vendored, no bundler.** jQuery 2.2.4, Bootstrap 4, Popper and the theme scripts live in `js/`; styling is one file, `css/app.css`. Bootstrap/normalize CSS, highlight.js, Font Awesome kit and fonts load from CDNs in `head.html` / `scripts.html`.
-- **Code highlighting happens twice.** Rouge renders `highlighter-rouge` markup at build time, then highlight.js (CDN) re-highlights it client-side; `ignoreUnescapedHTML` suppresses the warning that causes.
+- **Layouts:** `_layouts/base.html` is the shell (head, header, `{{ content }}`, footer, to-top, scripts). `_layouts/default.html` (homepage, `layout: base`) just includes the sections in order plus the `<dialog id="lightbox">`. `_layouts/blog.html` (posts, `layout: base`) renders `{{ content }}` inside `.prose dark:prose-invert` and reuses the blog grid as "Other posts".
+- **Sections:** `_includes/sections/{hero,trusted,about,resume,portfolio,testimonials,blog,contact}.html`. `about.html` is the Glaz markup pasted verbatim (services cards + 18-tool grid with inline SVGs). **Its SVG gradient/clipPath ids are unique only because it renders once per page: never loop it or include it from another layout.**
+- **Data:** `_data/profile.yml` (name, tagline, email, phones, socials, CV links, bio, resume summary, contact blurb/form action), `_data/resume.yml` (employment, education), `_data/testimonials.yml`. Edit content there, not in the includes.
+- **OG/Twitter meta** lives in `head.html` under `{% if page.layout == "blog" %}` (a `capture` in a child layout is invisible to the parent). The highlight.js CSS/JS and the GA4 tag (`production` only) are gated the same way in `head.html` / `scripts.html`.
+- **CSS:** `input.css` (Tailwind source + Glaz theme variables, light/dark via `:root.dark`/`:root.light`/`prefers-color-scheme`) → `tailwind.config.js` (explicit `content` globs: `_layouts`, `_includes`, `_posts`, `_projects`, `_data`, root `*.html|*.md`, `js`; `fontFamily` under `extend` so `font-mono` survives; typography palette mapped to the theme variables, invert set included). Body decor images are `/img/decor-*.webp`.
+- **JS:** `js/app.js` (ES module: scroll-spy keyed on nav `<a>` class == section id, hamburger, theme toggle cycling system → light → dark, footer year, `<dialog>` lightbox for `.zoom-gallery a`) imports `js/theme.js` (pure functions, unit-tested). No jQuery, no vendor bundles.
+- **Code highlighting happens twice.** Rouge renders `highlighter-rouge` markup at build time, then highlight.js (CDN, post pages only) re-highlights it client-side; `ignoreUnescapedHTML` suppresses the warning that causes.
 
 ## Content conventions
 
@@ -49,23 +57,29 @@ Front matter used by the layouts:
 layout: blog
 title: "..."
 date: YYYY-MM-DD
-thumbnail: "/assets/img/<name>.png"   # also the OG/Twitter image
+thumbnail: "/assets/img/<name>.png"   # card image and OG/Twitter image
 categories: <one word>
 ```
 
-`categories` becomes part of the published URL under the default permalink (`/<category>/YYYY/MM/DD/<slug>.html`; two categories nest, e.g. `docker jekyll` gives `/docker/jekyll/...`). Changing a post's category breaks its existing link.
+`categories` becomes part of the published URL (two categories nest, e.g. `docker jekyll` gives `/docker/jekyll/...`). Changing a post's category or date breaks its existing link and fails `check-site.sh`.
 
-The first paragraph is the excerpt (no `excerpt_separator` is configured) and every existing post follows it with the kramdown attribute line `{: class="post-cards_description"}` so it styles correctly on the homepage card. Existing posts tag code fences with a language.
+The first paragraph is the excerpt (no `excerpt_separator`); cards render it with `strip_html | truncatewords: 30`. Existing posts follow it with the kramdown attribute line `{: class="post-cards_description"}`, which is now inert (harmless; not needed on new posts). Tag code fences with a language. Jekyll 4 builds with `future: false`, so a future-dated post is invisible until its date.
 
 ### Projects (`_projects/<name>.md`)
 
-Front-matter only, no body. Fields: `name` (used as the modal DOM id `<name>Modal`, so keep it unique and id-safe), `image`, `image_alt`, `title`, `demo` (bare domain, the template prepends `https://`), `stack` (list), `description`.
+Front-matter only, no body. Fields: `name` (used as `data-project`, tests key on it; keep it unique and id-safe), `image` (root-relative), `image_alt`, `title`, `demo` (bare domain, optional; the template prepends `https://` and omits the "Live Preview" row when absent), `stack` (list), `description`.
 
-Display order is `collections.projects.order` in `_config.yml`. Jekyll 4 honours that key natively but GitHub Pages (Jekyll 3.10) ignores it, so `_layouts/default.html` builds an `ordered_projects` array itself from `site.collections` and both project loops (cards and modals) iterate that array. Unlisted projects render last. **Do not revert those loops to plain `site.projects`**; that silently reverts production to filename order.
+Display order is `collections.projects.order` in `_config.yml`. Jekyll 4 honours it natively; `_includes/sections/portfolio.html` still builds an `ordered_projects` array by hand (kept from the Pages-3.10 era, harmless, renders unlisted projects last). Do not revert that loop to plain `site.projects`.
 
 ### CV (`CV/`)
 
 XeLaTeX source: `CV/resume.tex` uses the local `resume.cls` and `\input`s sections from `CV/resume/*.tex`. There is no build script in the repo and no TeX toolchain on this machine; `cv.pdf` at the repo root is the committed output and must be regenerated and committed by hand after editing the `.tex` files. `CV/` and `cv.pdf` are excluded from the Docker image via `.dockerignore`.
+
+## Tests
+
+- `tests/unit/theme.test.js` (vitest + jsdom): the theme state machine in `js/theme.js`.
+- `tests/integration/pages.spec.js` (Playwright, Chromium): every page in `tests/expected-pages.txt` returns 200 with no failed same-origin request, has a visible `h1`, the header nav and the theme toggle. Specs are transpiled to CommonJS (no `"type": "module"` in `package.json`), so use `__dirname`, not `import.meta`.
+- `playwright.config.js` serves `_site/` with `serve --no-clean-urls` (a plain `serve` would 301 `/x.html` to `/x` and hide URL bugs).
 
 ## Repo workflow
 
