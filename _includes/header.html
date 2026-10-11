@@ -1,190 +1,107 @@
-<!-- Ported from the Glaz template. Nav hrefs are /#section so they work from post pages; each <a> keeps a class equal to its section id for the scroll-spy in js/app.js. -->
-		<header
-			class="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent py-4 lg:py-6"
-		>
-			<div class="container">
-				<div class="relative flex items-center justify-center">
-					<!-- Top bar menu -->
-					<div class="mx-auto flex items-center px-4 lg:px-0">
-						<!-- Mobile nav button -->
-						<button
-							id="hamburger"
-							name="hamburger"
-							type="button"
-							aria-label="Menu toggle"
-							class="absolute right-4 block lg:hidden"
-						>
-							<span
-								class="hamburger-line origin-top-left transition duration-300 ease-in-out"
-							></span>
-							<span
-								class="hamburger-line transition duration-300 ease-in-out"
-							></span>
-							<span
-								class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
-							></span>
-						</button>
-						<!-- End mobile nav button -->
-						<!-- Navigation Menu -->
-						<nav
-							id="nav-menu"
-							class="absolute right-0 top-14 hidden w-full rounded border border-disable bg-body p-5 shadow-sm backdrop-blur-3xl lg:static lg:block lg:max-w-full lg:rounded-none lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-0"
-							style="
-								box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-									rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-							"
-						>
-							<ul class="flex flex-col gap-5 lg:flex-row lg:gap-8">
-								<li class="group">
-									<a
-										href="/#about"
-										class="about font-medium text-disable transition-colors group-hover:text-heading"
-									>
-										ABOUT
-									</a>
-								</li>
-								<li class="group">
-									<a
-										href="/#resume"
-										class="resume w-full font-medium text-disable group-hover:text-heading"
-									>
-										RESUME
-									</a>
-								</li>
-								<li class="group">
-									<a
-										href="/#portfolio"
-										class="portfolio w-full font-medium text-disable group-hover:text-heading"
-									>
-										PORTFOLIO
-									</a>
-								</li>
-								<li class="group">
-									<a
-										href="/#blog"
-										class="blog w-full font-medium text-disable group-hover:text-heading"
-									>
-										BLOG
-									</a>
-								</li>
-								<li class="group">
-									<a
-										href="/#contact"
-										class="contact w-full font-medium text-disable group-hover:text-heading"
-									>
-										CONTACT
-									</a>
-								</li>
-							</ul>
-						</nav>
-						<!-- End navigation menu -->
-					</div>
-					<!-- End top bar menu -->
-					<!-- Social Links & dark mode -->
-					<div class="flex items-center gap-6">
-						<a
-							href="{{ site.data.profile.socials.github }}"
-							target="_blank"
-							class="hidden lg:block"
-							aria-label="GitHub"
-							title="GitHub"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="fill-paragraph hover:fill-heading"
-								viewBox="0 0 24 24"
-								width="24"
-								height="24"
-							>
-								<path
-									d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
-								></path>
-							</svg>
-						</a>
-						<a
-							href="{{ site.data.profile.socials.upwork }}"
-							target="_blank"
-							class="hidden lg:block"
-							aria-label="Upwork"
-							title="Upwork"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="fill-paragraph hover:fill-heading"
-								width="24"
-								height="24"
-								viewBox="0 0 64 64"
-							>
-								<path
-									d="M49.487 15.034c-6.86.033-12.074 4.57-14.026 11.8-3.275-5.04-5.83-10.805-7.295-15.672l-7.22.034.1 19.138a6.861 6.861 0 0 1-13.722.065l-.1-19.138L0 11.296.1 30.435C.128 38.377 6.474 44.67 14.24 44.63s14.055-6.386 14.02-14.33l-.015-3.25c1.456 2.88 3.276 5.94 5.276 8.64l-4.415 21.144 7.4-.034 3.18-15.362c2.896 1.793 6.15 2.86 9.94 2.842C57.57 44.245 64.04 37.717 64 29.41c-.036-7.946-6.568-14.413-14.512-14.377zm.103 21.846c-2.888.013-5.782-1.236-8.138-3.213l.708-2.9v-.182c.528-3.074 2.126-8.316 7.542-8.34a7.244 7.244 0 0 1 7.257 7.188c-.163 4.153-3.577 7.42-7.37 7.437z"
-								/>
-							</svg>
-						</a>
-						<a
-							href="{{ site.data.profile.socials.stackoverflow }}"
-							target="_blank"
-							class="hidden lg:block"
-							aria-label="StackOverflow"
-							title="StackOverflow"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="fill-paragraph hover:fill-heading"
-								viewBox="0 0 24 24"
-								width="24"
-								height="24"
-							>
-								<path
-									d="M18.001 20.0025V15.0001H20.001V22.0025H4.00098V15.0001H6.00098V20.0025H18.001ZM7.50098 18.0001V16.0001H16.501V18.0001H7.50098ZM7.578 13.6197L7.9253 11.65L16.7886 13.2129L16.4413 15.1825L7.578 13.6197ZM9.21156 8.11608L10.2116 6.38403L18.0058 10.884L17.0058 12.6161L9.21156 8.11608ZM12.6289 3.5031L14.161 2.21753L19.9461 9.11193L18.414 10.3975L12.6289 3.5031Z"
-								></path>
-							</svg>
-						</a>
-						<button
-							type="button"
-							class="mr-16 flex items-center justify-center rounded border border-paragraph bg-zinc-300 bg-opacity-20 p-2 backdrop-blur-3xl hover:border lg:mr-0"
-							id="theme-toggle"
-							aria-label="Toggle color theme"
-							title="Theme: system / light / dark"
-						>
-							<!-- Light -->
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								data-theme-icon="light"
-								class="size-6 fill-paragraph"
-								aria-hidden="true"
-							>
-								<path
-									d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
-								></path>
-							</svg>
-							<!-- Dark -->
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								data-theme-icon="dark"
-								class="size-6 fill-paragraph"
-								aria-hidden="true"
-							>
-								<path
-									d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"
-								></path>
-							</svg>
-							<!-- System -->
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								data-theme-icon="system"
-								class="size-6 fill-paragraph"
-								aria-hidden="true"
-							>
-								<path
-									d="M4 5v11h16V5H4zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.986c0 .556-.455 1.007-.992 1.007H13v2h3v2H8v-2h3v-2H2.992A.998.998 0 0 1 2 16.993V4.007zM6 15V7h12v8H6z"
-								></path>
-							</svg>
-						</button>
-					</div>
-					<!-- End social links & dark mode -->
-				</div>
-			</div>
-		</header>
+{% comment %}
+  Liquid Glass header: two floating glass capsules (nav, socials + theme toggle) over the page.
+  Nav hrefs are /#section so they work from post pages; each <a> keeps a class equal to its
+  section id for the scroll-spy in js/app.js. IDs #hamburger, #nav-menu, #theme-toggle are
+  contracts with js/app.js and the tests.
+{% endcomment %}
+<header class="fixed inset-x-0 top-0 z-20 py-3 lg:py-4">
+  <div class="container">
+    <div class="relative flex items-center justify-between lg:justify-center">
+      <!-- Mobile: menu button -->
+      <button
+        id="hamburger"
+        name="hamburger"
+        type="button"
+        aria-label="Menu toggle"
+        aria-controls="nav-menu"
+        class="glass glass-icon flex-col lg:hidden"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navigation capsule (glass sheet on mobile, pill on desktop) -->
+      <nav
+        id="nav-menu"
+        aria-label="Site"
+        class="glass absolute inset-x-0 top-full mt-3 hidden rounded-3xl p-2 lg:relative lg:mt-0 lg:block lg:w-auto lg:rounded-full lg:px-2 lg:py-1.5"
+      >
+        <ul class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-0.5">
+          <li><a href="/#about" class="about">About</a></li>
+          <li><a href="/#resume" class="resume">Resume</a></li>
+          <li><a href="/#portfolio" class="portfolio">Portfolio</a></li>
+          <li><a href="/#blog" class="blog">Blog</a></li>
+          <li><a href="/#contact" class="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Socials + theme capsule -->
+      <div class="glass flex items-center gap-0.5 rounded-full p-1 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
+        <div class="hidden items-center gap-0.5 lg:flex">
+      <a href="{{{{ site.data.profile.socials.github }}}}" target="_blank" rel="noopener noreferrer" class="glass-icon" aria-label="GitHub" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5 fill-paragraph transition-colors hover:fill-heading" aria-hidden="true">
+          <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
+        </svg>
+      </a>
+      <a href="{{{{ site.data.profile.socials.upwork }}}}" target="_blank" rel="noopener noreferrer" class="glass-icon" aria-label="Upwork" title="Upwork">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="size-5 fill-paragraph transition-colors hover:fill-heading" aria-hidden="true">
+          <path d="M49.487 15.034c-6.86.033-12.074 4.57-14.026 11.8-3.275-5.04-5.83-10.805-7.295-15.672l-7.22.034.1 19.138a6.861 6.861 0 0 1-13.722.065l-.1-19.138L0 11.296.1 30.435C.128 38.377 6.474 44.67 14.24 44.63s14.055-6.386 14.02-14.33l-.015-3.25c1.456 2.88 3.276 5.94 5.276 8.64l-4.415 21.144 7.4-.034 3.18-15.362c2.896 1.793 6.15 2.86 9.94 2.842C57.57 44.245 64.04 37.717 64 29.41c-.036-7.946-6.568-14.413-14.512-14.377zm.103 21.846c-2.888.013-5.782-1.236-8.138-3.213l.708-2.9v-.182c.528-3.074 2.126-8.316 7.542-8.34a7.244 7.244 0 0 1 7.257 7.188c-.163 4.153-3.577 7.42-7.37 7.437z"></path>
+        </svg>
+      </a>
+      <a href="{{{{ site.data.profile.socials.stackoverflow }}}}" target="_blank" rel="noopener noreferrer" class="glass-icon" aria-label="StackOverflow" title="StackOverflow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5 fill-paragraph transition-colors hover:fill-heading" aria-hidden="true">
+          <path d="M18.001 20.0025V15.0001H20.001V22.0025H4.00098V15.0001H6.00098V20.0025H18.001ZM7.50098 18.0001V16.0001H16.501V18.0001H7.50098ZM7.578 13.6197L7.9253 11.65L16.7886 13.2129L16.4413 15.1825L7.578 13.6197ZM9.21156 8.11608L10.2116 6.38403L18.0058 10.884L17.0058 12.6161L9.21156 8.11608ZM12.6289 3.5031L14.161 2.21753L19.9461 9.11193L18.414 10.3975L12.6289 3.5031Z"></path>
+        </svg>
+      </a>
+        <span class="mx-1 h-5 w-px opacity-20" style="background: var(--heading-color)" aria-hidden="true"></span>
+        </div>
+        <button
+          type="button"
+          id="theme-toggle"
+          aria-label="Toggle color theme"
+          title="Theme: system / light / dark"
+          class="glass-icon"
+        >
+
+      <!-- Light -->
+      <svg
+      	xmlns="http://www.w3.org/2000/svg"
+      	viewBox="0 0 24 24"
+      	data-theme-icon="light"
+      	class="size-5 fill-heading"
+      	aria-hidden="true"
+      >
+      	<path
+      		d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
+      	></path>
+      </svg>
+      <!-- Dark -->
+      <svg
+      	xmlns="http://www.w3.org/2000/svg"
+      	viewBox="0 0 24 24"
+      	data-theme-icon="dark"
+      	class="size-5 fill-heading"
+      	aria-hidden="true"
+      >
+      	<path
+      		d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"
+      	></path>
+      </svg>
+      <!-- System -->
+      <svg
+      	xmlns="http://www.w3.org/2000/svg"
+      	viewBox="0 0 24 24"
+      	data-theme-icon="system"
+      	class="size-5 fill-heading"
+      	aria-hidden="true"
+      >
+      	<path
+      		d="M4 5v11h16V5H4zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.986c0 .556-.455 1.007-.992 1.007H13v2h3v2H8v-2h3v-2H2.992A.998.998 0 0 1 2 16.993V4.007zM6 15V7h12v8H6z"
+      	></path>
+      </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

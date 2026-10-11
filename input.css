@@ -19,6 +19,15 @@
 		rgba(255, 255, 255, 0.6) -65.62%,
 		rgba(255, 255, 255, 0.3) 25.28%
 	);
+
+	/* Liquid Glass material (header capsules) */
+	--glass-fill: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.3));
+	--glass-edge: rgba(255, 255, 255, 0.7);
+	--glass-specular: rgba(255, 255, 255, 0.95);
+	--glass-shade: rgba(24, 24, 27, 0.08);
+	--glass-shadow: rgba(109, 40, 217, 0.22);
+	--glass-glint: rgba(255, 255, 255, 0.6);
+	--glass-pill: rgba(255, 255, 255, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +43,15 @@
 			rgb(255 255 255 / 25%) -65.62%,
 			rgb(118 118 118 / 24%) 83.28%
 		);
+
+		/* Liquid Glass material (header capsules) */
+		--glass-fill: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+		--glass-edge: rgba(255, 255, 255, 0.16);
+		--glass-specular: rgba(255, 255, 255, 0.3);
+		--glass-shade: rgba(0, 0, 0, 0.45);
+		--glass-shadow: rgba(0, 0, 0, 0.6);
+		--glass-glint: rgba(255, 255, 255, 0.14);
+		--glass-pill: rgba(255, 255, 255, 0.14);
 	}
 }
 
@@ -49,6 +67,15 @@
 		rgb(255 255 255 / 25%) -65.62%,
 		rgb(118 118 118 / 24%) 83.28%
 	);
+
+	/* Liquid Glass material (header capsules) */
+	--glass-fill: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+	--glass-edge: rgba(255, 255, 255, 0.16);
+	--glass-specular: rgba(255, 255, 255, 0.3);
+	--glass-shade: rgba(0, 0, 0, 0.45);
+	--glass-shadow: rgba(0, 0, 0, 0.6);
+	--glass-glint: rgba(255, 255, 255, 0.14);
+	--glass-pill: rgba(255, 255, 255, 0.14);
 }
 
 :root.light {
@@ -63,6 +90,15 @@
 		rgba(255, 255, 255, 0.6) -65.62%,
 		rgba(255, 255, 255, 0.3) 25.28%
 	);
+
+	/* Liquid Glass material (header capsules) */
+	--glass-fill: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.3));
+	--glass-edge: rgba(255, 255, 255, 0.7);
+	--glass-specular: rgba(255, 255, 255, 0.95);
+	--glass-shade: rgba(24, 24, 27, 0.08);
+	--glass-shadow: rgba(109, 40, 217, 0.22);
+	--glass-glint: rgba(255, 255, 255, 0.6);
+	--glass-pill: rgba(255, 255, 255, 0.7);
 }
 
 /* Theme toggle icons: show the active preference */
@@ -108,9 +144,6 @@ body {
 	@apply bg-auto bg-no-repeat;
 }
 
-header ul li a.active {
-	@apply text-heading;
-}
 
 .button {
 	@apply inline-block rounded px-7 py-4 text-sm font-medium text-white transition-all duration-200 lg:text-base;
@@ -135,9 +168,83 @@ header ul li a.active {
 	background: var(--secondary-color);
 }
 
-.navbar-fixed {
-	background: var(--body-color);
-	@apply fixed z-10 shadow-sm;
+/* Liquid Glass header. In @layer components so utilities (absolute, lg:hidden, ...) still win. */
+@layer components {
+	/* Translucent, refractive-looking capsules that float over the page.
+	   One material class; the header is always fixed, `.navbar-fixed` (added by js/app.js
+	   once the page is scrolled) only deepens the drop shadow. */
+	.glass {
+		@apply relative isolate;
+		background: var(--glass-fill);
+		border: 1px solid var(--glass-edge);
+		box-shadow:
+			inset 0 1px 0 0 var(--glass-specular),
+			inset 0 -1px 0 0 var(--glass-shade),
+			0 10px 30px -12px var(--glass-shadow);
+		-webkit-backdrop-filter: blur(22px) saturate(180%);
+		backdrop-filter: blur(22px) saturate(180%);
+		transition: box-shadow 300ms ease;
+	}
+
+	/* Lens glint: a soft specular bloom at the top-left, like light caught on curved glass. */
+	.glass::before {
+		content: '';
+		@apply pointer-events-none absolute inset-0 -z-10 rounded-[inherit];
+		background: radial-gradient(120% 90% at 12% 0%, var(--glass-glint) 0%, transparent 58%);
+	}
+
+	.navbar-fixed .glass {
+		box-shadow:
+			inset 0 1px 0 0 var(--glass-specular),
+			inset 0 -1px 0 0 var(--glass-shade),
+			0 18px 40px -14px var(--glass-shadow);
+	}
+
+	header nav ul li a {
+		@apply relative block rounded-full px-4 py-2 text-sm font-medium text-paragraph transition-[color,background-color,box-shadow] duration-200;
+	}
+
+	header nav ul li a:hover,
+	header nav ul li a:focus-visible {
+		@apply text-heading;
+		background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+	}
+
+	/* The active section sits on its own raised glass pill. */
+	header nav ul li a.active {
+		@apply text-heading;
+		background: var(--glass-pill);
+		box-shadow:
+			inset 0 1px 0 0 var(--glass-specular),
+			inset 0 -1px 0 0 var(--glass-shade);
+	}
+
+	header a:focus-visible,
+	header button:focus-visible {
+		outline: 2px solid var(--heading-color);
+		outline-offset: 2px;
+	}
+
+	.glass-icon {
+		@apply flex size-10 items-center justify-center rounded-full transition-[background-color,transform] duration-200;
+	}
+
+	.glass-icon:hover {
+		background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+	}
+
+	.glass-icon:active {
+		@apply scale-95;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.glass,
+	header nav ul li a,
+	.glass-icon,
+	.hamburger-line {
+		transition: none;
+	}
 }
 
 .bg-main {
@@ -145,21 +252,22 @@ header ul li a.active {
 	background: var(--glass-color);
 }
 
+/* Three lines that fold into an X around their own centre (the button is a 40px glass circle). */
 .hamburger-line {
-	@apply my-2 block h-[2px] w-[30px];
+	@apply my-[3px] block h-[2px] w-5 rounded-full origin-center transition-transform duration-300 ease-in-out;
 	background: var(--heading-color);
 }
 
 .hamburger-active > span:nth-child(1) {
-	@apply rotate-45;
+	transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger-active > span:nth-child(2) {
-	@apply scale-0;
+	transform: scaleX(0);
 }
 
 .hamburger-active > span:nth-child(3) {
-	@apply -rotate-[44deg];
+	transform: translateY(-8px) rotate(-45deg);
 }
 
 
