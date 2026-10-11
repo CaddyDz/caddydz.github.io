@@ -24,8 +24,8 @@ export default defineConfig({
 	webServer: process.env.PLAYWRIGHT_BASE_URL
 		? undefined
 		: {
-				// --no-clean-urls: `serve` would otherwise 301 /x.html -> /x, unlike GitHub Pages.
-				command: `npx serve _site -l ${PORT} --no-port-switching --no-clean-urls`,
+				// tests/serve.json sets cleanUrls:false (path is relative to the served dir): a plain `serve` 301s /x.html -> /x, unlike GitHub Pages.
+				command: `npx serve _site -l ${PORT} --no-port-switching -c ../tests/serve.json`,
 				url: `${baseURL}/`,
 				reuseExistingServer: !process.env.CI,
 				timeout: 60_000,
