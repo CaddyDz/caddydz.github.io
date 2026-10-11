@@ -1,0 +1,45 @@
+# Personal data read by the layouts. Edit here, never in _includes/.
+name: Salim Djerbouh
+tagline: Backend Heavy full-stack web developer
+description: Modern web developer, Laravel artisan # <meta name="description"> on non-post pages
+email: contact@dsalim.dev
+phones:
+  - "+31629153326"
+  - "+213551081911"
+years_experience: 7
+client_count: 120
+twitter_site: "@saly3301" # twitter:site on post pages
+cv:
+  pdf: /cv.pdf
+  source: https://github.com/CaddyDz/caddydz.github.io/tree/master/CV
+about:
+  headline: Backend developer with a passion for software engineering.
+  bio: >-
+    Hello, I'm Salim Djerbouh, I am a senior Web developer able to build a
+    Web presence from the ground up - from concept, navigation, layout and
+    programming to UX and SEO. Skilled at writing well-designed, testable
+    and efficient code using current best practices in Web development.
+    Fast learner, hard worker and team player who is proficient in an
+    array of scripting languages and multimedia Web tools.
+resume_summary: >-
+  Currently a freelancer on the platform Upwork, Formerly Backend
+  Engineer and DevOps assist at Belgian company Shyfter SRL, Chief
+  Technology Officer and Lead Developer at start-up company Zidweb.
+  6+ years experience specializing in the backend development,
+  infrastructure engineering, CI/CD pipelines automation, Super nerd
+  who loves Vim, macOS and Linux and enjoys to customize all of the
+  development environment. Interested in devising a better
+  problem-solving method for challenging tasks, and learning new
+  technologies and tools when the need arises.
+contact:
+  blurb: Always available for freelancing if the right project comes along, feel free to contact me.
+  form_note: Feel free to contact me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+  form_action: https://formsubmit.co/contact@dsalim.dev
+socials:
+  github: https://github.com/CaddyDz
+  upwork: https://www.upwork.com/freelancers/~01ac6972a358b30ee5
+  stackoverflow: https://stackoverflow.com/users/5581565/salim-djerbouh
+  linkedin: https://linkedin.com/in/caddydz
+  linkedin_label: caddydz
+  twitter: https://twitter.com/caddydz
+  twitter_label: "@caddydz"

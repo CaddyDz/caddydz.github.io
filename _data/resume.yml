@@ -1,0 +1,51 @@
+# Resume timeline (display order = file order). Edit here, never in _includes/.
+employment:
+  - company: Pierry, Inc.
+    role: Full Stack Web Developer
+    start: Jun. 2021
+    end: Dec. 2021
+  - company: Shyfter, SRL.
+    role: Backend Engineer, DevOps Lead
+    start: Feb. 2021
+    end: Sep. 2022
+  - company: Zidweb, LLC.
+    role: Co-Founder, CTO and Lead Developer
+    start: Feb. 2020
+    end: Feb. 2021
+  - company: Didata LLC.
+    role: Full stack Software Engineer
+    start: March. 2020
+    end: April. 2020
+  - company: Upwork.
+    role: Freelance Backend developer
+    start: Feb. 2020
+    end: Present
+  - company: A-Tech Solutions LLC.
+    role: Full Stack web developer
+    start: Jan. 2019
+    end: March. 2019
+  - company: SARL TPHST.
+    role: International Relations Consulting and IT support
+    start: Feb. 2018
+    end: Sep. 2019
+  - company: Bitshopit
+    role: Co-Founder and Lead Developer
+    start: Apr. 2018
+    end: Dec. 2018
+  - company: AlgoTech Orestor LLC.
+    role: Lead developer and system admin
+    start: Mar. 2017
+    end: Dec. 2017
+  - company: MNI Martship
+    role: Full stack web developer
+    start: Jun. 2017
+    end: Aug. 2017
+education:
+  - school: Crash Course
+    start: Feb. 2017
+    end: Dec. 2017
+    note: Followed the course with enthusiasm and practice upon theory, briefly dabbled in OSDev as a result.
+  - school: Lounici Ali University
+    start: Sep. 2013
+    end: Jan. 2016
+    note: Final year English literature, dropped out due to lack of interest, switched to computer science

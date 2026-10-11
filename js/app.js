@@ -1,30 +1,101 @@
-/* -- Text effect -- */
+import {
+	applyTheme,
+	nextTheme,
+	readStoredTheme,
+	setFooterYear,
+} from './theme.js';
 
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// Window On Scroll Effect
+window.onscroll = function () {
+	const header = document.querySelector('header');
+	if (!header) return;
 
-let interval = null;
+	const fixedNav = header.offsetTop;
+	const toTop = document.querySelector('#to-top');
+	const sections = document.querySelectorAll('section');
+	const navLi = document.querySelectorAll('header nav ul li a');
 
-document.querySelector(".text-effect").onmouseover = (event) => {
-  let iteration = 0;
+	var current = '';
+	sections.forEach((section) => {
+		const sectionTop = section.offsetTop;
+		if (scrollY >= sectionTop) {
+			current = section.getAttribute('id');
+		}
+	});
 
-  clearInterval(interval);
+	navLi.forEach((li) => {
+		li.classList.remove('active');
+		if (li.classList.contains(current)) {
+			li.classList.add('active');
+		}
+	});
 
-  interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((letter, index) => {
-        if (index < iteration) {
-          return event.target.dataset.value[index];
-        }
-
-        return letters[Math.floor(Math.random() * 26)];
-      })
-      .join("");
-
-    if (iteration >= event.target.dataset.value.length) {
-      clearInterval(interval);
-    }
-
-    iteration += 1 / 3;
-  }, 30);
+	if (scrollY > fixedNav) {
+		header.classList.add('navbar-fixed');
+		toTop?.classList.remove('hidden');
+	} else {
+		header.classList.remove('navbar-fixed');
+		toTop?.classList.add('hidden');
+	}
 };
+
+// Navbar Hamburger Menu Toggle
+const hamburger = document.querySelector('#hamburger');
+const navMenu = document.querySelector('#nav-menu');
+
+if (hamburger && navMenu) {
+	hamburger.addEventListener('click', () => {
+		hamburger.classList.toggle('hamburger-active');
+		navMenu.classList.toggle('hidden');
+	});
+
+	window.addEventListener('click', function (e) {
+		if (!hamburger.contains(e.target)) {
+			hamburger.classList.remove('hamburger-active');
+			navMenu.classList.add('hidden');
+		}
+	});
+}
+
+// Theme: system (default) → light → dark → system
+const themeToggle = document.querySelector('#theme-toggle');
+
+if (themeToggle) {
+	themeToggle.addEventListener('click', () => {
+		applyTheme(nextTheme(readStoredTheme()), { toggle: themeToggle });
+	});
+}
+
+applyTheme(readStoredTheme(), { toggle: themeToggle });
+
+window
+	.matchMedia('(prefers-color-scheme: dark)')
+	.addEventListener('change', () => {
+		if (readStoredTheme() === 'system') {
+			applyTheme('system', { toggle: themeToggle });
+		}
+	});
+
+setFooterYear(document.querySelector('#year'));
+
+// Portfolio lightbox: native <dialog>, replaces jQuery + Magnific Popup.
+// The <a href> stays a plain link to the image when JS is off.
+const lightbox = document.querySelector('#lightbox');
+if (lightbox && typeof lightbox.showModal === 'function') {
+	const shot = lightbox.querySelector('img');
+	document.querySelectorAll('.zoom-gallery a').forEach((a) => {
+		a.addEventListener('click', (e) => {
+			e.preventDefault();
+			shot.src = a.href;
+			shot.alt = a.querySelector('img')?.alt ?? '';
+			lightbox.showModal();
+		});
+	});
+	lightbox.addEventListener('click', (e) => {
+		if (e.target === lightbox || e.target.closest('[data-close]')) lightbox.close();
+	});
+	lightbox.addEventListener('close', () => shot.removeAttribute('src'));
+}
+
+// Deep links (/#contact from a post page) land mid-page: set the header / to-top state once.
+window.onscroll?.();

@@ -18,4 +18,9 @@ for leak in node_modules package.json package-lock.json tailwind.config.js input
   [ ! -e "$site/$leak" ] || { echo "LEAK: $leak was published to $site"; exit 1; }
 done
 
+# Built assets the new layouts depend on
+grep -q 'navbar-fixed' "$site/css/style.css" || { echo "css/style.css missing or not built from input.css"; exit 1; }
+[ -f "$site/js/app.js" ] && [ -f "$site/js/theme.js" ] || { echo "js/app.js or js/theme.js missing"; exit 1; }
+[ -f "$site/img/decor-1.webp" ] || { echo "img/decor-*.webp missing"; exit 1; }
+
 echo "site check OK: $(printf '%s\n' "$actual" | wc -l | tr -d ' ') pages, CNAME present, no leaks"
