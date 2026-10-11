@@ -31,6 +31,11 @@ for (const path of pages) {
 		await expect(page.locator('h1').first()).toBeVisible();
 		await expect(page.locator('header nav a', { hasText: 'ABOUT' })).toHaveAttribute('href', '/#about');
 		await expect(page.locator('#theme-toggle')).toBeVisible();
+
+		// The header social icons are Liquid output; a stray brace renders them as "}}" (regression on 0eb6eb6).
+		const socials = await page.locator('header a.glass-icon').evaluateAll((links) => links.map((a) => a.getAttribute('href')));
+		expect(socials, 'header social links').toHaveLength(3);
+		for (const href of socials) expect(href).toMatch(/^https:\/\/(github\.com|www\.upwork\.com|stackoverflow\.com)\//);
 	});
 }
 
