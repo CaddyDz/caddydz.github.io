@@ -1,12 +1,23 @@
 services:
+  # Tailwind watcher: writes css/style.css on the host through the bind mount.
+  # Uses the host node_modules (pure-JS deps), installing them if missing.
+  tailwind:
+    image: node:22-alpine
+    working_dir: /srv
+    volumes:
+      - .:/srv
+    command: sh -c "[ -x node_modules/.bin/tailwindcss ] || npm ci --no-audit --no-fund; npx tailwindcss -i input.css -o css/style.css --watch --poll"
+
   web:
     build: .
     image: caddydz/caddydz.github.io
     restart: unless-stopped
+    depends_on:
+      - tailwind
     volumes:
       - .:/srv
     ports:
-      - '35729:35729' # Jekyll live reload (the injected script connects to the page host on this port)
+      - "35729:35729"
     networks:
       - traefik
     labels:

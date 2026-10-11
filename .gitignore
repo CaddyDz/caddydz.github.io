@@ -1,3 +1,17 @@
 _site
 .jekyll-cache
 .DS_Store
+
+# Node / Tailwind (css/style.css is built by CI and the local watcher, never committed)
+node_modules/
+css/style.css
+
+# Ruby
+vendor/
+.bundle/
+
+# Tests
+test-results/
+playwright-report/
+playwright/.cache/
+coverage/

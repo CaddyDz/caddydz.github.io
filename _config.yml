@@ -5,6 +5,23 @@ title: "Salim Djerbouh"
 exclude:
   - CLAUDE.md
   - README.md
+  - Dockerfile
+  - docker-compose.yml
+  - .dockerignore
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - vendor
+  - tailwind.config.js
+  - input.css
+  - vitest.config.js
+  - playwright.config.js
+  - tests
+  - test-results
+  - playwright-report
+  - coverage
 
 collections:
   projects:

@@ -28,7 +28,7 @@ docker compose up -d --build
 ## Deployment
 
 - **Production is GitHub Pages**, building `master` at `/` with the legacy Jekyll builder (custom domain via `CNAME`). Nothing in the repo deploys the site; merging to `master` is the deploy.
-- `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. Put `[skip ci]` in the commit message to skip it.
+- `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. **Do not use `[skip ci]`**: GitHub's skip applies to every push workflow, so it would also skip the Pages deploy (`pages.yml`).
 - The Alpine `jekyll` package in the Docker image (4.x) and the GitHub Pages Jekyll (3.10) are independent; a local render is not a guarantee of the Pages render. Concrete example: `collections.projects.order` is a Jekyll 4 key that Pages ignores, which is why `_layouts/default.html` applies it by hand (see Projects below). Test anything version-sensitive against the `github-pages` gem before trusting it.
 - `_site/` and `.jekyll-cache/` are build output and gitignored.
 

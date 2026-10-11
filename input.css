@@ -1,0 +1,176 @@
+/* Tailwind source for dsalim.dev (ported from the Glaz template). Build: npm run build:css -> css/style.css (gitignored). */
+/* Fonts (Darker Grotesque, Inter) are loaded via <link> in _includes/head.html, not @import. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* General */
+	--disable-color: #52525b;
+	--primary-color: linear-gradient(to right, #c026d3, #6d28d9, #c026d3);
+	--secondary-color: linear-gradient(to right, #6d28d9, #c026d3);
+
+	/* Light (default / system light) */
+	--heading-color: #18181b;
+	--body-color: #ebe7ff;
+	--paragraph-color: #3f3f46;
+	--glass-color: linear-gradient(
+		153.32deg,
+		rgba(255, 255, 255, 0.6) -65.62%,
+		rgba(255, 255, 255, 0.3) 25.28%
+	);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not(.light) {
+		--disable-color: #a1a1aa;
+		--primary-color: linear-gradient(to right, #e889ff, #9180ff, #e889ff);
+		--secondary-color: linear-gradient(to right, #9180ff, #e889ff);
+		--heading-color: #ffffff;
+		--body-color: #000000;
+		--paragraph-color: #d4d4d8;
+		--glass-color: linear-gradient(
+			153.32deg,
+			rgb(255 255 255 / 25%) -65.62%,
+			rgb(118 118 118 / 24%) 83.28%
+		);
+	}
+}
+
+:root.dark {
+	--disable-color: #a1a1aa;
+	--primary-color: linear-gradient(to right, #e889ff, #9180ff, #e889ff);
+	--secondary-color: linear-gradient(to right, #9180ff, #e889ff);
+	--heading-color: #ffffff;
+	--body-color: #000000;
+	--paragraph-color: #d4d4d8;
+	--glass-color: linear-gradient(
+		153.32deg,
+		rgb(255 255 255 / 25%) -65.62%,
+		rgb(118 118 118 / 24%) 83.28%
+	);
+}
+
+:root.light {
+	--disable-color: #52525b;
+	--primary-color: linear-gradient(to right, #c026d3, #6d28d9, #c026d3);
+	--secondary-color: linear-gradient(to right, #6d28d9, #c026d3);
+	--heading-color: #18181b;
+	--body-color: #ebe7ff;
+	--paragraph-color: #3f3f46;
+	--glass-color: linear-gradient(
+		153.32deg,
+		rgba(255, 255, 255, 0.6) -65.62%,
+		rgba(255, 255, 255, 0.3) 25.28%
+	);
+}
+
+/* Theme toggle icons: show the active preference */
+#theme-toggle [data-theme-icon] {
+	display: none;
+}
+
+html[data-theme='light'] #theme-toggle [data-theme-icon='light'],
+html[data-theme='dark'] #theme-toggle [data-theme-icon='dark'],
+html[data-theme='system'] #theme-toggle [data-theme-icon='system'],
+html:not([data-theme]) #theme-toggle [data-theme-icon='system'] {
+	display: block;
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: var(--paragraph-color) !important;
+	opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: var(--paragraph-color) !important;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: var(--paragraph-color) !important;
+}
+
+body {
+	background: url(/img/decor-1.webp) left top no-repeat,
+		url(/img/decor-2.webp) right 1.5% no-repeat,
+		url(/img/decor-3.webp) left 14% no-repeat,
+		url(/img/decor-4.webp) right 30% no-repeat,
+		url(/img/decor-5.webp) left 40% no-repeat,
+		url(/img/decor-6.webp) right 50% no-repeat,
+		url(/img/decor-7.webp) left 60% no-repeat,
+		url(/img/decor-8.webp) right 70% no-repeat,
+		url(/img/decor-9.webp) left 98% no-repeat,
+		url(/img/decor-10.webp) right bottom no-repeat,
+		url(/img/decor-11.webp) left 80% no-repeat;
+	@apply bg-auto bg-no-repeat;
+}
+
+header ul li a.active {
+	@apply text-heading;
+}
+
+.button {
+	@apply inline-block rounded px-7 py-4 text-sm font-medium text-white transition-all duration-200 lg:text-base;
+	background: var(--primary-color);
+	background-position: 100%;
+	background-size: 200% 100%;
+}
+
+.button:hover {
+	background-position: 0 0;
+}
+
+.heading {
+	@apply font-darker text-4xl font-black text-heading sm:text-5xl;
+}
+
+.paragraph {
+	@apply text-sm font-normal leading-relaxed text-paragraph lg:text-base;
+}
+
+.gradient {
+	background: var(--secondary-color);
+}
+
+.navbar-fixed {
+	background: var(--body-color);
+	@apply fixed z-10 shadow-sm;
+}
+
+.bg-main {
+	@apply shadow-sm;
+	background: var(--glass-color);
+}
+
+.hamburger-line {
+	@apply my-2 block h-[2px] w-[30px];
+	background: var(--heading-color);
+}
+
+.hamburger-active > span:nth-child(1) {
+	@apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+	@apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+	@apply -rotate-[44deg];
+}
+
+
+
+
+
+
+dt {
+	@apply float-left font-bold uppercase text-paragraph;
+}
+
+dd {
+	@apply mb-4 pl-24;
+}
