@@ -2,10 +2,15 @@ url: "https://dsalim.dev"
 baseurl: "/"
 title: "Salim Djerbouh"
 
+exclude:
+  - CLAUDE.md
+  - README.md
+
 collections:
   projects:
     order:
       - murafiq.md
+      - money.md
       - orsp.md
       - shyfter.md
       - dms.md
