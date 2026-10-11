@@ -97,6 +97,10 @@
 								method="POST"
 								action="{{ site.data.profile.contact.form_action }}"
 							>
+								{% comment %} formsubmit.co options: return to the site after sending, email subject, honeypot spam trap. {% endcomment %}
+								<input type="hidden" name="_next" value="{{ site.data.profile.contact.form_next }}" />
+								<input type="hidden" name="_subject" value="{{ site.data.profile.contact.form_subject }}" />
+								<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
 								<div class="grid grid-cols-2 gap-4">
 									<div class="col-span-2 lg:col-span-1">
 										<label for="name" class="text-sm text-heading lg:text-base"

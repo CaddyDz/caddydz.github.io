@@ -34,7 +34,10 @@ resume_summary: >-
 contact:
   blurb: Always available for freelancing if the right project comes along, feel free to contact me.
   form_note: Feel free to contact me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
-  form_action: https://formsubmit.co/contact@dsalim.dev
+  # formsubmit.co hashed alias for contact@dsalim.dev (activated 2026-10-11); keeps the address out of the page source.
+  form_action: https://formsubmit.co/5d07e021d62cefcfb646025a91dc15e4
+  form_next: https://dsalim.dev/#contact # formsubmit needs an absolute URL
+  form_subject: New message from dsalim.dev
 socials:
   github: https://github.com/CaddyDz
   upwork: https://www.upwork.com/freelancers/~01ac6972a358b30ee5
