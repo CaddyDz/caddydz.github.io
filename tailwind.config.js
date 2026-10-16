@@ -59,6 +59,7 @@ module.exports = {
 				paragraph: 'var(--paragraph-color)',
 				disable: 'var(--disable-color)',
 				glass: 'var(--glass-color)',
+				'on-gradient': 'var(--on-gradient)',
 			},
 			screens: {
 				'2xl': '1320px',

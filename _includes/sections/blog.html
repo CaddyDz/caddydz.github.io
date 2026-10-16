@@ -6,7 +6,7 @@
 <section id="blog" class="pt-20 lg:pt-28">
   <div class="container">
     <div class="flex flex-col justify-start gap-8">
-      <h1 class="heading text-center lg:text-left">{{ include.heading | default: "Straight to the point blog posts" }}</h1>
+      <h2 class="heading text-center lg:text-left">{{ include.heading | default: "Straight to the point blog posts" }}</h2>
       <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {% for post in site.posts %}{% unless post.url == include.exclude %}
         <a href="{{ post.url }}" data-post class="bg-main group flex flex-col rounded p-4 transition-shadow hover:shadow-2xl">
@@ -21,7 +21,7 @@
           <time datetime="{{ post.date | date_to_xmlschema }}" class="mt-4 text-xs font-medium uppercase text-disable">
             {{ post.date | date: "%B %-d, %Y" }}
           </time>
-          <h2 class="heading mt-1 !text-2xl !leading-tight">{{ post.title }}</h2>
+          <h3 class="heading mt-1 !text-2xl !leading-tight">{{ post.title }}</h3>
           <p class="paragraph mt-2">{{ post.excerpt | strip_html | strip | truncatewords: 30 }}</p>
         </a>
         {% endunless %}{% endfor %}
