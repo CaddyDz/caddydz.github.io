@@ -1,0 +1,181 @@
+		<section id="contact" class="pt-20 lg:pt-28">
+			<div class="container">
+				<div class="flex flex-col justify-start gap-8">
+					<div
+						class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:gap-0"
+					>
+						<div>
+							<h1 class="heading">Let's Get In Touch!</h1>
+							<p class="paragraph my-4 lg:my-8">
+								Always available for freelancing if the right <br />
+								project comes along, Feel free to contact me.
+							</p>
+							<div class="flex flex-col gap-3 text-sm lg:text-base">
+								<a
+									href="tel:{{ site.data.profile.phones[0] }}"
+									class="flex items-center gap-3 font-medium text-paragraph hover:text-heading hover:underline"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										class="size-6 text-paragraph"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+										/>
+									</svg>
+									<span>{{ site.data.profile.phones[0] }}</span>
+								</a>
+								<a
+									href="mailto:{{ site.data.profile.email }}"
+									class="flex items-center gap-3 font-medium text-paragraph hover:text-heading hover:underline"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										class="size-6 text-paragraph"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+										/>
+									</svg>
+									<span>{{ site.data.profile.email }}</span>
+								</a>
+								<a
+									href="{{ site.data.profile.socials.linkedin }}" rel="noopener noreferrer"
+									target="_blank"
+									class="flex items-center gap-3 font-medium text-paragraph hover:text-heading hover:underline"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="fill-paragraph"
+										viewBox="0 0 24 24"
+										height="24"
+										class="size-6"
+									>
+										<path
+											d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"
+										></path>
+									</svg>
+									<span>{{ site.data.profile.socials.linkedin_label }}</span>
+								</a>
+								<a
+									href="{{ site.data.profile.socials.twitter }}" target="_blank" rel="noopener noreferrer"
+									class="flex items-center gap-3 font-medium text-paragraph hover:text-heading hover:underline"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="currentColor"
+										class="size-6"
+									>
+										<path
+											d="M18.2048 2.25H21.5128L14.2858 10.51L22.7878 21.75H16.1308L10.9168 14.933L4.95084 21.75H1.64084L9.37084 12.915L1.21484 2.25H8.04084L12.7538 8.481L18.2048 2.25ZM17.0438 19.77H18.8768L7.04484 4.126H5.07784L17.0438 19.77Z"
+										></path>
+									</svg>
+									<span>{{ site.data.profile.socials.twitter_label }}</span>
+								</a>
+							</div>
+						</div>
+						<div class="bg-main w-full rounded p-7 lg:w-[55%]">
+							<p class="paragraph mb-4 !text-sm italic lg:mb-8">
+								Feel free to contact me. I am always open to discussing new
+								projects, creative ideas or opportunities to be part of your
+								visions.
+							</p>
+							<form
+								method="POST"
+								action="{{ site.data.profile.contact.form_action }}"
+							>
+								{% comment %} formsubmit.co options: return to the site after sending, email subject, honeypot spam trap. {% endcomment %}
+								<input type="hidden" name="_next" value="{{ site.data.profile.contact.form_next }}" />
+								<input type="hidden" name="_subject" value="{{ site.data.profile.contact.form_subject }}" />
+								<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+								<div class="grid grid-cols-2 gap-4">
+									<div class="col-span-2 lg:col-span-1">
+										<label for="name" class="text-sm text-heading lg:text-base"
+											>Your Name</label
+										>
+										<div class="mt-2">
+											<input
+												type="text"
+												name="Name"
+												id="name"
+												placeholder="Name *"
+												class="bg-main w-full rounded border-none px-3 py-2.5 text-sm !text-paragraph outline-none lg:text-base"
+												required
+											/>
+										</div>
+									</div>
+									<div class="col-span-2 lg:col-span-1">
+										<label
+											for="email"
+											class="text-sm text-heading lg:text-base"
+										>
+											Your Email
+										</label>
+										<div class="mt-2">
+											<input
+												type="email"
+												name="Email"
+												id="email"
+												placeholder="Email *"
+												class="bg-main w-full rounded border-none px-3 py-2.5 text-sm !text-paragraph outline-none lg:text-base"
+												required
+											/>
+										</div>
+									</div>
+									<div class="col-span-2 mt-1">
+										<label
+											for="subject"
+											class="text-sm text-heading lg:text-base"
+										>
+											Subject
+										</label>
+										<div class="mt-2">
+											<input
+												type="text"
+												name="Subject"
+												id="subject"
+												placeholder="Subject *"
+												class="bg-main w-full rounded border-none px-3 py-2.5 text-sm !text-paragraph outline-none lg:text-base"
+												required
+											/>
+										</div>
+									</div>
+									<div class="col-span-2 mt-1">
+										<label
+											for="message"
+											class="text-sm text-heading lg:text-base"
+										>
+											Your Message
+										</label>
+										<div class="mt-2">
+											<textarea
+												id="message"
+												name="Message"
+												rows="4"
+												placeholder="Your message *"
+												class="bg-main w-full rounded border-none px-3 py-2.5 text-sm !text-paragraph outline-none lg:text-base"
+												required
+											></textarea>
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="button mt-4">Send Message</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

@@ -1,0 +1,34 @@
+<!-- Hero Section Start -->
+<section id="home" class="pt-28 text-center lg:pt-40 lg:text-left">
+  <div class="container">
+    <div class="flex flex-col items-center justify-center gap-8 lg:flex-row lg:justify-center">
+      <img src="/assets/img/me.jpg" alt="Portrait of {{ site.data.profile.name }}" class="w-1/3 rounded-lg" width="400" height="400" />
+      <div>
+        <h1 class="heading">{{ site.data.profile.name }}</h1>
+        <p class="paragraph mb-7 mt-5 w-80 sm:mb-10 sm:mt-8 sm:w-[420px]">{{ site.data.profile.tagline }}</p>
+        <dl class="mb-5 text-heading">
+          <dt>Phone:</dt>
+          {% for phone in site.data.profile.phones %}
+          <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+          {% endfor %}
+          <dt>Email:</dt>
+          <dd><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></dd>
+        </dl>
+        <a href="{{ site.data.profile.cv.pdf }}" class="button shadow-2xl" download>Download CV</a>
+        <a href="{{ site.data.profile.cv.source }}" class="button shadow-2xl" target="_blank" rel="noopener noreferrer">CV LaTeX source</a>
+        <div class="mt-9 flex justify-center gap-3 sm:justify-start sm:gap-10">
+          <div class="flex items-center justify-center gap-3">
+            <h3 class="heading !font-inter !font-semibold">{{ site.data.profile.years_experience }}+</h3>
+            <span class="paragraph !text-left !text-xs !leading-normal sm:!text-sm">Years <br />Experience</span>
+          </div>
+          <span class="w-[0.5px] bg-disable"></span>
+          <div class="flex items-center justify-center gap-3">
+            <h3 class="heading !font-inter !font-semibold">{{ site.data.profile.client_count }}+</h3>
+            <span class="paragraph !text-left !text-xs !leading-normal sm:!text-sm">Satisfied <br />Clients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->

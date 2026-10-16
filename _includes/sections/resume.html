@@ -1,0 +1,42 @@
+<!-- Resume Section Start -->
+<section id="resume" class="pt-20 text-center lg:pt-28 lg:text-left">
+  <div class="container">
+    <div class="flex flex-col justify-start gap-8">
+      <h1 class="heading">Resume</h1>
+      <p class="paragraph">{{ site.data.profile.resume_summary }}</p>
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
+        <div>
+          <h2 class="heading mb-6 !text-3xl">Employment</h2>
+          <ol class="flex flex-col gap-3">
+            {% for job in site.data.resume.employment %}
+            <li class="bg-main flex items-start gap-4 rounded p-5 text-left">
+              <span class="gradient mt-2 size-3 shrink-0 rounded-full" aria-hidden="true"></span>
+              <div>
+                <h3 class="font-darker text-2xl font-black leading-tight text-heading">{{ job.company }}</h3>
+                <p class="text-xs font-medium uppercase text-disable">{{ job.start }} – {{ job.end }}</p>
+                <p class="paragraph">{{ job.role }}</p>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <div>
+          <h2 class="heading mb-6 !text-3xl">Education</h2>
+          <ol class="flex flex-col gap-3">
+            {% for item in site.data.resume.education %}
+            <li class="bg-main flex items-start gap-4 rounded p-5 text-left">
+              <span class="gradient mt-2 size-3 shrink-0 rounded-full" aria-hidden="true"></span>
+              <div>
+                <h3 class="font-darker text-2xl font-black leading-tight text-heading">{{ item.school }}</h3>
+                <p class="text-xs font-medium uppercase text-disable">{{ item.start }} – {{ item.end }}</p>
+                <p class="paragraph">{{ item.note }}</p>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Resume Section End -->

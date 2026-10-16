@@ -1,0 +1,79 @@
+# Builds Tailwind CSS + Jekyll 4 and deploys to GitHub Pages.
+# Requires Settings -> Pages -> Source = "GitHub Actions" (flipped manually, once).
+# PRs run the build + site check only; master pushes also deploy.
+# Note: `${{ }}` must stay in block-style YAML (invalid inside a `{ }` flow mapping).
+name: Pages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Tailwind must run before Jekyll copies css/ into _site.
+      - run: npm run build:css
+
+      - run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
+      # URL invariant (tests/expected-pages.txt), CNAME, no tooling leaks.
+      - run: tests/check-site.sh
+
+      - run: npm test
+
+      - run: npx playwright install --with-deps chromium
+
+      # Serves _site on :4173 (playwright.config.js webServer) and checks every expected page.
+      - run: npm run test:e2e
+        env:
+          CI: true
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,32 @@
+{% comment %}
+  Blog card grid. On the homepage: all posts. On a post page: pass heading="Other posts" exclude=page.url.
+  `date:` replaces the old `date_to_string: "%B %d, %Y"`, whose format argument Jekyll ignores.
+{% endcomment %}
+<!-- Blog Section Start -->
+<section id="blog" class="pt-20 lg:pt-28">
+  <div class="container">
+    <div class="flex flex-col justify-start gap-8">
+      <h1 class="heading text-center lg:text-left">{{ include.heading | default: "Straight to the point blog posts" }}</h1>
+      <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        {% for post in site.posts %}{% unless post.url == include.exclude %}
+        <a href="{{ post.url }}" data-post class="bg-main group flex flex-col rounded p-4 transition-shadow hover:shadow-2xl">
+          <img
+            src="{{ post.thumbnail }}"
+            alt=""
+            loading="lazy"
+            width="640"
+            height="360"
+            class="aspect-video w-full rounded object-cover transition-all duration-200 group-hover:brightness-90"
+          />
+          <time datetime="{{ post.date | date_to_xmlschema }}" class="mt-4 text-xs font-medium uppercase text-disable">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </time>
+          <h2 class="heading mt-1 !text-2xl !leading-tight">{{ post.title }}</h2>
+          <p class="paragraph mt-2">{{ post.excerpt | strip_html | strip | truncatewords: 30 }}</p>
+        </a>
+        {% endunless %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->
