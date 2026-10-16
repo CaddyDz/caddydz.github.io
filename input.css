@@ -247,6 +247,36 @@ body {
 	}
 }
 
+/* No JS (the inline head script adds html.js): the hamburger cannot open the sheet and the theme
+   toggle does nothing. Below lg, show the links as a row in the header, which then scrolls away. */
+@media (max-width: 1023.98px) {
+	html:not(.js) header {
+		position: absolute;
+	}
+
+	html:not(.js) #hamburger,
+	html:not(.js) header .glass:has(> #theme-toggle) {
+		display: none;
+	}
+
+	html:not(.js) #nav-menu {
+		display: block;
+		position: static;
+		margin-top: 0;
+		width: 100%;
+	}
+
+	html:not(.js) #nav-menu ul {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+html:not(.js) #theme-toggle {
+	display: none;
+}
+
 .bg-main {
 	@apply shadow-sm;
 	background: var(--glass-color);

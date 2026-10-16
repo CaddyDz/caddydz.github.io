@@ -38,7 +38,7 @@ The compose stack and the `glaz` repo's compose stack both register the Traefik 
 
 ## Architecture
 
-- **Liquid Glass header:** the `.glass` material in `input.css` (driven by the `--glass-*` variables next to the theme variables) lives in `@layer components` so utilities like `absolute`/`lg:hidden` still win over it.
+- **Liquid Glass header:** the `.glass` material in `input.css` (driven by the `--glass-*` variables next to the theme variables) lives in `@layer components` so utilities like `absolute`/`lg:hidden` still win over it. Without JS (`html:not(.js)`; the inline head script adds `js`), `input.css` shows the nav as a row at phone width and hides the theme toggle.
 - **Sections:** `_includes/sections/{hero,trusted,about,resume,portfolio,testimonials,blog,contact}.html`. `about.html` is the Glaz markup pasted verbatim (services cards + 18-tool grid with inline SVGs). **Its SVG gradient/clipPath ids are unique only because it renders once per page: never loop it or include it from another layout.**
 - **Data:** personal, resume and testimonial content lives in `_data/*.yml`. Edit it there, not in the includes.
 - **OG/Twitter meta** lives in `head.html` under `{% if page.layout == "blog" %}` (a `capture` in a child layout is invisible to the parent). The highlight.js CSS/JS and the GA4 tag (`production` only) are gated the same way in `head.html` / `scripts.html`.
