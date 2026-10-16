@@ -144,6 +144,15 @@ body {
 	@apply bg-auto bg-no-repeat;
 }
 
+/* Posts: the 11 layers are spread over the page height, so on a post they crowd the article and
+   cost ~2 MB. Keep the top and bottom blobs (~400 KB); the others are then never requested.
+   Without :has() support posts keep the full set. */
+body:has(> main > article) {
+	background: url(/img/decor-1.webp) left top no-repeat,
+		url(/img/decor-2.webp) right 1.5% no-repeat,
+		url(/img/decor-10.webp) right bottom no-repeat;
+}
+
 
 .button {
 	@apply inline-block rounded px-7 py-4 text-sm font-medium text-white transition-all duration-200 lg:text-base;
