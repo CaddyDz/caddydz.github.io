@@ -27,7 +27,7 @@ docker build -t caddydz/caddydz.github.io . && docker run --name dsalim.dev -dp 
 
 then open http://localhost:4000.
 
-> The Docker Hub image is a Jekyll runtime only: it does not contain `css/style.css`. Always run it with the repo bind-mounted and the Tailwind watcher running.
+> The image ships a compiled `css/style.css`, so it also runs without the bind mount (`docker run -p 4000:4000 caddydz/caddydz.github.io`). With `-v $(pwd):/srv` the host's `css/` replaces it: keep the Tailwind watcher running.
 
 ## Scripts
 
