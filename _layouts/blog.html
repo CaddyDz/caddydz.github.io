@@ -2,8 +2,8 @@
 layout: base
 ---
 {% comment %}
-  Post layout. OG/Twitter meta and the highlight.js assets are emitted by head.html / scripts.html
-  under `page.layout == "blog"` (a capture here would not be visible to the parent layout).
+  Post layout. SEO meta comes from jekyll-seo-tag in head.html (`thumbnail` is the share image, see
+  _plugins/); the highlight.js assets are emitted by head.html / scripts.html under `page.layout == "blog"`.
 {% endcomment %}
 <main class="container pt-28 lg:pt-40">
   <article class="lg:px-32 xl:px-72">

@@ -1,6 +1,18 @@
 url: "https://dsalim.dev"
 baseurl: "/"
 title: "Salim Djerbouh"
+# jekyll-seo-tag / jekyll-feed. Posts use their excerpt as description and `thumbnail` as image (_plugins/).
+description: Modern web developer, Laravel artisan
+author:
+  name: Salim Djerbouh
+  twitter: saly3301 # twitter:creator; without it seo-tag falls back to the name ("@Salim Djerbouh")
+twitter:
+  username: saly3301
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
 
 exclude:
   - CLAUDE.md

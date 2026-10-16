@@ -1,14 +1,12 @@
 # Personal data read by the layouts. Edit here, never in _includes/.
 name: Salim Djerbouh
 tagline: Backend Heavy full-stack web developer
-description: Modern web developer, Laravel artisan # <meta name="description"> on non-post pages
 email: contact@dsalim.dev
 phones:
   - "+31629153326"
   - "+213551081911"
 years_experience: 7
 client_count: 120
-twitter_site: "@saly3301" # twitter:site on post pages
 cv:
   pdf: /cv.pdf
   source: https://github.com/CaddyDz/caddydz.github.io/tree/master/CV

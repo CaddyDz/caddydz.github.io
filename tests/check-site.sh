@@ -22,5 +22,8 @@ done
 grep -q 'navbar-fixed' "$site/css/style.css" || { echo "css/style.css missing or not built from input.css"; exit 1; }
 [ -f "$site/js/app.js" ] && [ -f "$site/js/theme.js" ] || { echo "js/app.js or js/theme.js missing"; exit 1; }
 [ -f "$site/img/decor-1.webp" ] || { echo "img/decor-*.webp missing"; exit 1; }
+for f in feed.xml sitemap.xml robots.txt; do
+  [ -s "$site/$f" ] || { echo "$f missing (jekyll-feed / jekyll-sitemap)"; exit 1; }
+done
 
 echo "site check OK: $(printf '%s\n' "$actual" | wc -l | tr -d ' ') pages, CNAME present, no leaks"
