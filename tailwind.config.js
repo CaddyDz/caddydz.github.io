@@ -16,6 +16,8 @@ const palette = {
 	'--tw-prose-quote-borders': '#c026d3',
 	'--tw-prose-captions': 'var(--disable-color)',
 	'--tw-prose-code': 'var(--heading-color)',
+	'--tw-prose-pre-code': 'var(--code-fg)',
+	'--tw-prose-pre-bg': 'var(--code-bg)',
 	'--tw-prose-th-borders': 'var(--disable-color)',
 	'--tw-prose-td-borders': 'var(--disable-color)',
 };
@@ -72,10 +74,8 @@ module.exports = {
 						...palette,
 						...invert,
 						'h1, h2, h3, h4': { fontFamily: theme('fontFamily.darker').join(', ') },
-						// highlight.js owns code blocks: neutralise the plugin's pre / pre code rules.
-						// (/css/style.css must be linked BEFORE the hljs theme in head.html.)
-						pre: { backgroundColor: 'transparent', padding: '0', color: 'inherit' },
-						'pre code': { backgroundColor: null, padding: null, color: null, fontFamily: null },
+						// Code blocks keep the plugin's <pre> box; its colours are the --code-* theme variables
+						// (palette above) and Rouge's token classes are coloured in input.css.
 						'code::before': { content: 'none' },
 						'code::after': { content: 'none' },
 					},

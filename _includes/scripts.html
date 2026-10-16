@@ -1,12 +1,4 @@
 <script type="module" src="/js/app.js"></script>
-{% if page.layout == "blog" %}
-<!-- Rouge renders the markup at build time; highlight.js re-highlights it client-side (ignoreUnescapedHTML silences the resulting warning). -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<script>
-  hljs.configure({ ignoreUnescapedHTML: true });
-  hljs.highlightAll();
-</script>
-{% endif %}
 {% if jekyll.environment == "production" %}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V08QC6HMRT"></script>

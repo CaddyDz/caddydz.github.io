@@ -33,7 +33,6 @@ The compose stack and the `glaz` repo's compose stack both register the Traefik 
 
 - **Post URLs never change.** They come from front-matter `date` + `categories` (default permalink `/:categories/:year/:month/:day/:title.html`); three posts have front-matter dates that differ from their filenames (chmod, vue3, gh-pr). `tests/expected-pages.txt` lists every live page and `tests/check-site.sh` fails if one disappears (subset check: new posts are fine; add them to the list if you want them guarded).
 - **All asset paths are root-relative** (`/css/style.css`, `/js/app.js`, `/img/...`, `/assets/img/...`) so they work from nested post URLs. Nav anchors are `/#about` etc. for the same reason.
-- `_includes/head.html` links `/css/style.css` BEFORE the highlight.js theme; the typography plugin's `pre code` reset and `.hljs` have equal specificity, so order decides whether code blocks have colour.
 - The inline theme script in `head.html` must stay inline (prevents a flash of the wrong theme).
 
 ## Architecture
@@ -41,10 +40,10 @@ The compose stack and the `glaz` repo's compose stack both register the Traefik 
 - **Liquid Glass header:** the `.glass` material in `input.css` (driven by the `--glass-*` variables next to the theme variables) lives in `@layer components` so utilities like `absolute`/`lg:hidden` still win over it.
 - **Sections:** `_includes/sections/{hero,trusted,about,resume,portfolio,testimonials,blog,contact}.html`. `about.html` is the Glaz markup pasted verbatim (services cards + 18-tool grid with inline SVGs). **Its SVG gradient/clipPath ids are unique only because it renders once per page: never loop it or include it from another layout.**
 - **Data:** personal, resume and testimonial content lives in `_data/*.yml`. Edit it there, not in the includes.
-- **OG/Twitter meta** lives in `head.html` under `{% if page.layout == "blog" %}` (a `capture` in a child layout is invisible to the parent). The highlight.js CSS/JS and the GA4 tag (`production` only) are gated the same way in `head.html` / `scripts.html`.
+- **OG/Twitter meta** lives in `head.html` under `{% if page.layout == "blog" %}` (a `capture` in a child layout is invisible to the parent). The GA4 tag in `scripts.html` is gated on `jekyll.environment == "production"`.
 - **CSS:** `input.css` (Tailwind source + Glaz theme variables, light/dark via `:root.dark`/`:root.light`/`prefers-color-scheme`) → `tailwind.config.js` (explicit `content` globs: `_layouts`, `_includes`, `_posts`, `_projects`, `_data`, root `*.html|*.md`, `js`; `fontFamily` under `extend` so `font-mono` survives; typography palette mapped to the theme variables, invert set included). Body decor images are `/img/decor-*.webp`.
 - **JS:** no jQuery, no vendor bundles. `js/theme.js` holds the pure, unit-tested theme functions; keep DOM code in `js/app.js`.
-- **Code highlighting happens twice.** Rouge renders `highlighter-rouge` markup at build time, then highlight.js (CDN, post pages only) re-highlights it client-side; `ignoreUnescapedHTML` suppresses the warning that causes.
+- **Code highlighting is Rouge only, at build time** (no client-side highlighter). Token colours are the `.highlight` rules in `input.css`, driven by the `--code-*` variables (light: GitHub, dark: Palenight); the typography plugin draws the `<pre>` box from `--code-bg`/`--code-fg`. Untagged fences render as plain text.
 
 ## Content conventions
 

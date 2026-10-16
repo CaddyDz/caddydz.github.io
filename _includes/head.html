@@ -41,12 +41,5 @@
       document.documentElement.classList.toggle('light', stored === 'light');
     })();
   </script>
-  <!-- Order matters: style.css (Tailwind typography resets `pre code`) must come BEFORE the highlight.js theme, or code blocks lose their colours. -->
   <link rel="stylesheet" href="/css/style.css" />
-  {% if page.layout == "blog" %}
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/material-palenight.min.css"
-  />
-  {% endif %}
 </head>
