@@ -186,6 +186,13 @@ body {
 		transition: box-shadow 300ms ease;
 	}
 
+	/* Without backdrop-filter the translucent fill alone is unreadable over the page: go opaque. */
+	@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+		.glass {
+			background: var(--body-color);
+		}
+	}
+
 	/* Lens glint: a soft specular bloom at the top-left, like light caught on curved glass. */
 	.glass::before {
 		content: '';
@@ -207,7 +214,7 @@ body {
 	header nav ul li a:hover,
 	header nav ul li a:focus-visible {
 		@apply text-heading;
-		background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+		background: var(--glass-pill);
 	}
 
 	/* The active section sits on its own raised glass pill. */
@@ -230,7 +237,17 @@ body {
 	}
 
 	.glass-icon:hover {
-		background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+		background: var(--glass-pill);
+	}
+
+	/* Hover = a 55% pill. Gated: a var() inside color-mix() passes parsing even where color-mix() is
+	   unsupported, so a plain fallback declaration before it would be dropped, not used. */
+	@supports (background: color-mix(in srgb, red 50%, transparent)) {
+		header nav ul li a:hover,
+		header nav ul li a:focus-visible,
+		.glass-icon:hover {
+			background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+		}
 	}
 
 	.glass-icon:active {
@@ -268,6 +285,54 @@ body {
 
 .hamburger-active > span:nth-child(3) {
 	transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Print: the content only, dark on white whatever the theme, no fixed chrome or decor. */
+@media print {
+	:root,
+	:root.dark,
+	:root:not(.light) {
+		--heading-color: #18181b;
+		--paragraph-color: #3f3f46;
+		--disable-color: #52525b;
+		--body-color: #ffffff;
+	}
+
+	body {
+		background: #ffffff !important;
+	}
+
+	header,
+	#to-top,
+	#lightbox,
+	article > a[href="/#blog"],
+	main ~ section {
+		/* main ~ section: "Other posts" and the contact form under a post */
+		display: none !important;
+	}
+
+	main {
+		padding-top: 0 !important;
+	}
+
+	/* Code: backgrounds are not printed by default, so light-on-dark tokens would vanish. */
+	.prose pre,
+	.prose pre * {
+		color: #000000 !important;
+		background: none !important;
+	}
+
+	.prose pre {
+		border: 1px solid #d4d4d8;
+		white-space: pre-wrap;
+		break-inside: avoid;
+	}
+
+	.prose a[href^="http"]::after {
+		content: ' (' attr(href) ')';
+		font-weight: 400;
+		word-break: break-all;
+	}
 }
 
 
