@@ -3,6 +3,7 @@ import {
 	nextTheme,
 	readStoredTheme,
 	setFooterYear,
+	shouldResyncTheme,
 } from './theme.js';
 
 // Window On Scroll Effect
@@ -75,6 +76,13 @@ window
 			applyTheme('system', { toggle: themeToggle });
 		}
 	});
+
+// Back/Forward (bfcache) restores the page as it was left, and other tabs can change the theme meanwhile.
+for (const type of ['pageshow', 'storage']) {
+	window.addEventListener(type, (e) => {
+		if (shouldResyncTheme(e)) applyTheme(readStoredTheme(), { toggle: themeToggle });
+	});
+}
 
 setFooterYear(document.querySelector('#year'));
 

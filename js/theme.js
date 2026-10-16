@@ -55,6 +55,18 @@ export function applyTheme(theme, options = {}) {
 	return { theme: normalized, dark };
 }
 
+/**
+ * Whether a window event means the stored theme may differ from the one on screen:
+ * a Back/Forward restore from the bfcache (the inline head script does not re-run),
+ * or another tab writing `theme` (key is null when storage was cleared).
+ * @param {Event & { persisted?: boolean, key?: string|null }} event
+ */
+export function shouldResyncTheme(event) {
+	if (event.type === 'pageshow') return event.persisted === true;
+	if (event.type === 'storage') return event.key === 'theme' || event.key === null;
+	return false;
+}
+
 export function readStoredTheme(storage = localStorage) {
 	return normalizeTheme(storage.getItem('theme'));
 }
