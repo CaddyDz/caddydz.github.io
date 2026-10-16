@@ -14,7 +14,7 @@ missing=$(comm -23 <(sort tests/expected-pages.txt) <(printf '%s\n' "$actual") |
 [ "$(cat "$site/CNAME")" = "dsalim.dev" ] || { echo "CNAME missing or wrong"; exit 1; }
 
 for leak in node_modules package.json package-lock.json tailwind.config.js input.css Gemfile Gemfile.lock \
-            Dockerfile docker-compose.yml tests vitest.config.js playwright.config.js; do
+            Dockerfile docker-compose.yml tests vitest.config.js playwright.config.js CV; do
   [ ! -e "$site/$leak" ] || { echo "LEAK: $leak was published to $site"; exit 1; }
 done
 

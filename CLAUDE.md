@@ -62,7 +62,7 @@ Display order is `collections.projects.order` in `_config.yml`. Jekyll 4 honours
 
 ### CV (`CV/`)
 
-XeLaTeX source: `CV/resume.tex` uses the local `resume.cls` and `\input`s sections from `CV/resume/*.tex`. There is no build script in the repo and no TeX toolchain on this machine; `cv.pdf` at the repo root is the committed output and must be regenerated and committed by hand after editing the `.tex` files.
+XeLaTeX source: `CV/resume.tex` uses the local `resume.cls` and `\input`s sections from `CV/resume/*.tex`. There is no build script in the repo and no TeX toolchain on this machine; `cv.pdf` at the repo root is the committed output and must be regenerated and committed by hand after editing the `.tex` files. `CV/` itself is excluded from the built site (the hero's "CV LaTeX source" button links to it on GitHub); only `cv.pdf` is published.
 
 ## Tests
 

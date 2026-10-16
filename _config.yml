@@ -22,6 +22,9 @@ exclude:
   - test-results
   - playwright-report
   - coverage
+  # LaTeX sources of cv.pdf (the root cv.pdf is still published). The hero's "CV LaTeX source"
+  # button links to the folder on GitHub; nothing links to /CV/ on the site.
+  - CV
 
 collections:
   projects:
