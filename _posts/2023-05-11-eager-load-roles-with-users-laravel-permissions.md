@@ -8,7 +8,7 @@ categories: laravel
 > Error: Class name must be a valid object or a string in file ... HasRelationships.php
 {: class="post-cards_description"}
 
-# TL;DR?
+## TL;DR?
 in `config/auth.php` add this to the `guards` array
 ```php
 'sanctum' => [
@@ -16,7 +16,7 @@ in `config/auth.php` add this to the `guards` array
   'provider' => 'users'
 ],
 ```
-# Explanation
+## Explanation
 This error occurs when attempting to eager load roles with their assigned users from [Spatie's laravel-permissions](https://spatie.be/docs/laravel-permission/v5/introduction) library like this
 ```php
 <?php

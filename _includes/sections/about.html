@@ -1,7 +1,7 @@
 {% comment %} Ported verbatim from Glaz. The services cards + tools grid below carry SVG gradient/clipPath ids that are unique only because this include renders ONCE per page. Never loop it or include it from another layout. {% endcomment %}
 		<section id="about" class="pt-20 text-center lg:pt-28 lg:text-left">
 			<div class="container space-y-10">
-				<h1 class="heading">{{ site.data.profile.about.headline }}</h1>
+				<h2 class="heading">{{ site.data.profile.about.headline }}</h2>
 				<p class="paragraph mb-7 mt-6 lg:mb-10 lg:mt-8">
 					{{ site.data.profile.about.bio }}
 				</p>
@@ -18,7 +18,7 @@
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="size-5 transition-transform group-hover:scale-150"
+							class="size-5 transition-transform motion-safe:group-hover:scale-150"
 						>
 							<path
 								stroke-linecap="round"
@@ -29,14 +29,14 @@
 					</a>
 				</div>
 				<div class="flex flex-col justify-start gap-8">
-					<h1 class="heading">Skills</h1>
+					<h3 class="heading">Skills</h3>
 					<!-- Skills section start -->
 					<div class="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-6">
 						<div
 							class="bg-main group flex flex-col items-center justify-center rounded p-7 lg:items-start lg:justify-start"
 						>
 							<div
-								class="gradient m-auto rounded p-3 text-white transition-all duration-700 group-hover:!rotate-[360deg] lg:m-0"
+								class="gradient m-auto rounded p-3 text-on-gradient transition-all duration-700 motion-safe:group-hover:!rotate-[360deg] lg:m-0"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
 									/>
 								</svg>
 							</div>
-							<h1 class="heading mb-3 mt-4 !text-2xl">Database design</h1>
+							<h4 class="heading mb-3 mt-4 !text-2xl">Database design</h4>
 							<p class="paragraph">
 								Revolutionize your data management. I specialize in crafting
 								tailored solutions using databases like PostgreSQL, MySQL, and
@@ -66,7 +66,7 @@
 							class="bg-main group flex flex-col items-center justify-center rounded p-7 lg:items-start lg:justify-start"
 						>
 							<div
-								class="gradient m-auto rounded p-3 text-white transition-all duration-700 group-hover:!rotate-[360deg] lg:m-0"
+								class="gradient m-auto rounded p-3 text-on-gradient transition-all duration-700 motion-safe:group-hover:!rotate-[360deg] lg:m-0"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@
 									/>
 								</svg>
 							</div>
-							<h1 class="heading mb-3 mt-4 !text-2xl">Backend development.</h1>
+							<h4 class="heading mb-3 mt-4 !text-2xl">Backend development.</h4>
 							<p class="paragraph">
 								Elevate your digital presence with my Laravel-focused Backend
 								Development service. Harness the power of efficient caching,
@@ -96,7 +96,7 @@
 							class="bg-main group flex flex-col items-center justify-center rounded p-7 lg:items-start lg:justify-start"
 						>
 							<div
-								class="gradient m-auto rounded p-3 text-white transition-all duration-700 group-hover:!rotate-[360deg] lg:m-0"
+								class="gradient m-auto rounded p-3 text-on-gradient transition-all duration-700 motion-safe:group-hover:!rotate-[360deg] lg:m-0"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +111,9 @@
 									></path>
 								</svg>
 							</div>
-							<h1 class="heading mb-3 mt-4 !text-2xl">
+							<h4 class="heading mb-3 mt-4 !text-2xl">
 								DevOps & system administration
-							</h1>
+							</h4>
 							<p class="paragraph">
 								Optimize your digital infrastructure with my DevOps and Server
 								Administration service. I specialize in ensuring reliability and
@@ -127,7 +127,7 @@
 							class="bg-main group flex flex-col items-center justify-center rounded p-7 lg:items-start lg:justify-start"
 						>
 							<div
-								class="gradient m-auto rounded p-3 text-white transition-all duration-700 group-hover:!rotate-[360deg] lg:m-0"
+								class="gradient m-auto rounded p-3 text-on-gradient transition-all duration-700 motion-safe:group-hover:!rotate-[360deg] lg:m-0"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@
 									></path>
 								</svg>
 							</div>
-							<h1 class="heading mb-3 mt-4 !text-2xl">QA & unit testing</h1>
+							<h4 class="heading mb-3 mt-4 !text-2xl">QA & unit testing</h4>
 							<p class="paragraph">
 								Elevate your software quality with my QA & Testing Automation
 								service. Specializing in comprehensive testing, including unit
@@ -155,7 +155,7 @@
 					</div>
 					<!-- Skills section end -->
 					<!-- Tools Section Start -->
-					<h1 class="heading my-8">My arsenal of tools</h1>
+					<h3 class="heading my-8">My arsenal of tools</h3>
 					<div
 						class="grid grid-cols-2 justify-between gap-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 xl:gap-6"
 					>
@@ -164,7 +164,7 @@
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 transition-transform group-hover:rotate-360"
+								class="size-12 transition-transform motion-safe:group-hover:rotate-360"
 								role="img"
 								fill="#FF2D20"
 								viewBox="0 0 24 24"
@@ -175,11 +175,11 @@
 									d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Laravel
-							</h1>
+							</p>
 						</div>
 						<!-- Docker -->
 						<div
@@ -187,7 +187,7 @@
 						>
 							<svg
 								viewBox="0 0 439 309"
-								class="size-12 transition-transform group-hover:-scale-x-100"
+								class="size-12 transition-transform motion-safe:group-hover:-scale-x-100"
 							>
 								<path
 									class="fill-blue-600"
@@ -195,18 +195,18 @@
 								/>
 							</svg>
 
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Docker
-							</h1>
+							</p>
 						</div>
 						<!-- Inertia -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-violet-400 stroke-2 font-extrabold transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-violet-400 stroke-2 font-extrabold transition-transform motion-safe:group-hover:-scale-x-100"
 								viewBox="0 0 62 62"
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -217,11 +217,11 @@
 									d="M44.7 14H26.9L44.1 31.2L26.9 48.4H44.7L61.9 31.2L44.7 14Z"
 								></path>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Inertia
-							</h1>
+							</p>
 						</div>
 						<!-- Postgres -->
 						<div
@@ -229,7 +229,7 @@
 						>
 							<svg
 								viewBox="0 0 32 32"
-								class="size-12 transition-transform group-hover:rotate-360"
+								class="size-12 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<path
 									d="M29.507,18.773a1.378,1.378,0,0,0-1.144-.921,2.619,2.619,0,0,0-.913.051,8.2,8.2,0,0,1-1.406.185,27.125,27.125,0,0,0,2.872-6.83c.953-3.689.444-5.369-.151-6.13A8.239,8.239,0,0,0,22.121,2a11.773,11.773,0,0,0-3.453.484A12.858,12.858,0,0,0,16.648,2.3a6.565,6.565,0,0,0-3.518.867,16.039,16.039,0,0,0-2.484-.624,7.694,7.694,0,0,0-5.819.924C3.093,4.691,2.289,6.819,2.438,9.792A36.351,36.351,0,0,0,3.844,16.33a22.579,22.579,0,0,0,1.514,3.863A4.786,4.786,0,0,0,7.8,22.742a2.4,2.4,0,0,0,2.379-.516,2.08,2.08,0,0,0,.5.43,3.328,3.328,0,0,0,.944.4,5.069,5.069,0,0,0,3.3-.2c.006.171.011.335.014.477.006.229.013.454.021.665a11.641,11.641,0,0,0,.441,3.3c.016.043.037.107.059.176a3.975,3.975,0,0,0,.991,1.745,2.955,2.955,0,0,0,2.09.777,4.7,4.7,0,0,0,.977-.109A4.592,4.592,0,0,0,22.607,28.1c.811-1.155,1.206-2.894,1.277-5.635.009-.078.018-.152.026-.222l.017-.145.191.017.049,0a7.562,7.562,0,0,0,3.163-.548c.631-.293,2.654-1.361,2.177-2.8"
@@ -247,18 +247,18 @@
 									style="fill: #fff"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Postgres
-							</h1>
+							</p>
 						</div>
 						<!-- Redis -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-indigo-400 stroke-2 font-extrabold transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-indigo-400 stroke-2 font-extrabold transition-transform motion-safe:group-hover:-scale-x-100"
 								viewBox="0 -18 256 256"
 							>
 								<path
@@ -298,11 +298,11 @@
 									fill="#9A2928"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Redis
-							</h1>
+							</p>
 						</div>
 						<!-- Ubuntu -->
 						<div
@@ -310,7 +310,7 @@
 						>
 							<svg
 								viewBox="0 0 32 32"
-								class="size-12 fill-orange-600 transition-transform group-hover:rotate-360"
+								class="size-12 fill-orange-600 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<path
 									d="M30 16C30 23.728 23.735 30 16 30C8.265 30 2 23.728 2 16C2 8.265 8.265 2 16 2C23.735 2 30 8.265 30 16Z"
@@ -320,11 +320,11 @@
 									fill="white"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Ubuntu
-							</h1>
+							</p>
 						</div>
 						<!-- Nginx -->
 						<div
@@ -332,7 +332,7 @@
 						>
 							<svg
 								viewBox="0 0 32 32"
-								class="size-12 fill-orange-600 transition-transform group-hover:rotate-360"
+								class="size-12 fill-orange-600 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<path
 									d="M15.948,2h.065a10.418,10.418,0,0,1,.972.528Q22.414,5.65,27.843,8.774a.792.792,0,0,1,.414.788c-.008,4.389,0,8.777-.005,13.164a.813.813,0,0,1-.356.507q-5.773,3.324-11.547,6.644a.587.587,0,0,1-.657.037Q9.912,26.6,4.143,23.274a.7.7,0,0,1-.4-.666q0-6.582,0-13.163a.693.693,0,0,1,.387-.67Q9.552,5.657,14.974,2.535c.322-.184.638-.379.974-.535"
@@ -343,11 +343,11 @@
 									style="fill: #fff"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								nginx
-							</h1>
+							</p>
 						</div>
 						<!-- Meilisearch -->
 						<div
@@ -355,7 +355,7 @@
 						>
 							<svg
 								viewBox="0 0 40.5 6.25"
-								class="size-12 fill-orange-600 transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-orange-600 transition-transform motion-safe:group-hover:-scale-x-100"
 							>
 								<path
 									d="M0 24.4968L7.60256 5.04523C8.67392 2.30411 11.3161 0.5 14.2591 0.5H18.8426L11.24 19.9516C10.1687 22.6927 7.52653 24.4968 4.58348 24.4968H0Z"
@@ -406,11 +406,11 @@
 								</defs>
 							</svg>
 
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Meilisearch
-							</h1>
+							</p>
 						</div>
 						<!-- Vue.js -->
 						<div
@@ -418,7 +418,7 @@
 						>
 							<svg
 								viewBox="0 0 128 128"
-								class="size-12 transition-transform group-hover:rotate-360"
+								class="size-12 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<path
 									fill="#42b883"
@@ -429,18 +429,18 @@
 									d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z"
 								></path>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Vue.js
-							</h1>
+							</p>
 						</div>
 						<!-- Vite -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 transition-transform group-hover:rotate-360"
+								class="size-12 transition-transform motion-safe:group-hover:rotate-360"
 								viewBox="0 0 410 404"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
@@ -480,11 +480,11 @@
 								</defs>
 							</svg>
 
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Vite
-							</h1>
+							</p>
 						</div>
 						<!-- Tailwind -->
 						<div
@@ -492,7 +492,7 @@
 						>
 							<svg
 								viewBox="0 0 54 33"
-								class="size-12 fill-sky-400 transition-transform group-hover:rotate-360"
+								class="size-12 fill-sky-400 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<g clip-path="url(#prefix__clip0)">
 									<path
@@ -507,11 +507,11 @@
 									</clipPath>
 								</defs>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Tailwind
-							</h1>
+							</p>
 						</div>
 						<!-- Lodash -->
 						<div
@@ -519,7 +519,7 @@
 						>
 							<svg
 								viewBox="0 -11.5 256 256"
-								class="size-12 fill-white transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-white transition-transform motion-safe:group-hover:-scale-x-100"
 							>
 								<g
 									stroke="none"
@@ -541,18 +541,18 @@
 									></path>
 								</g>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Lodash
-							</h1>
+							</p>
 						</div>
 						<!-- Nuxt -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-green-400 transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-green-400 transition-transform motion-safe:group-hover:-scale-x-100"
 								viewBox="0 0 300 200"
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -560,18 +560,18 @@
 									d="M168 200H279C282.542 200 285.932 198.756 289 197C292.068 195.244 295.23 193.041 297 190C298.77 186.959 300.002 183.51 300 179.999C299.998 176.488 298.773 173.04 297 170.001L222 41C220.23 37.96 218.067 35.7552 215 34C211.933 32.2448 207.542 31 204 31C200.458 31 197.067 32.2448 194 34C190.933 35.7552 188.77 37.96 187 41L168 74L130 9.99764C128.228 6.95784 126.068 3.75491 123 2C119.932 0.245087 116.542 0 113 0C109.458 0 106.068 0.245087 103 2C99.9323 3.75491 96.7717 6.95784 95 9.99764L2 170.001C0.226979 173.04 0.00154312 176.488 1.90993e-06 179.999C-0.0015393 183.51 0.229648 186.959 2 190C3.77035 193.04 6.93245 195.244 10 197C13.0675 198.756 16.4578 200 20 200H90C117.737 200 137.925 187.558 152 164L186 105L204 74L259 168H186L168 200ZM89 168H40L113 42L150 105L125.491 147.725C116.144 163.01 105.488 168 89 168Z"
 								></path>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Nuxt
-							</h1>
+							</p>
 						</div>
 						<!-- Headless UI -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-green-400 transition-transform group-hover:-scale-x-100"
+								class="size-12 fill-green-400 transition-transform motion-safe:group-hover:-scale-x-100"
 								viewBox="0 0 38 26"
 							>
 								<g clip-path="url(#logo__a_undefined)">
@@ -614,36 +614,36 @@
 									</clipPath>
 								</defs>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Headless UI
-							</h1>
+							</p>
 						</div>
 						<!-- Git -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-red-600 transition-transform group-hover:rotate-360"
+								class="size-12 fill-red-600 transition-transform motion-safe:group-hover:rotate-360"
 								viewBox="0 0 256 256"
 							>
 								<path
 									d="M251.172 116.594L139.4 4.828c-6.433-6.437-16.873-6.437-23.314 0l-23.21 23.21 29.443 29.443c6.842-2.312 14.688-.761 20.142 4.693 5.48 5.489 7.02 13.402 4.652 20.266l28.375 28.376c6.865-2.365 14.786-.835 20.269 4.657 7.663 7.66 7.663 20.075 0 27.74-7.665 7.666-20.08 7.666-27.749 0-5.764-5.77-7.188-14.235-4.27-21.336l-26.462-26.462-.003 69.637a19.82 19.82 0 0 1 5.188 3.71c7.663 7.66 7.663 20.076 0 27.747-7.665 7.662-20.086 7.662-27.74 0-7.663-7.671-7.663-20.086 0-27.746a19.654 19.654 0 0 1 6.421-4.281V94.196a19.378 19.378 0 0 1-6.421-4.281c-5.806-5.798-7.202-14.317-4.227-21.446L81.47 39.442l-76.64 76.635c-6.44 6.443-6.44 16.884 0 23.322l111.774 111.768c6.435 6.438 16.873 6.438 23.316 0l111.251-111.249c6.438-6.44 6.438-16.887 0-23.324"
 								/>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Git
-							</h1>
+							</p>
 						</div>
 						<!-- Obsidian -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 fill-violet-400 stroke-2 font-extrabold transition-transform group-hover:rotate-360"
+								class="size-12 fill-violet-400 stroke-2 font-extrabold transition-transform motion-safe:group-hover:rotate-360"
 								alt="Obsidian"
 								viewBox="0 0 25 25"
 							>
@@ -660,18 +660,18 @@
 									d="m17.3708 19.3102c.9267-1.3985 1.5868-2.4862 1.9352-3.0758.1742-.295.1427-.6648-.0638-.9383-.5377-.7126-1.5666-2.1607-2.1272-3.5015-.5764-1.3785-.6624-3.51876-.6673-4.56119-.0019-.39626-.1275-.78328-.3726-1.09465l-3.3311-4.23183c-.0117.19075-.0392.37998-.0788.56747-.1109.52394-.32 1.04552-.5585 1.56101-.1398.30214-.3014.62583-.4646.95284-.1086.21764-.218.4368-.3222.652-.5385 1.11265-1.0397 2.32011-1.1797 3.73901-.1299 1.31514.0478 2.84484.8484 4.67094.1333.0113.2675.0262.4023.0452 1.1488.1615 2.3546.6115 3.4647 1.5685.9541.8226 1.8163 2.0012 2.5152 3.6463z"
 								></path>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Obsidian
-							</h1>
+							</p>
 						</div>
 						<!-- Vim -->
 						<div
 							class="bg-main group flex w-full flex-col items-center justify-center rounded py-8 lg:py-5 xl:py-9"
 						>
 							<svg
-								class="size-12 stroke-2 font-extrabold transition-transform group-hover:-scale-x-100"
+								class="size-12 stroke-2 font-extrabold transition-transform motion-safe:group-hover:-scale-x-100"
 								viewBox="-0.5 0 257 257"
 							>
 								<g>
@@ -742,11 +742,11 @@
 									></path>
 								</g>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								Vim
-							</h1>
+							</p>
 						</div>
 						<!-- PhpStorm -->
 						<div
@@ -754,7 +754,7 @@
 						>
 							<svg
 								viewBox="0 0 32 32"
-								class="size-12 transition-transform group-hover:rotate-360"
+								class="size-12 transition-transform motion-safe:group-hover:rotate-360"
 							>
 								<g clip-path="url(#clip0_87_8020)">
 									<path
@@ -847,11 +847,11 @@
 									</clipPath>
 								</defs>
 							</svg>
-							<h1
+							<p
 								class="mt-4 font-darker text-4xl font-black text-heading"
 							>
 								PhpStorm
-							</h1>
+							</p>
 						</div>
 					</div>
 					<!-- Tools Section End -->

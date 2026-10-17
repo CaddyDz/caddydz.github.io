@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="motion-safe:scroll-smooth">
   {% include head.html %}
   <body class="w-full bg-body font-inter">
+    <a
+      href="#main"
+      class="sr-only z-50 rounded bg-body px-4 py-2 font-medium text-heading shadow-lg focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >Skip to content</a
+    >
     {% include header.html %}
     {{ content }}
     {% include footer.html %}

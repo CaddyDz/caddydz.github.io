@@ -48,7 +48,7 @@ const classes = "mr-1 px-4 py-3 text-sm leading-4 border rounded";
   </div>
 </template>
 ```
-# Usage:
+## Usage:
 Render an Inertia page and pass paginated results of your Eloquent model as a prop
 ```php
 return Inertia::render('Index', [
