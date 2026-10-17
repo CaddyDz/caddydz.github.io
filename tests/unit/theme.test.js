@@ -7,6 +7,7 @@ import {
 	readStoredTheme,
 	resolveIsDark,
 	setFooterYear,
+	shouldResyncTheme,
 	themeLabel,
 } from '../../js/theme.js';
 
@@ -156,5 +157,22 @@ describe('setFooterYear', () => {
 
 	it('no-ops for missing element', () => {
 		expect(setFooterYear(null)).toBeNull();
+	});
+});
+
+describe('shouldResyncTheme', () => {
+	it('resyncs on a bfcache restore only', () => {
+		expect(shouldResyncTheme({ type: 'pageshow', persisted: true })).toBe(true);
+		expect(shouldResyncTheme({ type: 'pageshow', persisted: false })).toBe(false);
+	});
+
+	it('resyncs when another tab writes or clears the theme key', () => {
+		expect(shouldResyncTheme({ type: 'storage', key: 'theme' })).toBe(true);
+		expect(shouldResyncTheme({ type: 'storage', key: null })).toBe(true);
+		expect(shouldResyncTheme({ type: 'storage', key: 'other' })).toBe(false);
+	});
+
+	it('ignores other events', () => {
+		expect(shouldResyncTheme({ type: 'load' })).toBe(false);
 	});
 });
