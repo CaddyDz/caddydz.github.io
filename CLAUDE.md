@@ -26,7 +26,7 @@ The compose stack and the `glaz` repo's compose stack both register the Traefik 
 - **Production is GitHub Pages deployed by `.github/workflows/pages.yml`** (Pages source = "GitHub Actions"): `npm run build:css` → `bundle exec jekyll build` (Jekyll 4 from `Gemfile.lock`, `JEKYLL_ENV=production`) → `tests/check-site.sh` → vitest → Playwright → `deploy-pages`. Pull requests run everything except the deploy. Merging to `master` is the deploy.
 - Compiled CSS is never committed (`css/style.css` is gitignored). Docker, CI and production all run the same locked Jekyll, so a local render matches production.
 - `Gemfile.lock` must be regenerated inside `ruby:3.3-slim` with `--add-platform x86_64-linux aarch64-linux` (command in README), never with the host Ruby.
-- `.github/workflows/docker.yml` only builds and pushes the dev/runtime image to Docker Hub on push to `master`. **Do not use `[skip ci]`**: GitHub's skip applies to every push workflow, so it would also skip the Pages deploy (`pages.yml`). The Docker Hub image has no `css/style.css`; it is a runtime shell for the bind-mounted dev loop.
+- `.github/workflows/docker.yml` builds the dev/runtime image on PRs that touch its inputs and pushes it to Docker Hub on push to `master`. **Do not use `[skip ci]`**: GitHub's skip applies to every push workflow, so it would also skip the Pages deploy (`pages.yml`). The image's Node stage compiles `css/style.css`, so it runs standalone; in the bind-mounted dev loop the host's `css/` (Tailwind watcher) replaces it.
 - `_config.yml` `exclude` lists every tooling file explicitly; `tests/check-site.sh` fails the build if any leaks into `_site/`.
 
 ## Hard invariants (CI enforces the first two)
