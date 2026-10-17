@@ -38,3 +38,16 @@ test('nav hover uses the 55% glass pill', async ({ page }) => {
 	await link.hover();
 	await expect(link).toHaveCSS('background-color', 'color(srgb 1 1 1 / 0.385)'); // color-mix() result, as Chromium serialises it
 });
+
+test.describe('phone width', () => {
+	test.use({ viewport: { width: 375, height: 740 } });
+
+	test('hovering the hamburger keeps the glass tint under the pill', async ({ page }) => {
+		await page.addInitScript(() => localStorage.setItem('theme', 'light'));
+		await page.goto(post);
+		const hamburger = page.locator('#hamburger');
+		await hamburger.hover();
+		await expect(hamburger).toHaveCSS('background-color', 'rgba(255, 255, 255, 0.6)'); // --glass-tint
+		await expect(hamburger).toHaveCSS('background-image', /^linear-gradient\(color\(srgb 1 1 1 \/ 0\.385\)/);
+	});
+});

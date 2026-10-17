@@ -28,6 +28,8 @@
 	--glass-shadow: rgba(109, 40, 217, 0.22);
 	--glass-glint: rgba(255, 255, 255, 0.6);
 	--glass-pill: rgba(255, 255, 255, 0.7);
+	/* Opaque-enough base under the fill so text stays readable over any backdrop (WCAG AA). */
+	--glass-tint: rgba(255, 255, 255, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,8 +52,10 @@
 		--glass-specular: rgba(255, 255, 255, 0.3);
 		--glass-shade: rgba(0, 0, 0, 0.45);
 		--glass-shadow: rgba(0, 0, 0, 0.6);
-		--glass-glint: rgba(255, 255, 255, 0.14);
+		--glass-glint: rgba(255, 255, 255, 0.08);
 		--glass-pill: rgba(255, 255, 255, 0.14);
+		/* Opaque-enough base under the fill so text stays readable over any backdrop (WCAG AA). */
+		--glass-tint: rgba(18, 18, 22, 0.88);
 	}
 }
 
@@ -74,8 +78,10 @@
 	--glass-specular: rgba(255, 255, 255, 0.3);
 	--glass-shade: rgba(0, 0, 0, 0.45);
 	--glass-shadow: rgba(0, 0, 0, 0.6);
-	--glass-glint: rgba(255, 255, 255, 0.14);
+	--glass-glint: rgba(255, 255, 255, 0.08);
 	--glass-pill: rgba(255, 255, 255, 0.14);
+	/* Opaque-enough base under the fill so text stays readable over any backdrop (WCAG AA). */
+	--glass-tint: rgba(18, 18, 22, 0.88);
 }
 
 :root.light {
@@ -99,6 +105,8 @@
 	--glass-shadow: rgba(109, 40, 217, 0.22);
 	--glass-glint: rgba(255, 255, 255, 0.6);
 	--glass-pill: rgba(255, 255, 255, 0.7);
+	/* Opaque-enough base under the fill so text stays readable over any backdrop (WCAG AA). */
+	--glass-tint: rgba(255, 255, 255, 0.6);
 }
 
 /* Theme toggle icons: show the active preference */
@@ -175,7 +183,7 @@ body {
 	   once the page is scrolled) only deepens the drop shadow. */
 	.glass {
 		@apply relative isolate;
-		background: var(--glass-fill);
+		background: var(--glass-fill), var(--glass-tint);
 		border: 1px solid var(--glass-edge);
 		box-shadow:
 			inset 0 1px 0 0 var(--glass-specular),
@@ -236,17 +244,24 @@ body {
 		@apply flex size-10 items-center justify-center rounded-full transition-[background-color,transform] duration-200;
 	}
 
+	/* background-image, not the shorthand: the hamburger is also .glass, and the shorthand would wipe its tint. */
 	.glass-icon:hover {
-		background: var(--glass-pill);
+		background-image: linear-gradient(var(--glass-pill), var(--glass-pill));
 	}
 
 	/* Hover = a 55% pill. Gated: a var() inside color-mix() passes parsing even where color-mix() is
 	   unsupported, so a plain fallback declaration before it would be dropped, not used. */
 	@supports (background: color-mix(in srgb, red 50%, transparent)) {
 		header nav ul li a:hover,
-		header nav ul li a:focus-visible,
-		.glass-icon:hover {
+		header nav ul li a:focus-visible {
 			background: color-mix(in srgb, var(--glass-pill) 55%, transparent);
+		}
+
+		.glass-icon:hover {
+			background-image: linear-gradient(
+				color-mix(in srgb, var(--glass-pill) 55%, transparent),
+				color-mix(in srgb, var(--glass-pill) 55%, transparent)
+			);
 		}
 	}
 
