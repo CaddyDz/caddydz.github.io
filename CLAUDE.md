@@ -31,7 +31,7 @@ The compose stack and the `glaz` repo's compose stack both register the Traefik 
 
 ## Hard invariants (CI enforces the first two)
 
-- **Post URLs never change.** They come from front-matter `date` + `categories` (default permalink `/:categories/:year/:month/:day/:title.html`); three posts have front-matter dates that differ from their filenames (chmod, vue3, gh-pr). `tests/expected-pages.txt` lists every live page and `tests/check-site.sh` fails if one disappears (subset check: new posts are fine; add them to the list if you want them guarded).
+- **Post URLs never change.** They come from front-matter `date` + `categories` (default permalink `/:categories/:year/:month/:day/:title.html`); three posts (chmod, vue3, gh-pr) pin their original URL with a front-matter `permalink` because their `date` was corrected after publishing; never remove those permalinks. `tests/expected-pages.txt` lists every live page and `tests/check-site.sh` fails if one disappears (subset check: new posts are fine; add them to the list if you want them guarded).
 - **All asset paths are root-relative** (`/css/style.css`, `/js/app.js`, `/img/...`, `/assets/img/...`) so they work from nested post URLs. Nav anchors are `/#about` etc. for the same reason.
 - `_includes/head.html` links `/css/style.css` BEFORE the highlight.js theme; the typography plugin's `pre code` reset and `.hljs` have equal specificity, so order decides whether code blocks have colour.
 - The inline theme script in `head.html` must stay inline (prevents a flash of the wrong theme).

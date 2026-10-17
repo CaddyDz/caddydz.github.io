@@ -1,7 +1,8 @@
 ---
 layout: blog
 title: "Harnessing Vue 3's Recursive Component Tree for Dynamic UIs"
-date: 2023-01-16
+date: 2024-01-16
+permalink: /javascript/2023/01/16/vue3-recursive-component-tree.html
 thumbnail: "/assets/img/vue.png"
 categories: javascript
 ---
