@@ -1,7 +1,8 @@
 ---
 layout: blog
 title: "Automate pull request review assignment on GitHub via actions"
-date: 2023-01-18
+date: 2024-01-18
+permalink: /github/2023/01/18/github-pr-auto-request-review.html
 thumbnail: "/assets/img/gh-pr-review.png"
 categories: github
 ---

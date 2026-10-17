@@ -1,7 +1,8 @@
 ---
 layout: blog
 title: "Understanding Unix Change Mode (chmod)"
-date: 2023-02-06
+date: 2023-01-09
+permalink: /unix/2023/02/06/understanding-unix-chmod.html
 thumbnail: "/assets/img/chmod.png"
 categories: unix
 ---
