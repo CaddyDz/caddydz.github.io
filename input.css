@@ -168,6 +168,92 @@ body {
 	background: var(--secondary-color);
 }
 
+/* Code blocks: Rouge token classes, coloured at build time (no client-side highlighter).
+   Light: GitHub (Primer) palette. Dark: Material Palenight, as before, with its base04 for
+   comments (base03 was 2.8:1). Every colour is >= 4.5:1 on its background.
+   The typography plugin draws the <pre> box from --code-bg / --code-fg (tailwind.config.js). */
+:root,
+:root.light {
+	--code-bg: #f6f8fa;
+	--code-fg: #1f2328;
+	--code-comment: #59636e;
+	--code-keyword: #cf222e;
+	--code-string: #0a3069;
+	--code-constant: #0550ae;
+	--code-function: #8250df;
+	--code-type: #953800;
+	--code-variable: #953800;
+	--code-tag: #116329;
+	--code-builtin: #0550ae;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not(.light) {
+		--code-bg: #292d3e;
+		--code-fg: #959dcb;
+		--code-comment: #8796b0;
+		--code-keyword: #c792ea;
+		--code-string: #c3e88d;
+		--code-constant: #f78c6c;
+		--code-function: #82aaff;
+		--code-type: #ffcb6b;
+		--code-variable: #f07178;
+		--code-tag: #f07178;
+		--code-builtin: #89ddff;
+	}
+}
+
+:root.dark {
+	--code-bg: #292d3e;
+	--code-fg: #959dcb;
+	--code-comment: #8796b0;
+	--code-keyword: #c792ea;
+	--code-string: #c3e88d;
+	--code-constant: #f78c6c;
+	--code-function: #82aaff;
+	--code-type: #ffcb6b;
+	--code-variable: #f07178;
+	--code-tag: #f07178;
+	--code-builtin: #89ddff;
+}
+
+.highlight :is(.c, .ch, .cd, .cm, .c1, .cs, .cpf) {
+	color: var(--code-comment);
+	font-style: italic;
+}
+.highlight :is(.k, .kd, .kn, .kp, .kr, .kt, .kv, .ow, .cp) {
+	color: var(--code-keyword);
+}
+.highlight :is(.s, .sa, .sb, .sc, .dl, .sd, .s1, .s2, .sh, .sx, .gi) {
+	color: var(--code-string);
+}
+.highlight :is(.kc, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .na, .no, .ss) {
+	color: var(--code-constant);
+}
+.highlight :is(.nf, .fm, .py, .gh, .gu) {
+	color: var(--code-function);
+}
+.highlight :is(.nc, .nn, .ne, .nd) {
+	color: var(--code-type);
+}
+.highlight :is(.nv, .vc, .vg, .vi, .vm, .si, .gd) {
+	color: var(--code-variable);
+}
+.highlight .nt {
+	color: var(--code-tag);
+}
+.highlight :is(.nb, .bp, .sr, .se) {
+	color: var(--code-builtin);
+}
+.highlight .gh,
+.highlight .gu,
+.highlight .gs {
+	font-weight: 700;
+}
+.highlight .ge {
+	font-style: italic;
+}
+
 /* Liquid Glass header. In @layer components so utilities (absolute, lg:hidden, ...) still win. */
 @layer components {
 	/* Translucent, refractive-looking capsules that float over the page.
