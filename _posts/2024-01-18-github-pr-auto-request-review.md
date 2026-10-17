@@ -17,6 +17,7 @@ Here's a GitHub actions workflow that automates the process of requesting a revi
 
 > Remember to change the [username] by the desired assignee.
 
+{% raw %}
 ```yaml
 name: Request Review
 on:
@@ -40,6 +41,7 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers" \
             -d "{\"reviewers\":[\"username\"]}"
 ```
+{% endraw %}
 
 ## Workflow Name
 
@@ -75,7 +77,7 @@ jobs:
 - This step executes a series of commands:
   - It uses curl to send a POST request to GitHub's API.
   - The request is sent to the URL for adding requested reviewers to a pull request in the current repository.
-  - The headers include an authorization token (${{ secrets.GITHUB_TOKEN }}) and a specification for the version of the GitHub API.
+  - The headers include an authorization token ({% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}) and a specification for the version of the GitHub API.
   - The data (-d) sent in the request specifies the reviewers to be added. Here, it's hard-coded to add a reviewer with the username "username".
 
 ## Overview

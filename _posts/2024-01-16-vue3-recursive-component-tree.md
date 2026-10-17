@@ -53,6 +53,7 @@ Now the branch component can call itself passing the node object as a prop and i
 
 `Branch.vue`
 
+{% raw %}
 ```vue
 <script setup>
 defineProps({
@@ -69,3 +70,4 @@ defineProps({
   </li>
 </template>
 ```
+{% endraw %}
