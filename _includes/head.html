@@ -39,6 +39,7 @@
       document.documentElement.dataset.theme = stored;
       document.documentElement.classList.toggle('dark', dark);
       document.documentElement.classList.toggle('light', stored === 'light');
+      document.documentElement.classList.add('js'); // html:not(.js) styles in input.css are the no-JS fallbacks
     })();
   </script>
   <!-- Order matters: style.css (Tailwind typography resets `pre code`) must come BEFORE the highlight.js theme, or code blocks lose their colours. -->
