@@ -31,8 +31,9 @@
           <div class="lg:ml-5">
             <h2 class="heading !text-3xl !font-extrabold">{{ project.title }}</h2>
             <p class="paragraph">{{ project.description }}</p>
-            {% if project.demo %}
-            <div class="item-center mb-6 mt-4 flex gap-7 lg:mb-7 lg:mt-5">
+            {% if project.demo or project.repo or project.case_study %}
+            <div class="item-center mb-6 mt-4 flex flex-wrap gap-x-7 gap-y-3 lg:mb-7 lg:mt-5">
+              {% if project.demo %}
               <a
                 href="https://{{ project.demo }}"
                 target="_blank"
@@ -48,6 +49,35 @@
                 </svg>
                 <span>Live Preview</span>
               </a>
+              {% endif %}
+              {% if project.case_study %}
+              <a
+                href="{{ project.case_study }}"
+                class="flex items-center gap-2 whitespace-nowrap text-xs font-medium text-heading hover:underline lg:text-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                <span>Case study</span>
+              </a>
+              {% endif %}
+              {% if project.repo %}
+              <a
+                href="https://{{ project.repo }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 whitespace-nowrap text-xs font-medium text-heading hover:underline lg:text-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                </svg>
+                <span>Source</span>
+              </a>
+              {% endif %}
             </div>
             <div class="flex flex-wrap gap-2">
             {% else %}

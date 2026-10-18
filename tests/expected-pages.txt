@@ -1,3 +1,4 @@
+case-study/2026/10/18/rebuilding-king-boosting.html
 css/2023/05/24/prevent-drag-overscroll-macos.html
 docker/jekyll/2023/04/13/setup-jekyll-runtime-docker.html
 github/2023/01/18/github-pr-auto-request-review.html
