@@ -27,6 +27,7 @@ collections:
   projects:
     order:
       - murafiq.md
+      - kingboosting.md
       - money.md
       - orsp.md
       - shyfter.md

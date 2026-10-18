@@ -56,7 +56,7 @@ The first paragraph is the excerpt (no `excerpt_separator`); cards render it wit
 
 ### Projects (`_projects/<name>.md`)
 
-Front-matter only, no body; copy an existing project for the fields. `name` is used as `data-project` and tests key on it, so keep it unique and id-safe. `demo` is a bare domain and optional: the template prepends `https://` and omits the "Live Preview" row when absent.
+Front-matter only, no body; copy an existing project for the fields. `name` is used as `data-project` and tests key on it, so keep it unique and id-safe. `demo` and `repo` are bare domains or paths (`github.com/owner/repo`) and optional: the template prepends `https://`. `case_study` is an optional root-relative post URL. Each adds a link (Live Preview, Case study, Source), and the row is omitted when all three are absent.
 
 Display order is `collections.projects.order` in `_config.yml`. Jekyll 4 honours it natively; `_includes/sections/portfolio.html` still builds an `ordered_projects` array by hand (kept from the Pages-3.10 era, harmless, renders unlisted projects last). Do not revert that loop to plain `site.projects`.
 
