@@ -1,5 +1,25 @@
 # Resume timeline (display order = file order). Edit here, never in _includes/.
 employment:
+  - company: Clarity Networks
+    role: Full-Stack Web Developer
+    start: Jul. 2023
+    end: Present
+  - company: Le Four Numérique
+    role: Front-end developer
+    start: Jul. 2023
+    end: Oct. 2023
+  - company: OrderSpark
+    role: Backend developer, DevOps lead
+    start: Oct. 2022
+    end: Jan. 2023
+  - company: One Potato, Ltd
+    role: Full Stack Web Developer
+    start: Oct. 2022
+    end: Dec. 2023
+  - company: American National Hockey League
+    role: Backend Engineer, DevOps
+    start: Jan. 2022
+    end: May. 2022
   - company: Pierry, Inc.
     role: Full Stack Web Developer
     start: Jun. 2021
