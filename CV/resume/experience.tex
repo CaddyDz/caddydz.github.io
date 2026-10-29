@@ -11,16 +11,17 @@
 %-------------------------------------------------------------------------------
   \cventry
     {Full-Stack Web Developer} % Job title
-    {DiDCentral, LLC} % Organization
+    {Clarity Networks} % Organization
     {Remote} % Location
     {July. 2023 - Present} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Built a queue based system to transcribe VoIP calls and catch fraudulent ones via a machine learning model.}
-        \item {Created a CRM for managing customers and their invoices.}
-        \item {Built the RoboGuard product which blocks bad actors from ISP networks.}
-        \item {Created a system to trap future calls in honeypots to process by the system.}
-        \item {Creating a mission control system analytics dashboard for customers network insights and for AU/US government regulation compliance.}
+        \item {Built RoboGuard (Laravel, Nova, PostgreSQL), a robocall blocker whose blocklists feed a backbone major US carriers route through.}
+        \item {Built honeypots that trap scam calls and a queue-based pipeline that transcribes them and flags fraud via a machine learning model.}
+        \item {Built an end-to-end self-test harness that pushes a synthetic call through the production ETL job chain to verify it before releases.}
+        \item {Added monitors for the pipeline's PostgreSQL materialized-view refreshes and scheduled jobs that page via SMS and Discord when they stall.}
+        \item {Sole operator of 12 servers and 4 replicated DB servers; zero-downtime deploys, QA-gated releases, no NOC-reported issues in a year.}
+        \item {Built the Mission Control analytics dashboard (customer network insights, AU/US regulatory compliance) and a customer invoicing CRM.}
       \end{cvitems}
     }
 
