@@ -4,9 +4,9 @@ tagline: Backend Heavy full-stack web developer
 description: Modern web developer, Laravel artisan # <meta name="description"> on non-post pages
 email: contact@dsalim.dev
 phones:
-  - "+31629153326"
+  - "+31684580269"
   - "+213551081911"
-years_experience: 7
+years_experience: 9
 client_count: 120
 twitter_site: "@saly3301" # twitter:site on post pages
 cv:
@@ -16,24 +16,25 @@ about:
   headline: Backend developer with a passion for software engineering.
   bio: >-
     Hello, I'm Salim Djerbouh, a backend-heavy full-stack web developer.
-    I currently keep production Laravel applications and their data
-    pipelines running for a telecom company, and I build web products from
-    the ground up: data model, API, front end, infrastructure and CI/CD.
-    I write well-designed, testable and efficient code, learn fast, and aim
-    for systems resilient enough that they rarely need firefighting.
-# Kept in line with CV/resume/summary.tex (the source of cv.pdf).
+    At Clarity Networks I build and run RoboGuard, a robocall-blocking
+    platform, and keep its production Laravel applications and data
+    pipelines running. I build web products from the ground up: data
+    model, API, front end, infrastructure and CI/CD. I write
+    well-designed, testable and efficient code, learn fast, and aim for
+    systems resilient enough that they rarely need firefighting.
+# Based on CV/resume/summary.tex plus the current role; the years follow
+# years_experience above.
 resume_summary: >-
-  Software engineer, full-stack web developer and DevOps/SysAdmin,
-  currently a freelance backend developer maintaining production Laravel
-  applications and data pipelines for a telecom company. Formerly Backend
-  Engineer and DevOps lead at Belgian company Shyfter SRL, and CTO and
-  Lead Developer at start-up Zidweb. Over seven years of experience
-  specializing in back-end development, infrastructure engineering and
-  CI/CD pipeline automation. Super nerd with a critical mindset who loves
-  Vim, macOS and Linux, and enjoys setting up and customizing development
-  environments. Interested in devising better problem-solving methods for
-  challenging tasks, and learning new technologies and tools when the
-  need arises.
+  Software engineer and DevOps/SysAdmin, currently a Full-Stack Web
+  Developer at Clarity Networks, building and running the RoboGuard
+  robocall-blocking platform. Formerly Backend Engineer and DevOps assist
+  at Belgian company Shyfter SRL, and CTO and Lead Developer at start-up
+  Zidweb. Over nine years of experience specializing in back-end
+  development, infrastructure engineering and CI/CD pipeline automation.
+  Super nerd with a critical mindset who loves Vim, macOS and Linux, and
+  enjoys setting up and customizing development environments. Interested
+  in devising better problem-solving methods for challenging tasks, and
+  learning new technologies and tools when the need arises.
 contact:
   blurb: Always available for freelancing if the right project comes along, feel free to contact me.
   form_note: Feel free to contact me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.

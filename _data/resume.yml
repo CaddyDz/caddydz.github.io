@@ -1,25 +1,45 @@
 # Resume timeline (display order = file order). Edit here, never in _includes/.
 employment:
+  - company: Clarity Networks
+    role: Full-Stack Web Developer
+    start: Jul. 2023
+    end: Present
+  - company: Le Four Numérique
+    role: Front-end developer
+    start: Jul. 2023
+    end: Oct. 2023
+  - company: Upwork
+    role: Freelance Full-stack web developer
+    start: Jan. 2023
+    end: Jul. 2023
+  - company: OrderSpark
+    role: Backend developer, DevOps lead
+    start: Oct. 2022
+    end: Jan. 2023
+  - company: One Potato, Ltd
+    role: Full Stack Web Developer
+    start: Oct. 2022
+    end: Dec. 2023
+  - company: American National Hockey League
+    role: Backend Engineer, DevOps
+    start: Jan. 2022
+    end: May. 2022
   - company: Pierry, Inc.
     role: Full Stack Web Developer
     start: Jun. 2021
     end: Dec. 2021
   - company: Shyfter, SRL.
-    role: Backend Engineer, DevOps Lead
+    role: Backend Engineer, DevOps Assist
     start: Feb. 2021
-    end: Sep. 2022
+    end: Aug. 2022
   - company: Zidweb, LLC.
     role: Co-Founder, CTO and Lead Developer
     start: Feb. 2020
     end: Feb. 2021
   - company: Didata LLC.
     role: Full stack Software Engineer
-    start: March. 2020
+    start: March. 2019
     end: April. 2020
-  - company: Upwork.
-    role: Freelance Backend developer
-    start: Feb. 2020
-    end: Present
   - company: A-Tech Solutions LLC.
     role: Full Stack web developer
     start: Jan. 2019
