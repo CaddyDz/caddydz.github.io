@@ -15,23 +15,26 @@ cv:
 about:
   headline: Backend developer with a passion for software engineering.
   bio: >-
-    Hello, I'm Salim Djerbouh, I am a senior Web developer able to build a
-    Web presence from the ground up - from concept, navigation, layout and
-    programming to UX and SEO. Skilled at writing well-designed, testable
-    and efficient code using current best practices in Web development.
-    Fast learner, hard worker and team player who is proficient in an
-    array of scripting languages and multimedia Web tools.
+    Hello, I'm Salim Djerbouh, a backend-heavy full-stack web developer.
+    At Clarity Networks I build and run RoboGuard, a robocall-blocking
+    platform, and keep its production Laravel applications and data
+    pipelines running. I build web products from the ground up: data
+    model, API, front end, infrastructure and CI/CD. I write
+    well-designed, testable and efficient code, learn fast, and aim for
+    systems resilient enough that they rarely need firefighting.
+# Based on CV/resume/summary.tex plus the current role; the years follow
+# years_experience above.
 resume_summary: >-
-  Currently a Full-Stack Web Developer at Clarity Networks, building
-  and running the RoboGuard robocall-blocking platform. Formerly Backend
-  Engineer and DevOps assist at Belgian company Shyfter SRL, Chief
-  Technology Officer and Lead Developer at start-up company Zidweb.
-  9+ years experience specializing in the backend development,
-  infrastructure engineering, CI/CD pipelines automation, Super nerd
-  who loves Vim, macOS and Linux and enjoys to customize all of the
-  development environment. Interested in devising a better
-  problem-solving method for challenging tasks, and learning new
-  technologies and tools when the need arises.
+  Software engineer and DevOps/SysAdmin, currently a Full-Stack Web
+  Developer at Clarity Networks, building and running the RoboGuard
+  robocall-blocking platform. Formerly Backend Engineer and DevOps assist
+  at Belgian company Shyfter SRL, and CTO and Lead Developer at start-up
+  Zidweb. Over nine years of experience specializing in back-end
+  development, infrastructure engineering and CI/CD pipeline automation.
+  Super nerd with a critical mindset who loves Vim, macOS and Linux, and
+  enjoys setting up and customizing development environments. Interested
+  in devising better problem-solving methods for challenging tasks, and
+  learning new technologies and tools when the need arises.
 contact:
   blurb: Always available for freelancing if the right project comes along, feel free to contact me.
   form_note: Feel free to contact me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
